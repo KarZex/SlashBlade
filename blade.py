@@ -137,3 +137,15 @@ for row in csv_reader:
 
 
 player["minecraft:client_entity"]["scripts"]["pre_animation"][10].replace("|| ;",";")
+
+with open(player_path,'w') as f:
+    json.dump(player,f,indent=4)
+    
+with open(bladeitem_path,'w') as f:
+    json.dump(bladeitem,f,indent=4)
+
+with open(blades_render_controllers_path,'w') as f:
+    json.dump(blades_render_controllers,f,indent=4)
+
+with open(item_texture_path,'w') as f:
+    json.dump(item_texture,f,indent=4)

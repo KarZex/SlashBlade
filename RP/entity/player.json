@@ -11,40 +11,11 @@
       },
       "textures": {
         "default": "textures/entity/steve",
-        "cape": "textures/entity/cape_invisible",
-        "wood": "textures/models/wood",
-		"white": "textures/models/white",
-		"slashblade": "textures/models/slashblade",
-		"tukumo": "textures/models/tukumo",
-		"muramasa": "textures/models/muramasa",
-		"bamboo": "textures/models/bamboo",
-		"silverbanboo": "textures/models/silverbanboo",
-		"sabigatana": "textures/models/sabigatana",
-		"doutanuki": "textures/models/doutanuki",
-		"lightsaber": "textures/models/lightsaber",
-		"balkonw": "textures/models/balkonw",
-		"balkons": "textures/models/balkons",
-		"balkoni": "textures/models/balkoni",
-		"balkong": "textures/models/balkong",
-		"balkond": "textures/models/balkond",
-		"haze": "textures/models/haze",
-		"weiss": "textures/models/weiss",
-		"tagayasan": "textures/models/tagayasan"
+        "cape": "textures/entity/cape_invisible"
       },
       "geometry": {
         "default": "geometry.humanoid.custom",
-        "cape": "geometry.cape",
-        "wood": "geometry.wood",
-		"white": "geometry.white",
-		"weiss": "geometry.weiss",
-		"slashblade": "geometry.slashblade",
-		"balkon": "geometry.balkon",
-		"blade2": "geometry.blade2",
-		"lightsaber": "geometry.lightsaber",
-		"muramasa": "geometry.muramasa",
-        "bamboo": "geometry.wood",
-        "silverbanboo": "geometry.slashblade",
-		"tagayasan": "geometry.tagayasan"
+        "cape": "geometry.cape"
       },
       "scripts": {
         "scale": "0.9375",
@@ -133,25 +104,7 @@
       "render_controllers": [
         { "controller.render.player.first_person": "variable.is_first_person" },
         { "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon" },
-        { "controller.render.player.map": "variable.map_face_icon" },
-		{ "controller.render.player.wood": "query.get_equipped_item_name=='wood'" },
-		{ "controller.render.player.white": "query.get_equipped_item_name=='white'" },
-		{ "controller.render.player.slashblade": "query.get_equipped_item_name=='slashblade'" },
-		{ "controller.render.player.tukumo": "query.get_equipped_item_name=='tukumo'" },
-		{ "controller.render.player.muramasa": "query.get_equipped_item_name=='muramasa'" },
-		{ "controller.render.player.lightsaber": "query.get_equipped_item_name=='lightsaber'" },
-		{ "controller.render.player.bamboo": "query.get_equipped_item_name=='bamboo'" },
-		{ "controller.render.player.balkonw": "query.get_equipped_item_name=='balkonw'" },
-		{ "controller.render.player.balkons": "query.get_equipped_item_name=='balkons'" },
-		{ "controller.render.player.balkoni": "query.get_equipped_item_name=='balkoni'" },
-		{ "controller.render.player.balkong": "query.get_equipped_item_name=='balkong'" },
-		{ "controller.render.player.balkond": "query.get_equipped_item_name=='balkond'" },
-		{ "controller.render.player.weiss": "query.get_equipped_item_name=='weiss'" },
-		{ "controller.render.player.haze": "query.get_equipped_item_name=='haze'" },
-		{ "controller.render.player.silverbanboo": "query.get_equipped_item_name=='silverbanboo'" },
-		{ "controller.render.player.tagayasan": "query.get_equipped_item_name=='tagayasan'" },
-		{ "controller.render.player.doutanuki": "query.get_equipped_item_name=='doutanuki'" },
-		{ "controller.render.player.sabigatana": "query.get_equipped_item_name=='sabigatana'" }
+        { "controller.render.player.map": "variable.map_face_icon" }
       ],
       "enable_attachables": true
     }

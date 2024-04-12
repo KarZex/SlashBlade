@@ -17,20 +17,20 @@ item = json.load(item_path)
 func_path = open("blade.mcfunction","r")
 
 #entity/player.json
-player_path = open("RP/entity/player.json","a")
+player_path = open("RP/entity/player.json","r")
 player = json.load(player_path)
 
 #render_controllers/bladeitem.json
-bladeitem_path = open("RP/render_controllers/bladeitem.json","a")
+bladeitem_path = open("RP/render_controllers/bladeitem.json","r")
 bladeitem = json.load(bladeitem_path)
 
 #render_controllers/blades.render_controllers.json
-blades_render_controllers_path = open("RP/render_controllers/blades.render_controllers.json","a")
+blades_render_controllers_path = open("RP/render_controllers/blades.render_controllers.json","r")
 blades_render_controllers = json.load(blades_render_controllers_path)
 
 #item_texture
-item_texture_path = open("RP/textures/item_texture.json","a")
-item_texture = json.load(player_path)
+item_texture_path = open("RP/textures/item_texture.json","r")
+item_texture = json.load(item_texture_path)
 
 
 
@@ -95,8 +95,7 @@ for row in csv_reader:
             item["minecraft:item"]["components"]["minecraft:foil"] = True
         
         #output
-        item_path = "BP/items/blade/{}.json".format(blade_id)
-        with open(item_path,'w') as f:
+        with open('BP/items/blade/{}.json'.format(blade_id),'w') as f:
             json.dump(item,f,indent=4)
         
 
@@ -115,10 +114,10 @@ for row in csv_reader:
 
         #player.json
 
-        player["minecraft:client_entity"]["textures"]["{}".format(blade_id)] = "textures/models/{}".format(blade_id)
-        player["minecraft:client_entity"]["geometry"]["{}".format(blade_id)] = "geometry.{}".format(blade_id)
-        player["minecraft:client_entity"]["scripts"]["pre_animation"][10].replace(";"," query.get_equipped_item_name('main_hand') == '{}' || ;".format(blade_id))
-        player["minecraft:client_entity"]["render_controllers"].append({ "controller.render.player.{}".format(blade_id): "query.get_equipped_item_name=='{}'".format(blade_id) }),
+        player["minecraft:client_entity"]["description"]["textures"]["{}".format(blade_id)] = "textures/models/{}".format(blade_id)
+        player["minecraft:client_entity"]["description"]["geometry"]["{}".format(blade_id)] = "geometry.{}".format(blade_id)
+        player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10].replace(";"," query.get_equipped_item_name('main_hand') == '{}' || ;".format(blade_id))
+        player["minecraft:client_entity"]["description"]["render_controllers"].append({ "controller.render.player.{}".format(blade_id): "query.get_equipped_item_name=='{}'".format(blade_id) }),
 
 
         #render_controllers
@@ -128,6 +127,7 @@ for row in csv_reader:
         bladeitem["render_controllers"]["controller.render.bladeitem"]["arrays"]["geometries"]["Array.item_geo"].append("Geometry.{}".format(blade_id))
         bladeitem["render_controllers"]["controller.render.bladeitem"]["arrays"]["textures"]["Array.item_texture"].append("Geometry.{}".format(blade_id))
 
+        
         #geometries
         shutil.copy('texture/model/{}.json'.format(blade_id),'RP/models/entity/blade')
 
@@ -136,16 +136,20 @@ for row in csv_reader:
         item_texture["texture_data"]["{}".format(blade_id)] = {"textures": "textures/blade/{}.png"}
 
 
-player["minecraft:client_entity"]["scripts"]["pre_animation"][10].replace("|| ;",";")
+###################
+#Saving
+###################
 
-with open(player_path,'w') as f:
+player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10].replace("|| ;",";")
+
+with open("RP/entity/player.json",'w') as f:
     json.dump(player,f,indent=4)
     
-with open(bladeitem_path,'w') as f:
+with open("RP/render_controllers/bladeitem.json",'w') as f:
     json.dump(bladeitem,f,indent=4)
 
-with open(blades_render_controllers_path,'w') as f:
+with open("RP/render_controllers/blades.render_controllers.json",'w') as f:
     json.dump(blades_render_controllers,f,indent=4)
 
-with open(item_texture_path,'w') as f:
+with open("RP/textures/item_texture.json",'w') as f:
     json.dump(item_texture,f,indent=4)

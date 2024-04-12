@@ -116,6 +116,9 @@ for row in csv_reader:
 
         player["minecraft:client_entity"]["description"]["textures"]["{}".format(blade_id)] = "textures/models/{}".format(blade_id)
         player["minecraft:client_entity"]["description"]["geometry"]["{}".format(blade_id)] = "geometry.{}".format(blade_id)
+
+        print(player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10])
+
         new_blade = player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10]
         new_blade.replace(";"," query.get_equipped_item_name('main_hand') == '{}' || ;".format(blade_id))
         player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10] = new_blade

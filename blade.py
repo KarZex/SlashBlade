@@ -10,7 +10,7 @@ csv_reader = csv.reader(csv_path)
 
 #item/blade
 item_path = open("blade.json","r")
-item = json.load(item_path)
+item = json.loads(item_path)
 
 #function/blade
 func_path = open("blade.mcfunction","r")
@@ -32,6 +32,13 @@ saD = json.load(saD_path)
 for row in csv_reader:
     row_count += 1
     if row_count == target:
+
+        ##########################
+        # Behavior Pack
+        ##########################
+
+        #item/blade
+
         #name
         item["minecraft:item"]["description"]["identifier"] = "blade:{}".format(row[1])
         #png icon
@@ -45,12 +52,20 @@ for row in csv_reader:
         #sa
         if row[5] =="A":
             item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"][1] = saA
-
-        
+        elif row[5] =="B":
+            item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"][1] = saB
+        elif row[5] =="C":
+            item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"][1] = saC
+        #output
         json_str = json.dumps(item, indent=2)
-        
-        item_path = "{}.json".format(row[1])
+        item_path = "BP/item/blade/{}.json".format(row[1])
         f = open(item_path,"w")
         f.write(json_str)
         f.close
+
+        ##########################
+        # Resource Pack
+        ##########################
+
+
         

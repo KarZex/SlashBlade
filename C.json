@@ -1,0 +1,22 @@
+{
+    "condition": "query.remaining_durability >= 10 && query.is_sneaking",
+    "sequence": [
+        {
+            "run_command": {
+                "command": [
+                    "effect @s resistance 1 255 true",
+                    "playanimation @s animation.sword.first.using",
+                    "summon zex:bomber ~~1~"
+                ],
+                "target": "holder"
+            }
+        },
+        {
+            "damage": {
+                "type": "durability",
+                "amount": 9,
+                "target": "self"
+            }
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "condition": "query.remaining_durability >= 9 && query.is_sneaking",
+    "sequence": [
+        {
+            "run_command": {
+                "command": [
+                    "execute @s ~~1.25~ detect ^^^3 air 0 tag @s add attacker",
+                    "execute @s[tag=attacker] ~~1.25~ tp @e[c=5,r=6,tag=!attacker] ^^^3",
+                    "execute @s[tag=attacker] ~~1.25~ particle zex:tpa ^^^3",
+                    "playanimation @s[tag=attacker] animation.sword.first.using",
+                    "execute @s[tag=attacker] ~~1.25~ execute @s[tag=attacker] ^^^3 damage @e[c=5,tag=!attacker,r=3] 3 suicide entity @s",
+                    "execute @s[tag=!attacker] ~~1.25~ title @s actionbar §c Failed",
+                    "tag @s remove attacker"
+                ],
+                "target": "holder"
+            }
+        },
+        {
+            "damage": {
+                "type": "durability",
+                "amount": 9,
+                "target": "self"
+            }
+        }
+    ]
+}

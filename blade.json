@@ -67,68 +67,34 @@
 									],
 									"target": "holder"
 								}
-							},
-							{
-								"condition": "query.remaining_durability >= 10 && query.is_sneaking",
-								"run_command": {
-									"command": [
-										"function bladecommon",
-										"execute @s[scores={blade=..19}] ~~~ damage @e[r=3,family=monster] 5 suicide entity @s"
-									],
-									"target": "holder"
-								}
 							}
 						]
 					},
 					{
 						"condition": "!query.is_sprinting && query.remaining_durability >= 1",
-						"sequence": [
-							{
-								"sequence": [
-									{
-										"run_command": {
-											"command": [
-												"tag @s add fly"
-											],
-											"target": "holder"
-										}
-									}
-								]
-							}
-						]
+						"run_command": {
+							"command": [
+								"tag @s add fly"
+							],
+							"target": "holder"
+						}
 					},
 					{
 						"condition": "( query.is_sprinting && query.remaining_durability >= 1 ) && !query.is_on_ground",
-						"sequence": [
-							{
-								"sequence": [
-									{
-										"run_command": {
-											"command": [
-												"tag @s add run"
-											],
-											"target": "holder"
-										}
-									}
-								]
-							}
-						]
+						"run_command": {
+							"command": [
+								"tag @s add run"
+							],
+							"target": "holder"
+						}
 					},
 					{
 						"condition": "query.remaining_durability >= 1",
-						"sequence": [
-							{
-								"sequence": [
-									{
-										"damage": {
-											"type": "durability",
-											"amount": 1,
-											"target": "self"
-										}
-									}
-								]
-							}
-						]
+						"damage": {
+							"type": "durability",
+							"amount": 1,
+							"target": "self"
+						}
 					}
 				]
 			},

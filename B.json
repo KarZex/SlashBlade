@@ -1,0 +1,26 @@
+{
+    "condition": "query.remaining_durability >= 9 && query.is_sneaking",
+    "sequence": [
+        {
+            "run_command": {
+                "command": [
+                    "playanimation @s animation.sword.first.using"
+                ],
+                "target": "holder"
+            }
+        },
+        {
+            "shoot": {
+                "projectile": "fire:airblade",
+                "launch_power": 1
+            }
+        },
+        {
+            "damage": {
+                "type": "durability",
+                "amount": 9,
+                "target": "self"
+            }
+        }
+    ]
+}

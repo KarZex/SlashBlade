@@ -1,3 +1,3 @@
-﻿名前,id,耐久,直接,周囲,sa,1
-sample,sample,1000,100,100,,
-,ewrwe,4,4,4,,
+名前,id,耐久,直接,周囲,sa,Ench1,Ench2,Ench3,Ench4,Ench5
+sample,sample,1000,100,100,C,sharpness-3,unbreaking-2,fire_aspect-2,,
+,ewrwe,4,4,4,,,,,,

@@ -10,7 +10,7 @@ csv_reader = csv.reader(csv_path)
 
 #item/blade
 item_path = open("blade.json","r")
-item = json.loads(item_path)
+item = json.load(item_path)
 
 #function/blade
 func_path = open("blade.mcfunction","r")
@@ -19,15 +19,17 @@ func_path = open("blade.mcfunction","r")
 next(csv_reader)
 
 row_count = 0
-
-saA_path = open("A.json","r")
-saA = json.load(saA_path)
-saB_path = open("B.json","r")
-saB = json.load(saB_path)
-saC_path = open("C.json","r")
-saC = json.load(saC_path)
-saD_path = open("D.json","r")
-saD = json.load(saD_path)
+try:
+    saA_path = open("A.json","r")
+    saA = json.load(saA_path)
+    saB_path = open("B.json","r")
+    saB = json.load(saB_path)
+    saC_path = open("C.json","r")
+    saC = json.load(saC_path)
+    saD_path = open("D.json","r")
+    saD = json.load(saD_path)
+except:
+    print("not found file")
 
 for row in csv_reader:
     row_count += 1

@@ -120,9 +120,11 @@ for row in csv_reader:
         print(player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10])
 
         new_blade = player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10]
-        new_blade.replace(";"," query.get_equipped_item_name('main_hand') == '{}' || ;".format(blade_id))
+        new_blade = new_blade.replace(";"," query.get_equipped_item_name('main_hand') == '{}' || ;".format(blade_id))
         player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10] = new_blade
-        player["minecraft:client_entity"]["description"]["render_controllers"].append({ "controller.render.player.{}".format(blade_id): "query.get_equipped_item_name=='{}'".format(blade_id) }),
+        player["minecraft:client_entity"]["description"]["render_controllers"].append({ "controller.render.player.{}".format(blade_id): "query.get_equipped_item_name=='{}'".format(blade_id) })
+
+        print(player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10])
 
 
         #render_controllers
@@ -146,7 +148,7 @@ for row in csv_reader:
 ###################
 
 new_blade = player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10]
-new_blade.replace("|| ;",";")
+new_blade = new_blade.replace("|| ;",";")
 player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10] = new_blade
 
 with open("RP/entity/player.json",'w') as f:

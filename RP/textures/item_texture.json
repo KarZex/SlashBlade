@@ -70,66 +70,6 @@
     },
   "bladesoulingot": {
       "textures": "textures/items/bladesoulingot"
-    },
-  "wood": {
-      "textures": "textures/blade/wood"
-    },
-    "slashblade": {
-      "textures": "textures/blade/slashblade"
-    },
-  "white": {
-      "textures": "textures/blade/white"
-    },
-  "whiteb": {
-      "textures": "textures/blade/whiteb"
-    },
-   "tukumo": {
-      "textures": "textures/blade/tukumo"
-    },
-  "muramasa": {
-      "textures": "textures/blade/muramasa"
-    },
-  "bamboo": {
-      "textures": "textures/blade/bamboo"
-    },
-  "balkonw": {
-      "textures": "textures/blade/balkon_wood"
-    },
-  "balkons": {
-      "textures": "textures/blade/balkon_rock"
-    },
-  "balkoni": {
-      "textures": "textures/blade/balkon_steel"
-    },
-  "balkong": {
-      "textures": "textures/blade/balkon_gold"
-    },
-  "balkond": {
-      "textures": "textures/blade/balkon_diamond"
-    },
-  "silverbanboo": {
-      "textures": "textures/blade/silverbanboo"
-    },
-  "communist": {
-      "textures": "textures/blade/communist"
-    },
-  "haze": {
-      "textures": "textures/blade/haze"
-    },
-  "weiss": {
-      "textures": "textures/blade/weiss"
-    },
-  "tagayasan": {
-      "textures": "textures/blade/tagayasan"
-    },
-  "sabigatana": {
-      "textures": "textures/blade/sabigatana"
-    },
-  "lightsaber": {
-      "textures": "textures/blade/lightsaber"
-    },
-  "doutanuki": {
-      "textures": "textures/blade/doutanuki"
     }
   }
 }

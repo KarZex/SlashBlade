@@ -1,7 +1,7 @@
 import json
 import csv
 import numpy as npy
-import os
+import shutil
 
 target = int(input("the target"))
 
@@ -16,7 +16,23 @@ item = json.load(item_path)
 #function/blade
 func_path = open("blade.mcfunction","r")
 
-#start with 2nd row
+#entity/player.json
+player_path = open("RP/entity/player.json","a")
+player = json.load(player_path)
+
+#render_controllers/bladeitem.json
+bladeitem_path = open("RP/render_controllers/bladeitem.json","a")
+bladeitem = json.load(bladeitem_path)
+
+#render_controllers/blades.render_controllers.json
+blades_render_controllers_path = open("RP/render_controllers/blades.render_controllers.json","a")
+blades_render_controllers = json.load(blades_render_controllers_path)
+
+#item_texture
+item_texture_path = open("RP/textures/item_texture.json","a")
+item_texture = json.load(player_path)
+
+
 
 row_count = 0
 
@@ -43,9 +59,12 @@ for row in csv_reader:
 
         #enchant "< enchant_id >-< level >"
         Enchants = []
+        Levels = []
         for i in range(6,11):
-            parts = row[i].split('-')
-            Enchants.append(parts)
+            if(row[i] != ""):
+                parts = row[i].split('-')
+                Enchants.append(parts[0])
+                Levels.append(parts[1])
 
 
         ##########################
@@ -84,15 +103,37 @@ for row in csv_reader:
         #function
 
         with open('BP/functions/bladestart.mcfunction','a') as f:
-            f.write("execute @a[hasitem={{location=slot.weapon.mainhand,item=blade:{}}}] ~~~ function blade/{}".format(blade_id))
+            f.write("\nexecute @a[hasitem={{location=slot.weapon.mainhand,item=blade:{0} }}] ~~~ function blade/{0}\n".format(blade_id))
 
         with open('BP/functions/blade/{}.mcfunction'.format(blade_id),'w') as f:
-            for i in Enchants:
-                f.write("enchant @s {0} {1}".format(Enchants[i][0],Enchants[i][1]))
+            for i in range(len(Enchants)):
+                f.write("enchant @s {0} {1}\n".format(Enchants[i],Levels[i]))
 
         ##########################
         # Resource Pack
         ##########################
 
+        #player.json
 
-        
+        player["minecraft:client_entity"]["textures"]["{}".format(blade_id)] = "textures/models/{}".format(blade_id)
+        player["minecraft:client_entity"]["geometry"]["{}".format(blade_id)] = "geometry.{}".format(blade_id)
+        player["minecraft:client_entity"]["scripts"]["pre_animation"][10].replace(";"," query.get_equipped_item_name('main_hand') == '{}' || ;".format(blade_id))
+        player["minecraft:client_entity"]["render_controllers"].append({ "controller.render.player.{}".format(blade_id): "query.get_equipped_item_name=='{}'".format(blade_id) }),
+
+
+        #render_controllers
+
+        blades_render_controllers["render_controllers"]["controller.render.player.{}".format(blade_id)] = {"geometry": "Geometry.{}".format(blade_id),"materials": [ { "*": "Material.default" } ],"textures": [ "Texture.{}".format(blade_id) ]}
+
+        bladeitem["render_controllers"]["controller.render.bladeitem"]["arrays"]["geometries"]["Array.item_geo"].append("Geometry.{}".format(blade_id))
+        bladeitem["render_controllers"]["controller.render.bladeitem"]["arrays"]["textures"]["Array.item_texture"].append("Geometry.{}".format(blade_id))
+
+        #geometries
+        shutil.copy('texture/model/{}.json'.format(blade_id),'RP/models/entity/blade')
+
+        #icon
+        shutil.copy('texture/icon/{}.png'.format(blade_id),'RP/textures/blade')
+        item_texture["texture_data"]["{}".format(blade_id)] = {"textures": "textures/blade/{}.png"}
+
+
+player["minecraft:client_entity"]["scripts"]["pre_animation"][10].replace("|| ;",";")

@@ -1,6 +1,5 @@
 import json
 import csv
-import numpy as npy
 import shutil
 
 target = int(input("the target"))
@@ -51,6 +50,7 @@ for row in csv_reader:
         # Blade Data
         ##########################
 
+        blade_name = row[0]
         blade_id = row[1]
         blade_durability = int(row[2])
         blade_damage = int(row[3])
@@ -117,14 +117,10 @@ for row in csv_reader:
         player["minecraft:client_entity"]["description"]["textures"]["{}".format(blade_id)] = "textures/models/{}".format(blade_id)
         player["minecraft:client_entity"]["description"]["geometry"]["{}".format(blade_id)] = "geometry.{}".format(blade_id)
 
-        print(player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10])
-
         new_blade = player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10]
         new_blade = new_blade.replace(";"," query.get_equipped_item_name('main_hand') == '{}' || ;".format(blade_id))
         player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10] = new_blade
         player["minecraft:client_entity"]["description"]["render_controllers"].append({ "controller.render.player.{}".format(blade_id): "query.get_equipped_item_name=='{}'".format(blade_id) })
-
-        print(player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10])
 
 
         #render_controllers
@@ -141,6 +137,10 @@ for row in csv_reader:
         #icon
         shutil.copy('texture/icon/{}.png'.format(blade_id),'RP/textures/blade')
         item_texture["texture_data"]["{}".format(blade_id)] = {"textures": "textures/blade/{}.png"}
+
+        #name
+        with open('RP/texts/ja_JP.lang','a') as f:
+            f.write("\nitem.blade:{0}={1}".format(blade_id,blade_name))
 
 
 ###################

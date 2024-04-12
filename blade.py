@@ -116,7 +116,9 @@ for row in csv_reader:
 
         player["minecraft:client_entity"]["description"]["textures"]["{}".format(blade_id)] = "textures/models/{}".format(blade_id)
         player["minecraft:client_entity"]["description"]["geometry"]["{}".format(blade_id)] = "geometry.{}".format(blade_id)
-        player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10].replace(";"," query.get_equipped_item_name('main_hand') == '{}' || ;".format(blade_id))
+        new_blade = player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10]
+        new_blade.replace(";"," query.get_equipped_item_name('main_hand') == '{}' || ;".format(blade_id))
+        player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10] = new_blade
         player["minecraft:client_entity"]["description"]["render_controllers"].append({ "controller.render.player.{}".format(blade_id): "query.get_equipped_item_name=='{}'".format(blade_id) }),
 
 
@@ -140,7 +142,9 @@ for row in csv_reader:
 #Saving
 ###################
 
-player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10].replace("|| ;",";")
+new_blade = player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10]
+new_blade.replace("|| ;",";")
+player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10] = new_blade
 
 with open("RP/entity/player.json",'w') as f:
     json.dump(player,f,indent=4)

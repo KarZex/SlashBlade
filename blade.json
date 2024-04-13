@@ -62,8 +62,7 @@
 								"condition": "query.remaining_durability >= 1 && !query.is_sneaking",
 								"run_command": {
 									"command": [
-										"function bladecommon",
-										"execute @s[scores={blade=..19}] ~~~ damage @e[r=3,family=monster] 0 override entity @s"
+										"function bladecommon"
 									],
 									"target": "holder"
 								}

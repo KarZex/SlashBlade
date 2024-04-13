@@ -60,12 +60,15 @@
 						"sequence": [
 							{
 								"condition": "query.remaining_durability >= 1 && !query.is_sneaking",
+								"sequence": [
+									{
 								"run_command": {
 									"command": [
 										"function bladecommon"
 									],
 									"target": "holder"
 								}
+								}]
 							}
 						]
 					},

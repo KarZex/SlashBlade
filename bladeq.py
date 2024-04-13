@@ -80,9 +80,9 @@ for row in csv_reader:
         #melee damage
         item["minecraft:item"]["components"]["minecraft:damage"] = blade_damage
         #around damage
-        item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"][0]["run_command"]["command"].append("execute @s[scores={{blade=..19}}] ~~~ damage @e[r=3,family=monster] 1 override entity @s")
-        item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"][0]["run_command"]["command"].append("execute @s[scores={{blade=20..39}}] ~~~ damage @e[r=3,family=monster] {} override entity @s".format(blade_around))
-        item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"][0]["run_command"]["command"].append("execute @s[scores={{blade=40..}}] ~~~ damage @e[r=3,family=monster] {} override entity @s".format(blade_around + 2))
+        item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"][0]["sequence"][0]["run_command"]["command"].append("execute @s[scores={{blade=..19}}] ~~~ damage @e[r=3,family=monster] 1 override entity @s")
+        item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"][0]["sequence"][0]["run_command"]["command"].append("execute @s[scores={{blade=20..39}}] ~~~ damage @e[r=3,family=monster] {} override entity @s".format(blade_around))
+        item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"][0]["sequence"][0]["run_command"]["command"].append("execute @s[scores={{blade=40..}}] ~~~ damage @e[r=3,family=monster] {} override entity @s".format(blade_around + 2))
         #sa
         if blade_sa =="A":
             item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"].append(saA)

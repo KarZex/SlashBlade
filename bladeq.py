@@ -98,6 +98,7 @@ for row in csv_reader:
         with open('BP/items/blade/{}.json'.format(blade_id),'w') as f:
             json.dump(item,f,indent=4)
         
+        item_path = open("blade.json","r")
         item = json.load(item_path)
         
 

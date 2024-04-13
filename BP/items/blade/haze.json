@@ -1,0 +1,184 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "blade:haze",
+            "category": "equipment"
+        },
+        "components": {
+            "minecraft:can_destroy_in_creative": false,
+            "minecraft:max_stack_size": 1,
+            "minecraft:hand_equipped": true,
+            "minecraft:use_duration": 0,
+            "minecraft:damage": 7,
+            "minecraft:icon": {
+                "texture": "haze"
+            },
+            "minecraft:weapon": {
+                "on_hurt_entity": {
+                    "event": "zex:up",
+                    "target": "self"
+                },
+                "on_not_hurt_entity": {
+                    "event": "zex:down",
+                    "target": "self"
+                },
+                "on_hit_block": {
+                    "event": "zex:down",
+                    "target": "self"
+                }
+            },
+            "minecraft:durability": {
+                "max_durability": 500
+            },
+            "minecraft:display_name": {},
+            "minecraft:enchantable": {
+                "value": 20,
+                "slot": "sword"
+            },
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "zex:on_use",
+                    "target": "self"
+                }
+            },
+            "minecraft:render_offsets": {
+                "main_hand": {
+                    "third_person": {
+                        "scale": [
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "first_person": {
+                        "scale": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            "minecraft:creative_category": {
+                "parent": "itemGroup.name.guns"
+            },
+            "minecraft:foil": true
+        },
+        "events": {
+            "zex:on_use": {
+                "sequence": [
+                    {
+                        "sequence": [
+                            {
+                                "condition": "query.remaining_durability >= 1 && !query.is_sneaking",
+                                "run_command": {
+                                    "command": [
+                                        "function bladecommon",
+                                        "execute @s[scores={{blade=..19}}] ~~~ damage @e[r=3,family=monster] 1 override entity @s",
+                                        "execute @s[scores={blade=20..39}] ~~~ damage @e[r=3,family=monster] 6 override entity @s",
+                                        "execute @s[scores={blade=40..}] ~~~ damage @e[r=3,family=monster] 8 override entity @s"
+                                    ],
+                                    "target": "holder"
+                                }
+                            },
+                            {
+                                "condition": "query.remaining_durability >= 10 && query.is_sneaking",
+                                "sequence": [
+                                    {
+                                        "run_command": {
+                                            "command": [
+                                                "effect @s resistance 1 255 true",
+                                                "playanimation @s animation.sword.first.using",
+                                                "summon zex:bomber ~~1~"
+                                            ],
+                                            "target": "holder"
+                                        }
+                                    },
+                                    {
+                                        "damage": {
+                                            "type": "durability",
+                                            "amount": 9,
+                                            "target": "self"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "condition": "!query.is_sprinting && query.remaining_durability >= 1",
+                        "run_command": {
+                            "command": [
+                                "tag @s add fly"
+                            ],
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "condition": "( query.is_sprinting && query.remaining_durability >= 1 ) && !query.is_on_ground",
+                        "run_command": {
+                            "command": [
+                                "tag @s add run"
+                            ],
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "condition": "query.remaining_durability >= 1",
+                        "damage": {
+                            "type": "durability",
+                            "amount": 1,
+                            "target": "self"
+                        }
+                    }
+                ]
+            },
+            "zex:up": {
+                "sequence": [
+                    {
+                        "damage": {
+                            "type": "durability",
+                            "amount": 1,
+                            "target": "self"
+                        }
+                    },
+                    {
+                        "run_command": {
+                            "command": [
+                                "playsound swingblade.c @s",
+                                "particle minecraft:critical_hit_emitter ^^2^2",
+                                "playanimation @s animation.sword.first.attack",
+                                "scoreboard players add @s[scores={blade=..70}] blade 2",
+                                "give @s[tag=sed] zex:tinyproudsoul",
+                                "function level"
+                            ],
+                            "target": "holder"
+                        }
+                    }
+                ]
+            },
+            "zex:down": {
+                "sequence": [
+                    {
+                        "damage": {
+                            "type": "durability",
+                            "amount": 1,
+                            "target": "self"
+                        },
+                        "run_command": {
+                            "command": [
+                                "playsound swingblade.c @s",
+                                "particle minecraft:critical_hit_emitter ^^2^2",
+                                "function level",
+                                "playanimation @s animation.sword.first.attack",
+                                "scoreboard players remove @s[scores={blade=1..}] blade 3"
+                            ],
+                            "target": "holder"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

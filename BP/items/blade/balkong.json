@@ -77,7 +77,7 @@
                                         "run_command": {
                                             "command": [
                                                 "function bladecommon",
-                                                "execute @s[scores={{blade=..19}}] ~~~ damage @e[r=3,family=monster] 1 override entity @s",
+                                                "execute @s[scores={blade=..19}] ~~~ damage @e[r=3,family=monster] 1 override entity @s",
                                                 "execute @s[scores={blade=20..39}] ~~~ damage @e[r=3,family=monster] 7 override entity @s",
                                                 "execute @s[scores={blade=40..}] ~~~ damage @e[r=3,family=monster] 9 override entity @s"
                                             ],

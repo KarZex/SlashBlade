@@ -2,10 +2,10 @@ import json
 import csv
 import shutil
 
-target = int(input("the target"))
+target = 1
 
 #data
-csv_path = open("blade.csv","r",encoding="utf_8")
+csv_path = open("newblade.csv","r",encoding="utf_8")
 csv_reader = csv.reader(csv_path)
 
 #item/blade
@@ -69,7 +69,7 @@ for row in csv_reader:
         blade_effect = int(row[11])
 
         ##########################
-        # Behavior Pack
+        # Behavior Pack 
         ##########################
 
         #item/blade
@@ -136,7 +136,7 @@ for row in csv_reader:
         blades_render_controllers["render_controllers"]["controller.render.player.{}".format(blade_id)] = {"geometry": "Geometry.{}".format(blade_id),"materials": [ { "*": "Material.default" } ],"textures": [ "Texture.{}".format(blade_id) ]}
 
         bladeitem["render_controllers"]["controller.render.bladeitem"]["arrays"]["geometries"]["Array.item_geo"].append("Geometry.{}".format(blade_id))
-        bladeitem["render_controllers"]["controller.render.bladeitem"]["arrays"]["textures"]["Array.item_texture"].append("Geometry.{}".format(blade_id))
+        bladeitem["render_controllers"]["controller.render.bladeitem"]["arrays"]["textures"]["Array.item_texture"].append("Texture.{}".format(blade_id))
 
         
         #geometries

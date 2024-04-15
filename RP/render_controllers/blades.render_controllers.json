@@ -1,6 +1,16 @@
 {
-  "format_version": "1.8.0",
-  "render_controllers": {
-
-  }
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.player.sample": {
+            "geometry": "Geometry.sample",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.sample"
+            ]
+        }
+    }
 }

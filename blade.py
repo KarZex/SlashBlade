@@ -41,6 +41,8 @@ saB_path = open("B.json","r")
 saB = json.load(saB_path)
 saC_path = open("C.json","r")
 saC = json.load(saC_path)
+saD_path = open("D.json","r")
+saD = json.load(saD_path)
 
 for row in csv_reader:
 
@@ -174,4 +176,5 @@ with open("RP/render_controllers/blades.render_controllers.json",'w') as f:
 
 with open("RP/textures/item_texture.json",'w') as f:
     json.dump(item_texture,f,indent=4)
+
 

@@ -1,0 +1,51 @@
+{
+    "condition": "query.remaining_durability >= 9 && query.is_sneaking",
+    "sequence": [
+        {
+            "run_command": {
+                "command": [
+                    "execute @s ~~1.25~ particle zex:tpa ^^^0",
+                    "execute @s ~~1.25~ execute @s ^^^0 damage @e[r=1] 3 override entity @s",
+                    "execute @s ~~1.25~ particle zex:tpa ^^^1",
+                    "execute @s ~~1.25~ execute @s ^^^1 damage @e[r=1] 3 override entity @s",
+                    "execute @s ~~1.25~ particle zex:tpa ^^^2",
+                    "execute @s ~~1.25~ execute @s ^^^2 damage @e[r=1] 3 override entity @s",
+                    "execute @s ~~1.25~ particle zex:tpa ^^^3",
+                    "execute @s ~~1.25~ execute @s ^^^3 damage @e[r=1] 3 override entity @s",
+                    "execute @s ~~1.25~ particle zex:tpa ^^^4",
+                    "execute @s ~~1.25~ execute @s ^^^4 damage @e[r=1] 3 override entity @s",
+                    "execute @s ~~1.25~ particle zex:tpa ^^^5",
+                    "execute @s ~~1.25~ execute @s ^^^5 damage @e[r=1] 3 override entity @s",
+                    "execute @s ~~1.25~ particle zex:tpa ^^^6",
+                    "execute @s ~~1.25~ execute @s ^^^6 damage @e[r=1] 3 override entity @s",
+                    "execute @s ~~1.25~ particle zex:tpa ^^^7",
+                    "execute @s ~~1.25~ execute @s ^^^7 damage @e[r=1] 3 override entity @s",
+                    "execute @s ~~1.25~ particle zex:tpa ^^^8",
+                    "execute @s ~~1.25~ execute @s ^^^8 damage @e[r=1] 3 override entity @s",
+                    "execute @s ~~1.25~ particle zex:tpa ^^^9",
+                    "execute @s ~~1.25~ execute @s ^^^9 damage @e[r=1] 3 override entity @s",
+                    "execute @s ~~1.25~ particle zex:tpa ^^^10",
+                    "execute @s ~~1.25~ execute @s ^^^10 damage @e[r=1] 3 override entity @s",
+                    "execute @s ~~1.25~ particle zex:tpa ^^^11",
+                    "execute @s ~~1.25~ execute @s ^^^11 damage @e[r=1] 3 override entity @s",
+                    "execute @s ~~1.25~ particle zex:tpa ^^^12",
+                    "execute @s ~~1.25~ execute @s ^^^12 damage @e[r=1] 3 override entity @s",
+                    "execute @s ~~1.25~ particle zex:tpa ^^^13",
+                    "execute @s ~~1.25~ execute @s ^^^13 damage @e[r=1] 3 override entity @s",
+                    "execute @s ~~1.25~ particle zex:tpa ^^^14",
+                    "execute @s ~~1.25~ execute @s ^^^14 damage @e[r=1] 3 override entity @s",
+                    "execute @s ~~1.25~ particle zex:tpa ^^^15",
+                    "execute @s ~~1.25~ execute @s ^^^15 damage @e[r=1] 3 override entity @s"                                    
+                ],
+                "target": "holder"
+            }
+        },
+        {
+            "damage": {
+                "type": "durability",
+                "amount": 9,
+                "target": "self"
+            }
+        }
+    ]
+}

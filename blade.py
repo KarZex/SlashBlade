@@ -5,7 +5,7 @@ import shutil
 target = 1
 
 #data
-csv_path = open("newblade.csv","r",encoding="utf_8")
+csv_path = open("tool/newblade.csv","r",encoding="utf_8")
 csv_reader = csv.reader(csv_path)
 
 #item/blade

@@ -42,3 +42,5 @@ execute @a[hasitem={location=slot.weapon.mainhand,item=blade:balkond }] ~~~ func
 execute @a[hasitem={location=slot.weapon.mainhand,item=blade:white }] ~~~ function blade/white
 
 execute @a[hasitem={location=slot.weapon.mainhand,item=blade:sample }] ~~~ function blade/sample
+
+execute @a[hasitem={location=slot.weapon.mainhand,item=blade:BambooKatana }] ~~~ function blade/BambooKatana

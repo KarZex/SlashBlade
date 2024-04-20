@@ -151,6 +151,9 @@ for row in csv_reader:
         elif blade_sa =="C":
             item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"].append(saC)
             item["minecraft:item"]["components"]["minecraft:foil"] = True
+        elif blade_sa =="D":
+            item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"].append(saD)
+            item["minecraft:item"]["components"]["minecraft:foil"] = True
         
         #output
         with open('behavior_packs/SlashBlade/items/blade/{}.json'.format(blade_id),'w') as f:

@@ -14,11 +14,11 @@ csv_path = open("tool/newblade.csv","r",encoding="utf_8")
 csv_reader = csv.reader(csv_path)
 
 #item/blade
-item_path = open("blade.json","r")
+item_path = open("tool/blade.json","r")
 item = json.load(item_path)
 
 #function/blade
-func_path = open("blade.mcfunction","r")
+func_path = open("tool/blade.mcfunction","r")
 
 #entity/player.json
 player_path = open("RP/entity/player.json","r")
@@ -45,13 +45,13 @@ item_texture = json.load(item_texture_path)
 
 row_count = 0
 
-saA_path = open("A.json","r")
+saA_path = open("tool/sa/A.json","r")
 saA = json.load(saA_path)
-saB_path = open("B.json","r")
+saB_path = open("tool/sa/B.json","r")
 saB = json.load(saB_path)
-saC_path = open("C.json","r")
+saC_path = open("tool/sa/C.json","r")
 saC = json.load(saC_path)
-saD_path = open("D.json","r")
+saD_path = open("tool/sa/D.json","r")
 saD = json.load(saD_path)
 
 for row in csv_reader:

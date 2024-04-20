@@ -51,3 +51,5 @@ execute @a[tag=run] ~~~ function run
 
 gamerule commandblockoutput false
 
+
+execute @a[hasitem={location=slot.weapon.mainhand,item=blade:bambook }] ~~~ function blade/bambook

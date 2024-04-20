@@ -1,0 +1,93 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:creeper",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "creeper",
+        "charged": "charged_creeper",
+        "hp": "entity_emissive_alpha"
+      },
+      "geometry": {
+        "default": "geometry.creeper.v1.8",
+        "charged": "geometry.creeper.charged.v1.8",
+        "health_bar": "geometry.health_bar",
+        "heart": "geometry.heart",
+        "dmg": "geometry.dmg"
+      },
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 6
+      },
+      "animations": {
+        "creeper_head": "animation.common.look_at_target",
+        "creeper_legs": "animation.creeper.legs",
+        "creeper_swelling": "animation.creeper.swelling",
+        "creeper_head1": "controller.animation.creeper.head",
+        "creeper_legs1": "controller.animation.creeper.legs",
+        "dmg_controller": "controller.animation.damage.root",
+        "hp_offset": "animation.health_creeper",
+        "health_percentage": "animation.health_bar.percentage"
+      },
+      "render_controllers": [
+        "controller.render.creeper",
+        "controller.render.creeper_armor",
+        "controller.render.health_bar",
+        "controller.render.heart",
+        "controller.render.first_digit",
+        "controller.render.second_digit",
+        "controller.render.third_digit",
+        "controller.render.dmg"
+      ],
+      "scripts": {
+        "pre_animation": [
+          "variable.wobble = Math.sin(query.swell_amount * 5730) * query.swell_amount * 0.01 + 1.0;",
+          "variable.swelling_scale1 = (Math.pow(Math.clamp(query.swell_amount, 0.0, 1.0), 4.0) * 0.4 + 1.0) * variable.wobble;",
+          "variable.swelling_scale2 = (Math.pow(Math.clamp(query.swell_amount, 0.0, 1.0), 4.0) * 0.1 + 1.0) / variable.wobble;",
+          "variable.leg_rot = Math.cos(query.modified_distance_moved * 38.17326) * 80.22 * query.modified_move_speed;",
+          "variable.flash = Math.mod(Math.Round(query.swell_amount * 10.0), 2.0);",
+          "variable.health = query.health / query.max_health;",
+          "variable.health_color = math.round(query.health / query.max_health * 100) >= 50 ? 0 : ((math.round(query.health / query.max_health * 100) >= 25 && math.round(query.health / query.max_health * 100) < 50) ? 1 : 2);",
+          "variable.first_digit = math.floor(query.health / 100);",
+          "variable.second_digit = math.floor((math.mod(query.health, 100)) / 10);",
+          "variable.third_digit = query.health - ((math.floor(query.health / 10)) * 10);"
+        ],
+        "animate": [
+          "creeper_head1",
+          "creeper_legs1",
+          "hp_offset",
+          "health_percentage",
+          "dmg_controller"
+        ],
+        "variables": {
+          "variable.hp": "public"
+        },
+        "initialize": [
+          "variable.hp = query.health;"
+        ]
+      },
+      "particle_effects": {
+        "dmg": "particle:damage"
+      },
+      "textures": {
+        "default": "textures/entity/creeper/creeper",
+        "charged": "textures/entity/creeper/creeper_armor",
+        "health_green": "textures/heart/health_bar_green",
+        "health_yellow": "textures/heart/health_bar_yellow",
+        "health_red": "textures/heart/health_bar_red",
+        "heart": "textures/heart/heart",
+        "heart0": "textures/heart/heart0",
+        "heart1": "textures/heart/heart1",
+        "heart2": "textures/heart/heart2",
+        "heart3": "textures/heart/heart3",
+        "heart4": "textures/heart/heart4",
+        "heart5": "textures/heart/heart5",
+        "heart6": "textures/heart/heart6",
+        "heart7": "textures/heart/heart7",
+        "heart8": "textures/heart/heart8",
+        "heart9": "textures/heart/heart9"
+      }
+    }
+  }
+}

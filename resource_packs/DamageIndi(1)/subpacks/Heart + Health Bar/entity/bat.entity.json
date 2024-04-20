@@ -1,0 +1,81 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:bat",
+      "materials": {
+        "default": "bat",
+        "hp": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/bat",
+        "health_green": "textures/heart/health_bar_green",
+        "health_yellow": "textures/heart/health_bar_yellow",
+        "health_red": "textures/heart/health_bar_red",
+        "heart": "textures/heart/heart",
+        "heart0": "textures/heart/heart0",
+        "heart1": "textures/heart/heart1",
+        "heart2": "textures/heart/heart2",
+        "heart3": "textures/heart/heart3",
+        "heart4": "textures/heart/heart4",
+        "heart5": "textures/heart/heart5",
+        "heart6": "textures/heart/heart6",
+        "heart7": "textures/heart/heart7",
+        "heart8": "textures/heart/heart8",
+        "heart9": "textures/heart/heart9"
+      },
+      "geometry": {
+        "default": "geometry.bat",
+        "health_bar": "geometry.health_bar",
+        "heart": "geometry.heart",
+        "dmg": "geometry.dmg"
+      },
+      "scripts": {
+        "scale": "0.35",
+        "pre_animation": [
+          "variable.health = query.health / query.max_health;",
+          "variable.health_color = math.round(query.health / query.max_health * 100) >= 50 ? 0 : ((math.round(query.health / query.max_health * 100) >= 25 && math.round(query.health / query.max_health * 100) < 50) ? 1 : 2);",
+          "variable.first_digit = math.floor(query.health / 100);",
+          "variable.second_digit = math.floor((math.mod(query.health, 100)) / 10);",
+          "variable.third_digit = query.health - ((math.floor(query.health / 10)) * 10);"
+        ],
+        "animate": [
+          "move",
+          "hp_offset",
+          "health_percentage",
+          "dmg_controller"
+        ],
+        "variables": {
+          "variable.hp": "public"
+        },
+        "initialize": [
+          "variable.hp = query.health;"
+        ]
+      },
+      "animations": {
+        "move": "controller.animation.bat.move",
+        "resting": "animation.bat.resting",
+        "flying": "animation.bat.flying",
+        "dmg_controller": "controller.animation.damage.root",
+        "hp_offset": "animation.health_bat",
+        "health_percentage": "animation.health_bar.percentage"
+      },
+      "render_controllers": [
+        "controller.render.bat",
+        "controller.render.health_bar",
+        "controller.render.heart",
+        "controller.render.first_digit",
+        "controller.render.second_digit",
+        "controller.render.third_digit",
+        "controller.render.dmg"
+      ],
+      "particle_effects": {
+        "dmg": "particle:damage"
+      },
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 18
+      }
+    }
+  }
+}

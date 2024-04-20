@@ -1,0 +1,13 @@
+effect @a[hasitem={location=slot.armor.head,item=zex:bangalore}] invisibility 1 1 true
+effect @a[hasitem={location=slot.armor.head,item=zex:gibraltar}] invisibility 1 1 true
+effect @a[hasitem={location=slot.armor.head,item=zex:horizon}] invisibility 1 1 true
+effect @a[hasitem={location=slot.armor.head,item=zex:caustic}] invisibility 1 1 true
+effect @a[hasitem={location=slot.armor.head,item=zex:fuse}] invisibility 1 1 true
+effect @a[hasitem={location=slot.armor.head,item=zex:lifeline}] invisibility 1 1 true
+effect @a[hasitem={location=slot.armor.head,item=zex:mirage}] invisibility 1 1 true
+effect @a[hasitem={location=slot.armor.head,item=zex:octane}] invisibility 1 1 true
+effect @a[hasitem={location=slot.armor.head,item=zex:revenant}] invisibility 1 1 true
+effect @a[hasitem={location=slot.armor.head,item=zex:seer}] invisibility 1 1 true
+effect @a[hasitem={location=slot.armor.head,item=zex:bloodhound}] invisibility 1 1 true
+effect @a[hasitem={location=slot.armor.head,item=zex:valkyrie}] invisibility 1 1 true
+effect @a[hasitem={location=slot.armor.head,item=zex:wraith}] invisibility 1 1 true

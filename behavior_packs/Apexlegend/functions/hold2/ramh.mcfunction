@@ -1,0 +1,20 @@
+execute as @s[scores={caram=36..40}] run titleraw @s[scores={ram=1..}] actionbar {"rawtext":[{"text":"§cRampage§r "},{"text":"§6[Charged]§7§r "},{"score":{"name":"@s","objective":"ram"}},{"text":"/40 "},{"score":{"name":"@s","objective":"rama"}}]}
+execute as @s[scores={caram=31..35}] run titleraw @s[scores={ram=1..}] actionbar {"rawtext":[{"text":"§cRampage§r "},{"text":"§6[Charge§7d]§7§r "},{"score":{"name":"@s","objective":"ram"}},{"text":"/40 "},{"score":{"name":"@s","objective":"rama"}}]}
+execute as @s[scores={caram=26..30}] run titleraw @s[scores={ram=1..}] actionbar {"rawtext":[{"text":"§cRampage§r "},{"text":"§6[Charg§7ed]§7§r "},{"score":{"name":"@s","objective":"ram"}},{"text":"/40 "},{"score":{"name":"@s","objective":"rama"}}]}
+execute as @s[scores={caram=21..25}] run titleraw @s[scores={ram=1..}] actionbar {"rawtext":[{"text":"§cRampage§r "},{"text":"§6[Char§7ged]§7§r "},{"score":{"name":"@s","objective":"ram"}},{"text":"/40 "},{"score":{"name":"@s","objective":"rama"}}]}
+execute as @s[scores={caram=16..20}] run titleraw @s[scores={ram=1..}] actionbar {"rawtext":[{"text":"§cRampage§r "},{"text":"§6[Cha§7rged]§7§r "},{"score":{"name":"@s","objective":"ram"}},{"text":"/40 "},{"score":{"name":"@s","objective":"rama"}}]}
+execute as @s[scores={caram=11..15}] run titleraw @s[scores={ram=1..}] actionbar {"rawtext":[{"text":"§cRampage§r "},{"text":"§6[Ch§7arged]§7§r "},{"score":{"name":"@s","objective":"ram"}},{"text":"/40 "},{"score":{"name":"@s","objective":"rama"}}]}
+execute as @s[scores={caram=6..10}] run titleraw @s[scores={ram=1..}] actionbar {"rawtext":[{"text":"§cRampage§r "},{"text":"§6[C§7harged]§7§r "},{"score":{"name":"@s","objective":"ram"}},{"text":"/40 "},{"score":{"name":"@s","objective":"rama"}}]}
+execute as @s[scores={caram=1..5}] run titleraw @s[scores={ram=1..}] actionbar {"rawtext":[{"text":"§cRampage§r "},{"text":"§6[§7Charged]§7§r "},{"score":{"name":"@s","objective":"ram"}},{"text":"/40 "},{"score":{"name":"@s","objective":"rama"}}]}
+
+
+execute as @s[scores={caram=36..40}] run titleraw @s[scores={ram=0}] actionbar {"rawtext":[{"text":"§cRampage§r "},{"text":"§6[Charged]§7§r §4"},{"score":{"name":"@s","objective":"ram"}},{"text":"/40 §r"},{"score":{"name":"@s","objective":"rama"}}]}
+execute as @s[scores={caram=31..35}] run titleraw @s[scores={ram=0}] actionbar {"rawtext":[{"text":"§cRampage§r "},{"text":"§6[Charge§7d]§7§r §4"},{"score":{"name":"@s","objective":"ram"}},{"text":"/40 §r"},{"score":{"name":"@s","objective":"rama"}}]}
+execute as @s[scores={caram=26..30}] run titleraw @s[scores={ram=0}] actionbar {"rawtext":[{"text":"§cRampage§r "},{"text":"§6[Charg§7ed]§7§r §4"},{"score":{"name":"@s","objective":"ram"}},{"text":"/40 §r"},{"score":{"name":"@s","objective":"rama"}}]}
+execute as @s[scores={caram=21..25}] run titleraw @s[scores={ram=0}] actionbar {"rawtext":[{"text":"§cRampage§r "},{"text":"§6[Char§7ged]§7§r §4"},{"score":{"name":"@s","objective":"ram"}},{"text":"/40 §r"},{"score":{"name":"@s","objective":"rama"}}]}
+execute as @s[scores={caram=16..20}] run titleraw @s[scores={ram=0}] actionbar {"rawtext":[{"text":"§cRampage§r "},{"text":"§6[Cha§7rged]§7§r §4"},{"score":{"name":"@s","objective":"ram"}},{"text":"/40 §r"},{"score":{"name":"@s","objective":"rama"}}]}
+execute as @s[scores={caram=11..15}] run titleraw @s[scores={ram=0}] actionbar {"rawtext":[{"text":"§cRampage§r "},{"text":"§6[Ch§7arged]§7§r §4"},{"score":{"name":"@s","objective":"ram"}},{"text":"/40 §r"},{"score":{"name":"@s","objective":"rama"}}]}
+execute as @s[scores={caram=6..10}] run titleraw @s[scores={ram=0}] actionbar {"rawtext":[{"text":"§cRampage§r "},{"text":"§6[C§7harged]§7§r §4"},{"score":{"name":"@s","objective":"ram"}},{"text":"/40 §r"},{"score":{"name":"@s","objective":"rama"}}]}
+execute as @s[scores={caram=1..5}] run titleraw @s[scores={ram=0}] actionbar {"rawtext":[{"text":"§cRampage§r "},{"text":"§6[§7Charged]§7§r §4"},{"score":{"name":"@s","objective":"ram"}},{"text":"/40 §r"},{"score":{"name":"@s","objective":"rama"}}]}
+
+replaceitem entity @s[scores={caram=0},tag=!reload] slot.weapon.mainhand 0 gun:ram

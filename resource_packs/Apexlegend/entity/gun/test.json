@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "fire:arcstar",
+      "materials": {
+        "default": "wither_skull"
+      },
+      "textures": {
+        "default": "textures/arcstar"
+      },
+      "geometry": {
+        "default": "geometry.arcstar"
+      },
+      "animations": {
+        "move": "animation.wither_skull.move",
+		"arc": "animation.arcstar.move"
+      }, 
+      "scripts": {
+        "pre_animation": [
+          "variable.shake = query.shake_time - query.frame_alpha;",
+          "variable.shake_power = variable.shake > 0.0 ? -Math.sin(variable.shake * 200.0) * variable.shake : 0.0;"
+        ],
+        "animate": [
+          "move",
+		  { "arc": "!query.is_on_ground" }
+        ]
+      },
+      "render_controllers": [ "controller.render.wither_skull" ]
+    }
+  }
+}

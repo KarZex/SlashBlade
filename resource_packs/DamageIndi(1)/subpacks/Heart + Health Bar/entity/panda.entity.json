@@ -1,0 +1,98 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:panda",
+      "materials": {
+        "default": "panda",
+        "hp": "entity_emissive_alpha"
+      },
+      "geometry": {
+        "default": "geometry.panda",
+        "health_bar": "geometry.health_bar",
+        "heart": "geometry.heart",
+        "dmg": "geometry.dmg"
+      },
+      "animations": {
+        "unhappy": "animation.panda.unhappy",
+        "sneezing": "animation.panda.sneezing",
+        "walk": "animation.quadruped.walk",
+        "look_at_target": "animation.common.look_at_target",
+        "baby_transform": "animation.panda.baby_transform",
+        "sitting": "animation.panda.sitting",
+        "rolling": "animation.panda.rolling",
+        "lying": "animation.panda.lying",
+        "move": "controller.animation.panda.move",
+        "unhappy1": "controller.animation.panda.unhappy",
+        "sneezing1": "controller.animation.panda.sneezing",
+        "baby": "controller.animation.panda.baby",
+        "dmg_controller": "controller.animation.damage.root",
+        "hp_offset": "animation.health_panda",
+        "health_percentage": "animation.health_bar.percentage"
+      },
+      "render_controllers": [
+        "controller.render.panda",
+        "controller.render.health_bar",
+        "controller.render.heart",
+        "controller.render.first_digit",
+        "controller.render.second_digit",
+        "controller.render.third_digit",
+        "controller.render.dmg"
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 54
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.health = query.health / query.max_health;",
+          "variable.health_color = math.round(query.health / query.max_health * 100) >= 50 ? 0 : ((math.round(query.health / query.max_health * 100) >= 25 && math.round(query.health / query.max_health * 100) < 50) ? 1 : 2);",
+          "variable.first_digit = math.floor(query.health / 100);",
+          "variable.second_digit = math.floor((math.mod(query.health, 100)) / 10);",
+          "variable.third_digit = query.health - ((math.floor(query.health / 10)) * 10);"
+        ],
+        "animate": [
+          "move",
+          "unhappy1",
+          "sneezing1",
+          "baby",
+          "hp_offset",
+          "health_percentage",
+          "dmg_controller"
+        ],
+        "variables": {
+          "variable.hp": "public"
+        },
+        "initialize": [
+          "variable.hp = query.health;"
+        ]
+      },
+      "particle_effects": {
+        "dmg": "particle:damage"
+      },
+      "textures": {
+        "default": "textures/entity/panda/panda",
+        "lazy": "textures/entity/panda/panda_lazy",
+        "worried": "textures/entity/panda/panda_worried",
+        "playful": "textures/entity/panda/panda_playful",
+        "brown": "textures/entity/panda/panda_brown",
+        "weak": "textures/entity/panda/panda_sneezy",
+        "aggressive": "textures/entity/panda/panda_aggressive",
+        "health_green": "textures/heart/health_bar_green",
+        "health_yellow": "textures/heart/health_bar_yellow",
+        "health_red": "textures/heart/health_bar_red",
+        "heart": "textures/heart/heart",
+        "heart0": "textures/heart/heart0",
+        "heart1": "textures/heart/heart1",
+        "heart2": "textures/heart/heart2",
+        "heart3": "textures/heart/heart3",
+        "heart4": "textures/heart/heart4",
+        "heart5": "textures/heart/heart5",
+        "heart6": "textures/heart/heart6",
+        "heart7": "textures/heart/heart7",
+        "heart8": "textures/heart/heart8",
+        "heart9": "textures/heart/heart9"
+      }
+    }
+  }
+}

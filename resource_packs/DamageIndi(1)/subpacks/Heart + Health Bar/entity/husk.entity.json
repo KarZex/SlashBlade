@@ -1,0 +1,127 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:husk",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "husk",
+        "hp": "entity_emissive_alpha"
+      },
+      "geometry": {
+        "default": "geometry.zombie.husk.v1.8",
+        "health_bar": "geometry.health_bar",
+        "heart": "geometry.heart",
+        "dmg": "geometry.dmg"
+      },
+      "animations": {
+        "humanoid_big_head": "animation.humanoid.big_head",
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+        "move": "animation.humanoid.move",
+        "riding.arms": "animation.humanoid.riding.arms",
+        "riding.legs": "animation.humanoid.riding.legs",
+        "holding": "animation.humanoid.holding",
+        "brandish_spear": "animation.humanoid.brandish_spear",
+        "charging": "animation.humanoid.charging",
+        "attack.rotations": "animation.humanoid.attack.rotations",
+        "sneaking": "animation.humanoid.sneaking",
+        "bob": "animation.humanoid.bob",
+        "damage_nearby_mobs": "animation.humanoid.damage_nearby_mobs",
+        "bow_and_arrow": "animation.humanoid.bow_and_arrow",
+        "use_item_progress": "animation.humanoid.use_item_progress",
+        "zombie_attack_bare_hand": "animation.zombie.attack_bare_hand",
+        "swimming": "animation.zombie.swimming",
+        "humanoid_baby_big_head": "controller.animation.humanoid.baby_big_head",
+        "look_at_target": "controller.animation.humanoid.look_at_target",
+        "move1": "controller.animation.humanoid.move",
+        "riding1": "controller.animation.humanoid.riding",
+        "holding1": "controller.animation.humanoid.holding",
+        "brandish_spear1": "controller.animation.humanoid.brandish_spear",
+        "charging1": "controller.animation.humanoid.charging",
+        "attack": "controller.animation.humanoid.attack",
+        "sneaking1": "controller.animation.humanoid.sneaking",
+        "bob1": "controller.animation.humanoid.bob",
+        "damage_nearby_mobs1": "controller.animation.humanoid.damage_nearby_mobs",
+        "bow_and_arrow1": "controller.animation.humanoid.bow_and_arrow",
+        "use_item_progress1": "controller.animation.humanoid.use_item_progress",
+        "zombie_attack_bare_hand1": "controller.animation.zombie.attack_bare_hand",
+        "swimming1": "controller.animation.zombie.swimming",
+        "dmg_controller": "controller.animation.damage.root",
+        "hp_offset": "animation.health_humanoid",
+        "health_percentage": "animation.health_bar.percentage"
+      },
+      "render_controllers": [
+        "controller.render.husk",
+        "controller.render.health_bar",
+        "controller.render.heart",
+        "controller.render.first_digit",
+        "controller.render.second_digit",
+        "controller.render.third_digit",
+        "controller.render.dmg"
+      ],
+      "enable_attachables": true,
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 28
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.health = query.health / query.max_health;",
+          "variable.health_color = math.round(query.health / query.max_health * 100) >= 50 ? 0 : ((math.round(query.health / query.max_health * 100) >= 25 && math.round(query.health / query.max_health * 100) < 50) ? 1 : 2);",
+          "variable.first_digit = math.floor(query.health / 100);",
+          "variable.second_digit = math.floor((math.mod(query.health, 100)) / 10);",
+          "variable.third_digit = query.health - ((math.floor(query.health / 10)) * 10);",
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+        ],
+        "animate": [
+          "humanoid_baby_big_head",
+          "look_at_target",
+          "move1",
+          "riding1",
+          "holding1",
+          "brandish_spear1",
+          "charging1",
+          "attack",
+          "sneaking1",
+          "bob1",
+          "damage_nearby_mobs1",
+          "bow_and_arrow1",
+          "use_item_progress1",
+          "zombie_attack_bare_hand1",
+          "swimming1",
+          "hp_offset",
+          "health_percentage",
+          "dmg_controller"
+        ],
+        "variables": {
+          "variable.hp": "public"
+        },
+        "initialize": [
+          "variable.hp = query.health;"
+        ]
+      },
+      "particle_effects": {
+        "dmg": "particle:damage"
+      },
+      "textures": {
+        "default": "textures/entity/zombie/husk",
+        "health_green": "textures/heart/health_bar_green",
+        "health_yellow": "textures/heart/health_bar_yellow",
+        "health_red": "textures/heart/health_bar_red",
+        "heart": "textures/heart/heart",
+        "heart0": "textures/heart/heart0",
+        "heart1": "textures/heart/heart1",
+        "heart2": "textures/heart/heart2",
+        "heart3": "textures/heart/heart3",
+        "heart4": "textures/heart/heart4",
+        "heart5": "textures/heart/heart5",
+        "heart6": "textures/heart/heart6",
+        "heart7": "textures/heart/heart7",
+        "heart8": "textures/heart/heart8",
+        "heart9": "textures/heart/heart9"
+      }
+    }
+  }
+}

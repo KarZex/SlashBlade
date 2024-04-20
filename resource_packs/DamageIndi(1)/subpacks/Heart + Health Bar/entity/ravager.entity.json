@@ -1,0 +1,90 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:ravager",
+      "materials": {
+        "default": "ravager",
+        "hp": "entity_emissive_alpha"
+      },
+      "geometry": {
+        "default": "geometry.ravager",
+        "health_bar": "geometry.health_bar",
+        "heart": "geometry.heart",
+        "dmg": "geometry.dmg"
+      },
+      "render_controllers": [
+        "controller.render.ravager",
+        "controller.render.health_bar",
+        "controller.render.heart",
+        "controller.render.first_digit",
+        "controller.render.second_digit",
+        "controller.render.third_digit",
+        "controller.render.dmg"
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 57
+      },
+      "animations": {
+        "walk": "animation.ravager.walk",
+        "look_at_target": "animation.common.look_at_target",
+        "idle_mouth": "animation.ravager.idle_mouth",
+        "stunned": "animation.ravager.stunned",
+        "roaring": "animation.ravager.roaring",
+        "move": "controller.animation.ravager.move",
+        "head": "controller.animation.ravager.head_movement",
+        "biting": "animation.ravager.biting",
+        "dmg_controller": "controller.animation.damage.root",
+        "hp_offset": "animation.health_ravager",
+        "health_percentage": "animation.health_bar.percentage"
+      },
+      "scripts": {
+        "initialize": [
+          "variable.hp = query.health;"
+        ],
+        "pre_animation": [
+          "variable.roar_length = 1.0;",
+          "variable.bite_anim_duration = 0.75f;",
+          "variable.bite_neck_length = 10;",
+          "variable.health = query.health / query.max_health;",
+          "variable.health_color = math.round(query.health / query.max_health * 100) >= 50 ? 0 : ((math.round(query.health / query.max_health * 100) >= 25 && math.round(query.health / query.max_health * 100) < 50) ? 1 : 2);",
+          "variable.first_digit = math.floor(query.health / 100);",
+          "variable.second_digit = math.floor((math.mod(query.health, 100)) / 10);",
+          "variable.third_digit = query.health - ((math.floor(query.health / 10)) * 10);"
+        ],
+        "animate": [
+          "move",
+          "head",
+          "hp_offset",
+          "health_percentage",
+          "dmg_controller"
+        ],
+        "variables": {
+          "variable.hp": "public"
+        }
+      },
+      "particle_effects": {
+        "dmg": "particle:damage",
+        "stun_particles": "minecraft:stunned_emitter"
+      },
+      "textures": {
+        "default": "textures/entity/illager/ravager",
+        "health_green": "textures/heart/health_bar_green",
+        "health_yellow": "textures/heart/health_bar_yellow",
+        "health_red": "textures/heart/health_bar_red",
+        "heart": "textures/heart/heart",
+        "heart0": "textures/heart/heart0",
+        "heart1": "textures/heart/heart1",
+        "heart2": "textures/heart/heart2",
+        "heart3": "textures/heart/heart3",
+        "heart4": "textures/heart/heart4",
+        "heart5": "textures/heart/heart5",
+        "heart6": "textures/heart/heart6",
+        "heart7": "textures/heart/heart7",
+        "heart8": "textures/heart/heart8",
+        "heart9": "textures/heart/heart9"
+      }
+    }
+  }
+}

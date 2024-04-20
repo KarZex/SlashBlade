@@ -1,0 +1,91 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:vex",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "vex",
+        "hp": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/vex/vex",
+        "charging": "textures/entity/vex/vex_charging",
+        "health_green": "textures/heart/health_bar_green",
+        "health_yellow": "textures/heart/health_bar_yellow",
+        "health_red": "textures/heart/health_bar_red",
+        "heart": "textures/heart/heart",
+        "heart0": "textures/heart/heart0",
+        "heart1": "textures/heart/heart1",
+        "heart2": "textures/heart/heart2",
+        "heart3": "textures/heart/heart3",
+        "heart4": "textures/heart/heart4",
+        "heart5": "textures/heart/heart5",
+        "heart6": "textures/heart/heart6",
+        "heart7": "textures/heart/heart7",
+        "heart8": "textures/heart/heart8",
+        "heart9": "textures/heart/heart9"
+      },
+      "geometry": {
+        "default": "geometry.vex.v1.8",
+        "health_bar": "geometry.health_bar",
+        "heart": "geometry.heart",
+        "dmg": "geometry.dmg"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.health = query.health / query.max_health;",
+          "variable.health_color = math.round(query.health / query.max_health * 100) >= 50 ? 0 : ((math.round(query.health / query.max_health * 100) >= 25 && math.round(query.health / query.max_health * 100) < 50) ? 1 : 2);",
+          "variable.first_digit = math.floor(query.health / 100);",
+          "variable.second_digit = math.floor((math.mod(query.health, 100)) / 10);",
+          "variable.third_digit = query.health - ((math.floor(query.health / 10)) * 10);",
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+          "variable.empty_handed  = !query.is_item_equipped(0) && !query.is_item_equipped(1);"
+        ],
+        "scale": "1.0",
+        "animate": [
+          "look_at_target1",
+          "vex_charge1",
+          "vex_idle1",
+          "hp_offset",
+          "health_percentage",
+          "dmg_controller"
+        ],
+        "variables": {
+          "variable.hp": "public"
+        },
+        "initialize": [
+          "variable.hp = query.health;"
+        ]
+      },
+      "animations": {
+        "look_at_target1": "controller.animation.humanoid.look_at_target",
+        "vex_charge1": "controller.animation.vex.charge",
+        "vex_idle1": "controller.animation.vex.idle",
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "vex_charge": "animation.vex.charge",
+        "vex_idle": "animation.vex.idle",
+        "dmg_controller": "controller.animation.damage.root",
+        "hp_offset": "animation.health_vex",
+        "health_percentage": "animation.health_bar.percentage"
+      },
+      "render_controllers": [
+        "controller.render.vex",
+        "controller.render.health_bar",
+        "controller.render.heart",
+        "controller.render.first_digit",
+        "controller.render.second_digit",
+        "controller.render.third_digit",
+        "controller.render.dmg"
+      ],
+	    "held_item_ignores_lighting": true,
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 41
+      },
+      "particle_effects": {
+        "dmg": "particle:damage"
+      }
+    }
+  }
+}

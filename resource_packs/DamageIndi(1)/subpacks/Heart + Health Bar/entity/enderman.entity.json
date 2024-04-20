@@ -1,0 +1,103 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:enderman",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "enderman",
+        "invisible": "enderman_invisible",
+        "hp": "entity_emissive_alpha"
+      },
+      "geometry": {
+        "default": "geometry.enderman.v1.8",
+        "health_bar": "geometry.health_bar",
+        "heart": "geometry.heart",
+        "dmg": "geometry.dmg"
+      },
+      "animations": {
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+        "move": "animation.humanoid.move",
+        "attack.rotations": "animation.humanoid.attack.rotations",
+        "bob": "animation.humanoid.bob",
+        "base_pose": "animation.enderman.base_pose",
+        "arms_legs": "animation.enderman.arms_legs",
+        "carrying": "animation.enderman.carrying",
+        "scary_face": "animation.enderman.scary_face",
+        "look_at_target1": "controller.animation.humanoid.look_at_target",
+        "move1": "controller.animation.humanoid.move",
+        "attack": "controller.animation.humanoid.attack",
+        "bob1": "controller.animation.humanoid.bob",
+        "base_pose1": "controller.animation.enderman.base_pose",
+        "carrying1": "controller.animation.enderman.carrying",
+        "scary_face1": "controller.animation.enderman.scary_face",
+        "dmg_controller": "controller.animation.damage.root",
+        "hp_offset": "animation.health_enderman",
+        "health_percentage": "animation.health_bar.percentage"
+      },
+      "render_controllers": [
+        "controller.render.enderman",
+        "controller.render.health_bar",
+        "controller.render.heart",
+        "controller.render.first_digit",
+        "controller.render.second_digit",
+        "controller.render.third_digit",
+        "controller.render.dmg"
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 7
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.health = query.health / query.max_health;",
+          "variable.health_color = math.round(query.health / query.max_health * 100) >= 50 ? 0 : ((math.round(query.health / query.max_health * 100) >= 25 && math.round(query.health / query.max_health * 100) < 50) ? 1 : 2);",
+          "variable.first_digit = math.floor(query.health / 100);",
+          "variable.second_digit = math.floor((math.mod(query.health, 100)) / 10);",
+          "variable.third_digit = query.health - ((math.floor(query.health / 10)) * 10);",
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 28.65;"
+        ],
+        "animate": [
+          "look_at_target1",
+          "move1",
+          "attack",
+          "bob1",
+          "base_pose1",
+          "carrying1",
+          "scary_face1",
+          "hp_offset",
+          "health_percentage",
+          "dmg_controller"
+        ],
+        "variables": {
+          "variable.hp": "public"
+        },
+        "initialize": [
+          "variable.hp = query.health;"
+        ]
+      },
+      "particle_effects": {
+        "dmg": "particle:damage"
+      },
+      "textures": {
+        "default": "textures/entity/enderman/enderman",
+        "health_green": "textures/heart/health_bar_green",
+        "health_yellow": "textures/heart/health_bar_yellow",
+        "health_red": "textures/heart/health_bar_red",
+        "heart": "textures/heart/heart",
+        "heart0": "textures/heart/heart0",
+        "heart1": "textures/heart/heart1",
+        "heart2": "textures/heart/heart2",
+        "heart3": "textures/heart/heart3",
+        "heart4": "textures/heart/heart4",
+        "heart5": "textures/heart/heart5",
+        "heart6": "textures/heart/heart6",
+        "heart7": "textures/heart/heart7",
+        "heart8": "textures/heart/heart8",
+        "heart9": "textures/heart/heart9"
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.AMS": {
+      "states": {
+        "default": {
+          "transitions": [
+			{ "riding": "variable.hurt_time > 0.0" }
+          ]
+        },
+        "riding": {
+          "on_entry": [
+            "/effect @s[scores={bangaloreg=0},hasitem={location=slot.armor.head,item=zex:bangalore}] speed 1 3 true",
+			"/scoreboard players set @s[scores={bangaloreg=0},hasitem={location=slot.armor.head,item=zex:bangalore}] bangaloreg 100",
+			"/scoreboard players set @s[hasitem={location=slot.armor.head,item=zex:octane}] octanew 100"
+          ],
+          "transitions": [
+			  {"default": "(variable.hurt_time <= 0.0)"}
+            ]
+        }
+      }
+    }
+  }
+}

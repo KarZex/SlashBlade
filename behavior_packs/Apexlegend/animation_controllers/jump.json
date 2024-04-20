@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.reload": {
+      "states": {
+        "default": {
+          "transitions": [
+			{ "jump": "query.is_jumping" }
+          ]
+        },
+		"jump": {
+          "on_entry": [  
+			"/tag @s add flying",
+			"/tag @s add flying2"
+          ],
+          "on_exit": [          
+            "/tag @s remove flying"
+          ],
+          "transitions": [ { "default": "!query.is_jumping"}]
+        }
+      }
+    }
+  }
+}

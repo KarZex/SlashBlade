@@ -1,0 +1,90 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "addon:hor",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+	    "animate": [ "walk" ]
+	  },
+	  "animations": {
+	    "walk": "controller.animation.hor"
+	  }
+    },
+    "component_groups": {
+		"minecraft:exploding": {
+			"minecraft:explode": {
+				"fuseLength": 0,
+				"fuseLit": true,
+				"power": 0,
+				"breaks_blocks": false
+			}
+		}
+    },
+
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.1,
+        "height": 0.1
+      },
+	  "minecraft:timer": {
+			"time": 15,
+			"time_down_event": { "event": "minecraft:exploding" }
+	  },
+      "minecraft:damage_sensor": {
+        "triggers": [
+		{
+          "cause": "all",
+          "deals_damage": false
+        }
+	   ]
+      },
+	  "minecraft:type_family": {
+			"family": ["inanimate"]
+	  },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 7,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+
+    "events": {
+			"minecraft:entity_spawned":{
+				"run_command": {
+					"command": [
+						"fill ~-1~15~-1 ~1~15~1 barrier 0 keep"
+					]
+				}
+			},
+			"minecraft:exploding": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"minecraft:exploding"
+							]
+						}
+					},
+					{
+						"run_command": {
+							"command": [
+								"fill ~-1~15~-1 ~1~15~1 air 0 replace barrier"
+							]
+						}
+					}
+				]
+			}
+		}
+  }
+}

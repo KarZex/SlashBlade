@@ -1,0 +1,3 @@
+titleraw @s[scores={valf=60..}] actionbar {"rawtext":[{"text":"Fuel§r "},{"score":{"name":"@s","objective":"valf"}},{"text":"/140"}]}
+titleraw @s[scores={valf=1..59}] actionbar {"rawtext":[{"text":"Fuel§r §g"},{"score":{"name":"@s","objective":"valf"}},{"text":"/140§r"}]}
+titleraw @s[scores={valf=0}] actionbar {"rawtext":[{"text":"Fuel§r §4"},{"score":{"name":"@s","objective":"valf"}},{"text":"/140§r"}]}

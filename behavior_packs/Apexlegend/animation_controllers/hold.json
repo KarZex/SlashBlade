@@ -1,0 +1,350 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.hold": {
+      "states": {
+        "default": {
+          "transitions": [
+			{ "cbocek": "query.get_equipped_item_name == 'cbocek'" },
+			{ "ckv": "query.get_equipped_item_name == 'ckv'" },
+			{ "cmas": "query.get_equipped_item_name == 'cmas'" },
+			{ "cram": "query.get_equipped_item_name == 'cram'" },
+		    { "abi": "(query.get_equipped_item_name == 'abi')" },
+			{ "tsen": "query.get_equipped_item_name == 'tsen'" },
+			{ "tram": "query.get_equipped_item_name == 'tram'" },
+			{ "teva": "query.get_equipped_item_name == 'teva'" },
+			{ "tg7": "query.get_equipped_item_name == 'tg7'" },
+			{ "tcar": "query.get_equipped_item_name == 'tcar'" },
+			{ "tflat": "query.get_equipped_item_name == 'tflat'" },
+			{ "them": "query.get_equipped_item_name == 'them'" },
+			{ "tr301": "query.get_equipped_item_name == 'tr301'" },
+			{ "bocek": "query.get_equipped_item_name == 'bocek'" },
+			{ "mas": "query.get_equipped_item_name == 'mas'" },
+			{ "pk": "query.get_equipped_item_name == 'pk'" },
+			{ "moz": "query.get_equipped_item_name == 'moz'" },
+			{ "eva": "query.get_equipped_item_name == 'eva'" },
+			{ "r301": "query.get_equipped_item_name == 'r301'" },
+			{ "r99": "query.get_equipped_item_name == 'r99'" },
+			{ "lewis": "query.get_equipped_item_name == 'lewis'" },
+			{ "re45": "query.get_equipped_item_name == 're45'" },
+			{ "p2020": "query.get_equipped_item_name == 'p2020'" },
+			{ "g7": "query.get_equipped_item_name == 'g7'" },
+			{ "alt": "query.get_equipped_item_name == 'alt'" },
+			{ "r3030": "query.get_equipped_item_name == 'r3030'" },
+			{ "car": "query.get_equipped_item_name == 'car'" },
+			{ "hem": "query.get_equipped_item_name == 'hem'" },
+			{ "pro": "query.get_equipped_item_name == 'pro'" },
+			{ "ram": "query.get_equipped_item_name == 'ram'" },
+			{ "flat": "query.get_equipped_item_name == 'flat'" },
+			{ "wing": "query.get_equipped_item_name == 'wing'" },
+			{ "spit": "query.get_equipped_item_name == 'spit'" },
+            { "dev": "(query.get_equipped_item_name == 'dev')" },
+			{ "lstar": "(query.get_equipped_item_name == 'lstar')" },
+			{ "kv": "(query.get_equipped_item_name == 'kv')" },
+			{ "triple": "(query.get_equipped_item_name == 'triple')" },
+			{ "volt": "(query.get_equipped_item_name == 'volt')" },
+			{ "charge": "(query.get_equipped_item_name == 'charge')" },
+			{ "havoc": "(query.get_equipped_item_name == 'havoc')" },
+			{ "sen": "(query.get_equipped_item_name == 'sen')" },
+			{ "long": "(query.get_equipped_item_name == 'long')" },
+			{ "ability": "(1.0)" }
+          ]
+        },
+        "tcar": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold2/carh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "teva": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold2/evah"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "tsen": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold2/senh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "tram": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold2/ramh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "tg7": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold2/g7h"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "tflat": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold2/flath"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "tr301": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold2/r301h"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "them": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold2/hemh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+		"ability": {
+          "on_entry": [  
+			"/execute as @s[hasitem={location=slot.armor.head,item=zex:valkyrie},tag=!revr] run function valf",
+			"/execute as @s[tag=revr] run function revr"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+		"cbocek": {
+          "on_entry": [  
+			"/replaceitem entity @s slot.weapon.mainhand 0 gun:bocek",                    
+            "/scoreboard players set @s boceka 60"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+		"ckv": {
+          "on_entry": [  
+			"/replaceitem entity @s slot.weapon.mainhand 0 gun:kv",              
+            "/scoreboard players set @s kv 4",      
+            "/scoreboard players set @s kva 8"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+		"cmas": {
+          "on_entry": [  
+			"/replaceitem entity @s slot.weapon.mainhand 0 gun:re45",              
+            "/scoreboard players set @s re45 25",      
+            "/scoreboard players set @s re45a 200"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+		"cram": {
+          "on_entry": [    
+            "/scoreboard players set @s caram 40",   
+			"/replaceitem entity @s slot.weapon.mainhand 0 guntype:tram",             
+            "/give @s gun:thermite",    
+            "/scoreboard players set @s ram 40",           
+            "/scoreboard players set @s rama 180"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+		"abi": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0},tag=!revr] run function hold/ability",
+			"/execute as @s[tag=revr] run function revr"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+		"bocek": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0},tag=!bocek] run function hold/bocekh",
+			"/execute as @s[scores={cooldown=0},tag=bocek] run function hold/bocekhh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+		"mas": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/mash"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "pk": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/pkh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "moz": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/mozh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "eva": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/evah"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "r301": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/r301h"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "r99": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/r99h"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "re45": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/re45h"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "p2020": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/p2020h"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "g7": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/g7h"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "alt": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/alth"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "r3030": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/r3030h"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "car": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/carh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "hem": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/hemh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "pro": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/proh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "ram": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/ramh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "flat": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/flath"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "wing": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/wingh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "uzi": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/uzih"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "vz61": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/vz61h"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "spit": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/spit2h"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "bar": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/barh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "g36": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/g36h"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "hk416": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/hk416h"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "charge": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/chargeh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "dev": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/devh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "lstar": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/lstarh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "kv": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/kvh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "havoc": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/havoch"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "triple": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/tripleh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "volt": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/volth"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "sen": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/senh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        },
+        "long": {
+          "on_entry": [            
+            "/execute as @s[scores={cooldown=0}] run function hold/longh"
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        }
+      }
+    }
+  }
+}

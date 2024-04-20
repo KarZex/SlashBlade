@@ -1,0 +1,92 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "minecraft:frog",
+			"materials": {
+				"default": "frog",
+				"hp": "entity_emissive_alpha"
+			},
+			"textures": {
+				"temperate": "textures/entity/frog/temperate_frog",
+				"cold": "textures/entity/frog/cold_frog",
+				"warm": "textures/entity/frog/warm_frog",
+        "health_green": "textures/heart/health_bar_green",
+        "health_yellow": "textures/heart/health_bar_yellow",
+        "health_red": "textures/heart/health_bar_red",
+        "heart": "textures/heart/heart",
+        "heart0": "textures/heart/heart0",
+        "heart1": "textures/heart/heart1",
+        "heart2": "textures/heart/heart2",
+        "heart3": "textures/heart/heart3",
+        "heart4": "textures/heart/heart4",
+        "heart5": "textures/heart/heart5",
+        "heart6": "textures/heart/heart6",
+        "heart7": "textures/heart/heart7",
+        "heart8": "textures/heart/heart8",
+        "heart9": "textures/heart/heart9"
+			},
+			"geometry": {
+				"default": "geometry.frog",
+        "health_bar": "geometry.health_bar",
+        "heart": "geometry.heart",
+        "dmg": "geometry.dmg"
+			},
+			"spawn_egg": {
+				"base_color": "#d07444",
+				"overlay_color": "#ffc77c"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.moving = query.ground_speed > 0 || query.vertical_speed > 0;",
+          "variable.health = query.health / query.max_health;",
+          "variable.health_color = math.round(query.health / query.max_health * 100) >= 50 ? 0 : ((math.round(query.health / query.max_health * 100) >= 25 && math.round(query.health / query.max_health * 100) < 50) ? 1 : 2);",
+          "variable.first_digit = math.floor(query.health / 100);",
+          "variable.second_digit = math.floor((math.mod(query.health, 100)) / 10);",
+          "variable.third_digit = query.health - ((math.floor(query.health / 10)) * 10);"
+        ],
+        "animate": [
+					"general",
+					"croaking",
+					"eat_mob",
+          "hp_offset",
+          "health_percentage",
+          "dmg_controller"
+        ],
+        "variables": {
+          "variable.hp": "public"
+        },
+        "initialize": [
+          "variable.hp = query.health;"
+        ]
+			},
+			"animations": {
+				"general": "controller.animation.frog.general",
+				"croaking": "controller.animation.frog.croaking",
+				"eat_mob": "controller.animation.frog.eat_mob",
+				"croak": "animation.frog.croak",
+				"jump": "animation.frog.jump",
+				"tongue": "animation.frog.tongue",
+				"walk": "animation.frog.walk",
+				"swim": "animation.frog.swim",
+				"idle_water": "animation.frog.idle.water",
+				"look_at_target": "animation.common.look_at_target",
+        "dmg_controller": "controller.animation.damage.root",
+        "hp_offset": "animation.health_silverfish",
+        "health_percentage": "animation.health_bar.percentage"
+			},
+			"render_controllers": [
+				"controller.render.frog",
+        "controller.render.health_bar",
+        "controller.render.heart",
+        "controller.render.first_digit",
+        "controller.render.second_digit",
+        "controller.render.third_digit",
+        "controller.render.dmg.frog"
+			],
+			"particle_effects": {
+        "dmg": "particle:damage"
+      }
+		}
+	}
+}

@@ -1,0 +1,45 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "gun:flat",
+      "category" : "equipment" 
+    },
+
+    "components": {
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true,
+      "minecraft:use_duration": 99999,
+      "minecraft:icon": {
+        "texture": "flat"
+      },
+			"minecraft:render_offsets": {
+				"main_hand": {
+					"third_person": {
+						"scale": [
+							0.0125,
+							0.0125,
+							0.0125
+						]
+					},
+					"first_person": {
+						"scale": [
+							0.00475,
+							0.00475,
+							0.00475
+						]
+					}
+				}
+			},
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.guns"
+      },
+      "minecraft:food": {
+        "nutrition": 0,
+        "saturation_modifier": "supernatural",
+        "can_always_eat": true
+      }
+    }
+  }
+}

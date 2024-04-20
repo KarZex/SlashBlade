@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:fx",
+      "category": "gun"
+    },
+    "components": {
+      "minecraft:icon": "fx",
+      "minecraft:render_offsets": "bow"
+    }
+  }
+}

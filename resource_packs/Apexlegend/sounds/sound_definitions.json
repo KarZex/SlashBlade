@@ -1,0 +1,451 @@
+{
+	"format_version": "1.14.0",
+	"sound_definitions": {
+ 		"gun.change": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gc1"
+			]
+		},
+ 		"gun.change2": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gc2"
+			]
+		},
+ 		"charge.sen": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/csen"
+			]
+		},
+ 		"charge.ram": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/cram"
+			]
+		},
+ 		"fire.ther": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/therf"
+			]
+		},
+ 		"time.ther": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/thert"
+			]
+		},
+ 		"fire.arc": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/arcf"
+			]
+		},
+ 		"fire.gre": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gref"
+			]
+		},
+ 		"hold.arc": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/arch"
+			]
+		},
+ 		"time.arc": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/arct"
+			]
+		},
+ 		"fire.triple": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/triple"
+			]
+		},
+ 		"fire.lstarw": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/lstarw"
+			]
+		},
+ 		"fire.havoca": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/havoca"
+			]
+		},
+ 		"reload.triple": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/triple"
+			]
+		},
+ 		"fire.bc": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/bc"
+			]
+		},
+ 		"fire.bs": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/bs"
+			]
+		},
+ 		"fire.bm": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/bm"
+			]
+		},
+ 		"fire.bw": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/bw"
+			]
+		},
+ 		"reload.volt": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/volt"
+			]
+		},
+ 		"fire.volt": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/volt"
+			]
+		},
+ 		"fire.r5": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/sound/r5"
+			]
+		},
+ 		"fire.havoc": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/havoc"
+			]
+		},
+"fire.boss": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/spain_super"
+			]
+		},
+"fire.nhk": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/fire"
+			]
+		},
+"fire.tank": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/fire_cannon2"
+			]
+		},
+ 		"fire.flat": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/flat"
+			]
+		},
+ 		"fire.pro": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/pro"
+			]
+		},
+ 		"fire.wing": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/wing"
+			]
+		},
+ 		"fire.hem": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/hem"
+			]
+		},
+ 		"fire.car": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/car"
+			]
+		},
+ 		"fire.r3030": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/r3030"
+			]
+		},
+ 		"fire.spit": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/spit"
+			]
+		},
+ 		"fire.ram": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/ram"
+			]
+		},
+ 		"fire.r301": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/r301"
+			]
+		},
+ 		"fire.r99": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/r99"
+			]
+		},
+ 		"fire.alt": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/alt"
+			]
+		},
+ 		"fire.re45": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/re45"
+			]
+		},
+ 		"fire.p2020": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/p2020"
+			]
+		},
+ 		"fire.g7": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/g7"
+			]
+		},
+ 		"fire.dev": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/dev"
+			]
+		},
+ 		"fire.lstar": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/lstar"
+			]
+		},
+ 		"fire.moz": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/moz"
+			]
+		},
+ 		"fire.pk": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/pk"
+			]
+		},
+ 		"fire.mas": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/mas"
+			]
+		},
+ 		"fire.eva": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/eva"
+			]
+		},
+ 		"fire.charge": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/charge"
+			]
+		},
+ 		"fire.kv": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/kv"
+			]
+		},
+ 		"fire.sen": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/sen"
+			]
+		},
+ 		"reload.lstar": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/lstar"
+			]
+		},
+
+ 		"fire.long": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/long"
+			]
+		},
+ 		"reload.flat": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/flat"
+			]
+		},
+ 		"reload.pro": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/pro"
+			]
+		},
+ 		"reload.wing": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/wing"
+			]
+		},
+ 		"reload.hem": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/hem"
+			]
+		},
+ 		"reload.car": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/car"
+			]
+		},
+ 		"reload.r3030": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/r3030"
+			]
+		},
+ 		"reload.spit": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/spit"
+			]
+		},
+ 		"reload.ram": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/ram"
+			]
+		},
+ 		"reload.r301": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/r301"
+			]
+		},
+ 		"reload.r99": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/r99"
+			]
+		},
+ 		"reload.alt": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/alt"
+			]
+		},
+ 		"reload.re45": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/re45"
+			]
+		},
+ 		"reload.p2020": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/p2020"
+			]
+		},
+ 		"reload.g7": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/g7"
+			]
+		},
+ 		"reload.dev": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/dev"
+			]
+		},
+ 		"reload.moz": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/moz"
+			]
+		},
+ 		"reload.pk": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/pk"
+			]
+		},
+ 		"reload.mas": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/mas"
+			]
+		},
+ 		"reload.eva": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/eva"
+			]
+		},
+ 		"reload.charge": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/charge"
+			]
+		},
+ 		"reload.kv": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/kv"
+			]
+		},
+ 		"reload.sen": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/sen"
+			]
+		},
+
+ 		"reload.long": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/long"
+			]
+		},
+ 		"reload.havoc": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/havoc"
+			]
+		}
+  	}
+}

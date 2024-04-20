@@ -1,0 +1,121 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.heart": {
+      "geometry": "Geometry.heart",
+      "materials": [{ "*": "Material.hp" }],
+      "textures": [ "Texture.heart" ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "part_visibility": [
+        { "*": "query.health / 100 >= 1 && !query.is_invisible && query.distance_from_camera <= 20 && query.is_alive" },
+        { "first": false },
+        { "second": false },
+        { "third": false }
+      ],
+      "arrays": {
+        "textures": {
+          "array.textures": [
+            "Texture.heart0",
+            "Texture.heart1",
+            "Texture.heart2",
+            "Texture.heart3",
+            "Texture.heart4",
+            "Texture.heart5",
+            "Texture.heart6",
+            "Texture.heart7",
+            "Texture.heart8",
+            "Texture.heart9"
+          ]
+        }
+      }
+    },
+    "controller.render.first_digit": {
+      "geometry": "Geometry.heart",
+      "materials": [{ "*": "Material.hp" }],
+      "textures": [ "query.health < 100 ? Texture.heart : Array.textures[variable.first_digit]" ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "part_visibility": [
+        { "*": "query.health / 10 >= 1 && !query.is_invisible && query.distance_from_camera <= 20 && query.is_alive" },
+        { "heart": false },
+        { "second": false },
+        { "third": false }
+      ],
+      "arrays": {
+        "textures": {
+          "array.textures": [
+            "Texture.heart0",
+            "Texture.heart1",
+            "Texture.heart2",
+            "Texture.heart3",
+            "Texture.heart4",
+            "Texture.heart5",
+            "Texture.heart6",
+            "Texture.heart7",
+            "Texture.heart8",
+            "Texture.heart9"
+          ]
+        }
+      }
+    },
+    "controller.render.second_digit": {
+      "geometry": "Geometry.heart",
+      "materials": [{ "*": "Material.hp" }],
+      "textures": [ "query.health < 10 ? Texture.heart : Array.textures[variable.second_digit]" ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "part_visibility": [
+        { "*": "!query.is_invisible && query.distance_from_camera <= 20 && query.is_alive" },
+        { "heart": false },
+        { "first": false },
+        { "third": false }
+      ],
+      "arrays": {
+        "textures": {
+          "array.textures": [
+            "Texture.heart0",
+            "Texture.heart1",
+            "Texture.heart2",
+            "Texture.heart3",
+            "Texture.heart4",
+            "Texture.heart5",
+            "Texture.heart6",
+            "Texture.heart7",
+            "Texture.heart8",
+            "Texture.heart9"
+          ]
+        }
+      }
+    },
+    "controller.render.third_digit": {
+      "geometry": "Geometry.heart",
+      "materials": [{ "*": "Material.hp" }],
+      "textures": [ "Array.textures[variable.third_digit]" ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "part_visibility": [
+        { "*": "!query.is_invisible && query.distance_from_camera <= 20 && query.is_alive" },
+        { "heart": false },
+        { "second": false },
+        { "first": false }
+      ],
+      "arrays": {
+        "textures": {
+          "array.textures": [
+            "Texture.heart0",
+            "Texture.heart1",
+            "Texture.heart2",
+            "Texture.heart3",
+            "Texture.heart4",
+            "Texture.heart5",
+            "Texture.heart6",
+            "Texture.heart7",
+            "Texture.heart8",
+            "Texture.heart9"
+          ]
+        }
+      }
+    }
+  }
+}

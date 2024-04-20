@@ -1,0 +1,2 @@
+titleraw @s[scores={flat=1..}] actionbar {"rawtext":[{"text":"§3Heavy§r "},{"text":"[S] "},{"score":{"name":"@s","objective":"flat"}},{"text":"/30"}]}
+titleraw @s[scores={flat=0}] actionbar {"rawtext":[{"text":"§3Heavy§r "},{"text":"[S] §4"},{"score":{"name":"@s","objective":"flat"}},{"text":"/30§r"}]}

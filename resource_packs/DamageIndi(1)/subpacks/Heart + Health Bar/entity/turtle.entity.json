@@ -1,0 +1,89 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:turtle",
+      "materials": {
+        "default": "turtle",
+        "hp": "entity_emissive_alpha"
+      },
+      "geometry": {
+        "default": "geometry.turtle",
+        "health_bar": "geometry.health_bar",
+        "heart": "geometry.heart",
+        "dmg": "geometry.dmg"
+      },
+      "animations": {
+        "general": "animation.turtle.general",
+        "move": "animation.turtle.move",
+        "ground_move": "animation.turtle.ground_move",
+        "look_at_target": "animation.common.look_at_target",
+        "general1": "controller.animation.turtle.general",
+        "move1": "controller.animation.turtle.move",
+        "dmg_controller": "controller.animation.damage.root",
+        "hp_offset": "animation.health_turtle",
+        "health_percentage": "animation.health_bar.percentage"
+      },
+      "render_controllers": [
+        "controller.render.turtle",
+        "controller.render.health_bar",
+        "controller.render.heart",
+        "controller.render.first_digit",
+        "controller.render.second_digit",
+        "controller.render.third_digit",
+        "controller.render.dmg"
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 50
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.timeMultiplier = query.has_rider ? 0.39972 : 1.0;",
+          "variable.backLegMultiplier = query.has_rider ? 0.5 : 3.0;",
+          "variable.frontLegMultiplier = query.has_rider ? 2.0 : 8.0;",
+          "variable.legSpeedMultiplier = query.has_rider ? 2.0 : 5.0;",
+          "variable.health = query.health / query.max_health;",
+          "variable.health_color = math.round(query.health / query.max_health * 100) >= 50 ? 0 : ((math.round(query.health / query.max_health * 100) >= 25 && math.round(query.health / query.max_health * 100) < 50) ? 1 : 2);",
+          "variable.first_digit = math.floor(query.health / 100);",
+          "variable.second_digit = math.floor((math.mod(query.health, 100)) / 10);",
+          "variable.third_digit = query.health - ((math.floor(query.health / 10)) * 10);"
+        ],
+        "animate": [
+          "general1",
+          "move1",
+          "hp_offset",
+          "health_percentage",
+          "dmg_controller"
+        ],
+        "variables": {
+          "variable.hp": "public"
+        },
+        "initialize": [
+          "variable.hp = query.health;"
+        ],
+        "scale": "1.2"
+      },
+      "particle_effects": {
+        "dmg": "particle:damage"
+      },
+      "textures": {
+        "default": "textures/entity/sea_turtle",
+        "health_green": "textures/heart/health_bar_green",
+        "health_yellow": "textures/heart/health_bar_yellow",
+        "health_red": "textures/heart/health_bar_red",
+        "heart": "textures/heart/heart",
+        "heart0": "textures/heart/heart0",
+        "heart1": "textures/heart/heart1",
+        "heart2": "textures/heart/heart2",
+        "heart3": "textures/heart/heart3",
+        "heart4": "textures/heart/heart4",
+        "heart5": "textures/heart/heart5",
+        "heart6": "textures/heart/heart6",
+        "heart7": "textures/heart/heart7",
+        "heart8": "textures/heart/heart8",
+        "heart9": "textures/heart/heart9"
+      }
+    }
+  }
+}

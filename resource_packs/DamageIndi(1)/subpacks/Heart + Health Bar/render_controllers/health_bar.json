@@ -1,0 +1,26 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.health_bar": {
+      "geometry": "Geometry.health_bar",
+      "materials": [{ "*": "Material.hp" }],
+      "textures": [ "Array.textures[variable.health_color]" ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "part_visibility": [
+        { "*": "!query.is_invisible && query.distance_from_camera <= 20 && query.is_alive" },
+        { "heart": "!query.is_invisible && query.distance_from_camera <= 20 && query.is_alive && query.health >= 100" },
+        { "first": "!query.is_invisible && query.distance_from_camera <= 20 && query.is_alive && query.health >= 10" }
+      ],
+      "arrays": {
+        "textures": {
+          "array.textures": [
+            "Texture.health_green",
+            "Texture.health_yellow",
+            "Texture.health_red"
+          ]
+        }
+      }
+    }
+  }
+}

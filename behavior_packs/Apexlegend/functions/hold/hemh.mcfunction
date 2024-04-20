@@ -1,0 +1,2 @@
+titleraw @s[scores={hem=1..}] actionbar {"rawtext":[{"text":"§3Heavy§r "},{"score":{"name":"@s","objective":"hem"}},{"text":"/30"}]}
+titleraw @s[scores={hem=0}] actionbar {"rawtext":[{"text":"§3Heavy§r §4"},{"score":{"name":"@s","objective":"hem"}},{"text":"/30§r"}]}

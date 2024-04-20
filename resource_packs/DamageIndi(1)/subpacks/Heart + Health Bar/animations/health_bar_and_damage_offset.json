@@ -1,0 +1,1273 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.health_player": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            27,
+            0
+          ],
+          "scale": "query.is_in_ui ? 0 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            20,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_humanoid": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            28.5,
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            20,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_vex": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            7,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            3,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_strider": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            "query.is_baby ? 24 : 25",
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            20,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_snowman": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            28.5,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            20,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_golem": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            40,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            35,
+            0
+          ],
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_warden": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            45,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            40,
+            0
+          ],
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_wither": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            25,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            20,
+            0
+          ],
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_ravager": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            36,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            26,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_enderman": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            40,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            20,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_bat": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            20,
+            0
+          ],
+          "scale": 2.85
+        },
+        "dmg": {
+          "position": [
+            0,
+            15,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_allay": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            7,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            3,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_bee": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            7,
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_wolf": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            10,
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_turtle": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            "query.is_baby ? 3 : 6",
+            0
+          ],
+          "scale": "query.is_baby ? 3.125 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_squid": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            10,
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_rabbit": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            7,
+            0
+          ],
+          "scale": "query.is_baby ? 2.5 : 2"
+        },
+        "dmg": {
+          "position": [
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_parrot": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            7,
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_pig": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            "query.is_baby ? 15 : 11",
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_phantom": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            7,
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_fox": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            7,
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_cat": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            7,
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_blaze": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            24,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            18,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_panda": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            "query.is_baby ? 22 : 18",
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            15,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_creeper": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            23,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            18,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_cow": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            "query.is_baby ? 28 : 22",
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            18,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_mooshroom": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            "query.is_baby ? 28 : 26",
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            18,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_cod": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            2,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_tfish": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            2,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_salmon": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            2,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_pufferfish": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            2,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_dolphin": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            "query.is_baby ? 4 : 6",
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_mite": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            2.5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_silverfish": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            2.5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_cube": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            2.5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_villager": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            31,
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            25,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_witch": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            36.5,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            25,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_elder_guardian": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            16,
+            0
+          ],
+          "scale": 0.425
+        },
+        "dmg": {
+          "position": [
+            0,
+            10,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_ghast": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            70,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            20,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_guardian": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            13,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_polar": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            15,
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            8,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_sheep": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            "query.is_baby ? 22 : 18",
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            10,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_llama": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            32,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            20,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_shulker": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            15,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            8,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_hoglin": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            "query.is_baby ? 26.5 : 23",
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            17,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_chicken": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            "query.is_baby ? 15 : 12",
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_spider": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            10,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_slime": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            3,
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            2.5,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_horse": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            "query.is_baby ? 28 : 26.5",
+            0
+          ]
+        },
+        "dmg": {
+          "position": [
+            0,
+            24,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_sniffer": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "query.camera_rotation(1) - query.body_y_rotation",
+            0
+          ],
+          "position": [
+            0,
+            "query.is_baby ? 24 : 32",
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            20,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_camel": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "query.camera_rotation(1) - query.body_y_rotation",
+            0
+          ],
+          "position": [
+            0,
+            "query.is_baby ? 26 : 32",
+            0
+          ],
+          "scale": "query.is_baby ? 2 : 1"
+        },
+        "dmg": {
+          "position": [
+            0,
+            20,
+            0
+          ]
+        }
+      }
+    },
+    "animation.health_donkey": {
+      "loop": true,
+      "bones": {
+        "base0": {
+          "rotation": [
+            "query.camera_rotation(0)",
+            "-query.body_y_rotation + query.camera_rotation(1)",
+            0
+          ],
+          "position": [
+            0,
+            "query.is_baby ? 30 : 28",
+            0
+          ],
+          "scale": "query.is_baby ? 2.0 : 1.0"
+        },
+        "dmg": {
+          "position": [
+            0,
+            24,
+            0
+          ]
+        }
+      }
+    }
+  }
+}

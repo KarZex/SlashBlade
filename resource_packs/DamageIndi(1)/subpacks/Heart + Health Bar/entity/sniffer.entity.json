@@ -1,0 +1,114 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:sniffer",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "sniffer",
+        "hp": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/sniffer/sniffer",
+        "health_green": "textures/heart/health_bar_green",
+        "health_yellow": "textures/heart/health_bar_yellow",
+        "health_red": "textures/heart/health_bar_red",
+        "heart": "textures/heart/heart",
+        "heart0": "textures/heart/heart0",
+        "heart1": "textures/heart/heart1",
+        "heart2": "textures/heart/heart2",
+        "heart3": "textures/heart/heart3",
+        "heart4": "textures/heart/heart4",
+        "heart5": "textures/heart/heart5",
+        "heart6": "textures/heart/heart6",
+        "heart7": "textures/heart/heart7",
+        "heart8": "textures/heart/heart8",
+        "heart9": "textures/heart/heart9"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.moving = math.min(1.0, query.modified_move_speed * 10);",
+          "variable.health = query.health / query.max_health;",
+          "variable.health_color = math.round(query.health / query.max_health * 100) >= 50 ? 0 : ((math.round(query.health / query.max_health * 100) >= 25 && math.round(query.health / query.max_health * 100) < 50) ? 1 : 2);",
+          "variable.first_digit = math.floor(query.health / 100);",
+          "variable.second_digit = math.floor((math.mod(query.health, 100)) / 10);",
+          "variable.third_digit = query.health - ((math.floor(query.health / 10)) * 10);"
+        ],
+        "animate": [
+					"general",
+					"baby",
+					"walk1",
+					"sniffsniff1",
+					"long_sniff1",
+					"search1",
+					"dig1",
+          "stand_up1",
+          "feeling_happy1",
+          "hp_offset",
+          "health_percentage",
+          "dmg_controller"
+        ],
+        "variables": {
+          "variable.hp": "public"
+        },
+        "initialize": [
+          "variable.hp = query.health;"
+        ]
+      },
+      "geometry": {
+        "default": "geometry.sniffer",
+        "health_bar": "geometry.health_bar",
+        "heart": "geometry.heart",
+        "dmg": "geometry.dmg"
+      },
+      "animations": {
+        "baby_transform": "animation.sniffer.baby_transform",
+        "walk": "animation.sniffer.walk",
+        "look_at_target": "animation.common.look_at_target",
+        "sniffsniff": "animation.sniffer.sniffsniff",
+        "long_sniff": "animation.sniffer.longsniff",
+        "search": "animation.sniffer.search",
+        "dig": "animation.sniffer.dig",
+        "stand_up": "animation.sniffer.stand_up",
+        "feeling_happy": "animation.sniffer.feeling_happy",
+        "general": "controller.animation.sniffer.general",
+        "baby": "controller.animation.sniffer.baby",
+        "walk1": "controller.animation.sniffer.walk",
+        "sniffsniff1": "controller.animation.sniffer.sniffsniff",
+        "long_sniff1": "controller.animation.sniffer.long_sniff",
+        "search1": "controller.animation.sniffer.search",
+        "dig1": "controller.animation.sniffer.dig",
+        "stand_up1": "controller.animation.sniffer.stand_up",
+        "feeling_happy1": "controller.animation.sniffer.feeling_happy",
+        "dmg_controller": "controller.animation.damage.root",
+        "hp_offset": "animation.health_sniffer",
+        "health_percentage": "animation.health_bar.percentage"
+      },
+      "render_controllers": [
+        "controller.render.sniffer",
+        "controller.render.health_bar",
+        "controller.render.heart",
+        "controller.render.first_digit",
+        "controller.render.second_digit",
+        "controller.render.third_digit",
+        "controller.render.dmg"
+      ],
+			"particle_effects": {
+        "dmg": "particle:damage"
+      },
+      "spawn_egg": {
+        "base_color": "#871E09",
+        "overlay_color": "#25AB70"
+      },
+      "sound_effects": {
+        "drop_seed": "mob.sniffer.drop_seed",
+        "sniffsniff": "mob.sniffer.sniffsniff",
+        "searching": "mob.sniffer.searching",
+        "long_sniff": "mob.sniffer.long_sniff",
+        "digging": "mob.sniffer.digging",
+        "stand_up": "mob.sniffer.stand_up",
+        "happy": "mob.sniffer.happy"
+      }
+    }
+  }
+}

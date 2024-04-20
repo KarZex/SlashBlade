@@ -1,0 +1,38 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "§lDamage Indicator Addon §cv3.6.2",
+    "description": "§cby §bCoptaine\n§rHealth & Damage Indicator\n\nChangelog:\n- §aFixed damage counter not showing",
+    "uuid": "e684b463-aeac-4359-8489-7caaed17c23a",
+    "version": [ 3, 6, 2 ],
+    "min_engine_version": [ 1, 20, 0 ]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "8a178e7b-95c8-4eea-a6ca-bf7e71f20a0b",
+      "version": [ 3, 6, 2 ]
+    }
+  ],
+  "subpacks": [
+    {
+      "folder_name": "Health Bar",
+      "memory_tier": 1,
+      "name": "Health Bar"
+    },
+    {
+      "folder_name": "Heart Value",
+      "memory_tier": 1,
+      "name": "Heart Value"
+    },
+    {
+      "folder_name": "Heart + Health Bar",
+      "memory_tier": 1,
+      "name": "Heart + Health Bar"
+    }
+  ],
+  "metadata": {
+    "authors": [ "Coptaine" ],
+    "url": "https://mcpedl.com/damage-indicator-addon/"
+  }
+}

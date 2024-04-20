@@ -1,0 +1,20 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:client_entity": {
+      "description": {
+        "identifier": "fire:grenade",
+        "materials": {
+          "default": "spider"
+        },
+        "textures": {
+          "default": "textures/grenade"
+        },
+        "geometry": {
+          "default": "geometry.grenade"
+        },
+        "render_controllers": [ 
+          "controller.render.default" 
+        ]
+      }
+    }
+}

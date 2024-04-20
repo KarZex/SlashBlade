@@ -1,0 +1,24 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "addon:doom",
+      "materials": { 
+	  "default": "entity_alphablend",
+	  "doom": "spider" 
+	  },
+      "textures": {
+        "default": "textures/craft/doom"
+      },
+      "geometry": {
+        "default": "geometry.doom2",
+        "doom": "geometry.doomn"
+      },
+	  "spawn_egg":{
+	  "texture":"b2",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.default","controller.render.doom" ]
+    }
+  }
+}

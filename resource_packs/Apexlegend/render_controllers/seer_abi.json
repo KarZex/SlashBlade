@@ -1,0 +1,68 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.": {
+            "geometry": "Geometry.seered",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Array.textures[query.health]"
+            ],
+            "arrays": {
+                "textures": {
+                    "array.textures": [
+                        "Texture.hp0",
+                        "Texture.hp1",
+                        "Texture.hp2",
+                        "Texture.hp3",
+                        "Texture.hp4",
+                        "Texture.hp5",
+                        "Texture.hp6",
+                        "Texture.hp7",
+                        "Texture.hp8",
+                        "Texture.hp9",
+                        "Texture.hp10",
+                        "Texture.hp11",
+                        "Texture.hp12",
+                        "Texture.hp13",
+                        "Texture.hp14",
+                        "Texture.hp15",
+                        "Texture.hp16",
+                        "Texture.hp17",
+                        "Texture.hp18",
+                        "Texture.hp19",
+                        "Texture.hp20",
+                        "Texture.hp21",
+                        "Texture.hp22",
+                        "Texture.hp23",
+                        "Texture.hp24",
+                        "Texture.hp25",
+                        "Texture.hp26",
+                        "Texture.hp27",
+                        "Texture.hp28",
+                        "Texture.hp29",
+                        "Texture.hp30",
+                        "Texture.hp31",
+                        "Texture.hp32",
+                        "Texture.hp33",
+                        "Texture.hp34",
+                        "Texture.hp35",
+                        "Texture.hp36",
+                        "Texture.hp37",
+                        "Texture.hp38",
+                        "Texture.hp39",
+                        "Texture.hp40",
+                        "Texture.hp41",
+                        "Texture.hp42",
+                        "Texture.hp43",
+                        "Texture.hp44",
+                        "Texture.hp45"
+                    ]
+                }
+            }
+        }
+    }
+}

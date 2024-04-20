@@ -1,0 +1,124 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "addon:gas",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+	    "animate": [ "walk" ]
+	  },
+	  "animations": {
+	    "walk": "controller.animation.gas"
+	  }
+    },
+	"component_groups": {
+      "A": {
+	  "minecraft:explode": {
+          "fuse_length": 10,
+          "fuse_lit": true,
+          "power": 0,
+          "causes_fire": true,
+          "destroy_affected_by_griefing": true
+        }
+      },
+      "B": {
+        "minecraft:transformation": {
+          "into": "addon:d2b"
+        }
+      },
+      "C": {
+        "minecraft:transformation": {
+          "into": "addon:d2c"
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "inanimate", "spawns" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+		{
+			"cause": "all",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "all"
+                  }
+                ]
+            },
+            "event": "A"
+          }
+		}
+	   ]
+	  },		
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 1.8
+      },
+      "minecraft:health": {
+        "value": 9999,
+        "max": 9999
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/empty.json"
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:persistent": {
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+
+    "events": {
+
+	  
+	  
+      "A": {
+        "add": {
+          "component_groups": [
+            "A"
+          ]
+        },
+        "run_command": {
+          "command": [
+			"tag @s add ed"
+          ]
+        }
+      },
+      "B": {
+        "add": {
+          "component_groups": [
+            "B"
+          ]
+        }
+      },
+      "C": {
+        "add": {
+          "component_groups": [
+            "C"
+          ]
+        }
+      }
+    }
+  }
+}

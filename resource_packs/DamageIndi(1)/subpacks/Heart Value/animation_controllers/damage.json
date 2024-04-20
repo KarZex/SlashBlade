@@ -1,0 +1,1027 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.damage.root": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [{ "setup": "variable.hp = query.health; return 1;" }]
+                },
+                "setup": {
+                    "transitions": [
+                        { "1": "variable.hp - query.health == 1" },
+                        { "1a": "variable.hp - query.health == -1" },
+                        { "2": "variable.hp - query.health == 2" },
+                        { "2a": "variable.hp - query.health == -2" },
+                        { "3": "variable.hp - query.health == 3" },
+                        { "3a": "variable.hp - query.health == -3" },
+                        { "4": "variable.hp - query.health == 4" },
+                        { "4a": "variable.hp - query.health == -4" },
+                        { "5": "variable.hp - query.health == 5" },
+                        { "5a": "variable.hp - query.health == -5" },
+                        { "6": "variable.hp - query.health == 6" },
+                        { "6a": "variable.hp - query.health == -6" },
+                        { "7": "variable.hp - query.health == 7" },
+                        { "7a": "variable.hp - query.health == -7" },
+                        { "8": "variable.hp - query.health == 8" },
+                        { "8a": "variable.hp - query.health == -8" },
+                        { "9": "variable.hp - query.health == 9" },
+                        { "9a": "variable.hp - query.health == -9" },
+                        { "10": "variable.hp - query.health == 10" },
+                        { "10a": "variable.hp - query.health == -10" },
+                        { "11": "variable.hp - query.health == 11" },
+                        { "11a": "variable.hp - query.health == -11" },
+                        { "12": "variable.hp - query.health == 12" },
+                        { "12a": "variable.hp - query.health == -12" },
+                        { "13": "variable.hp - query.health == 13" },
+                        { "13a": "variable.hp - query.health == -13" },
+                        { "14": "variable.hp - query.health == 14" },
+                        { "14a": "variable.hp - query.health == -14" },
+                        { "15": "variable.hp - query.health == 15" },
+                        { "15a": "variable.hp - query.health == -15" },
+                        { "16": "variable.hp - query.health == 16" },
+                        { "16a": "variable.hp - query.health == -16" },
+                        { "17": "variable.hp - query.health == 17" },
+                        { "17a": "variable.hp - query.health == -17" },
+                        { "18": "variable.hp - query.health == 18" },
+                        { "18a": "variable.hp - query.health == -18" },
+                        { "19": "variable.hp - query.health == 19" },
+                        { "19a": "variable.hp - query.health == -19" },
+                        { "20": "variable.hp - query.health == 20" },
+                        { "20a": "variable.hp - query.health == -20" },
+                        { "21": "variable.hp - query.health == 21" },
+                        { "21a": "variable.hp - query.health == -21" },
+                        { "22": "variable.hp - query.health == 22" },
+                        { "22a": "variable.hp - query.health == -22" },
+                        { "23": "variable.hp - query.health == 23" },
+                        { "23a": "variable.hp - query.health == -23" },
+                        { "24": "variable.hp - query.health == 24" },
+                        { "24a": "variable.hp - query.health == -24" },
+                        { "25": "variable.hp - query.health == 25" },
+                        { "25a": "variable.hp - query.health == -25" },
+                        { "26": "variable.hp - query.health == 26" },
+                        { "26a": "variable.hp - query.health == -26" },
+                        { "27": "variable.hp - query.health == 27" },
+                        { "27a": "variable.hp - query.health == -27" },
+                        { "28": "variable.hp - query.health == 28" },
+                        { "28a": "variable.hp - query.health == -28" },
+                        { "29": "variable.hp - query.health == 29" },
+                        { "29a": "variable.hp - query.health == -29" },
+                        { "30": "variable.hp - query.health == 30" },
+                        { "30a": "variable.hp - query.health == -30" },
+                        { "31": "variable.hp - query.health == 31" },
+                        { "31a": "variable.hp - query.health == -31" },
+                        { "32": "variable.hp - query.health == 32" },
+                        { "32a": "variable.hp - query.health == -32" },
+                        { "33": "variable.hp - query.health == 33" },
+                        { "33a": "variable.hp - query.health == -33" },
+                        { "34": "variable.hp - query.health == 34" },
+                        { "34a": "variable.hp - query.health == -34" },
+                        { "35": "variable.hp - query.health == 35" },
+                        { "35a": "variable.hp - query.health == -35" },
+                        { "36": "variable.hp - query.health == 36" },
+                        { "36a": "variable.hp - query.health == -36" },
+                        { "37": "variable.hp - query.health == 37" },
+                        { "37a": "variable.hp - query.health == -37" },
+                        { "38": "variable.hp - query.health == 38" },
+                        { "38a": "variable.hp - query.health == -38" },
+                        { "39": "variable.hp - query.health == 39" },
+                        { "39a": "variable.hp - query.health == -39" },
+                        { "40": "variable.hp - query.health == 40" },
+                        { "40a": "variable.hp - query.health == -40" },
+                        { "41": "variable.hp - query.health == 41" },
+                        { "41a": "variable.hp - query.health == -41" },
+                        { "42": "variable.hp - query.health == 42" },
+                        { "42a": "variable.hp - query.health == -42" },
+                        { "43": "variable.hp - query.health == 43" },
+                        { "43a": "variable.hp - query.health == -43" },
+                        { "44": "variable.hp - query.health == 44" },
+                        { "44a": "variable.hp - query.health == -44" },
+                        { "45": "variable.hp - query.health == 45" },
+                        { "45a": "variable.hp - query.health == -45" },
+                        { "46": "variable.hp - query.health == 46" },
+                        { "46a": "variable.hp - query.health == -46" },
+                        { "47": "variable.hp - query.health == 47" },
+                        { "47a": "variable.hp - query.health == -47" },
+                        { "48": "variable.hp - query.health == 48" },
+                        { "48a": "variable.hp - query.health == -48" },
+                        { "49": "variable.hp - query.health == 49" },
+                        { "49a": "variable.hp - query.health == -49" },
+                        { "50": "variable.hp - query.health == 50" },
+                        { "50a": "variable.hp - query.health == -50" },
+                        { "51": "variable.hp - query.health == 51" },
+                        { "51a": "variable.hp - query.health == -51" },
+                        { "52": "variable.hp - query.health == 52" },
+                        { "52a": "variable.hp - query.health == -52" },
+                        { "53": "variable.hp - query.health == 53" },
+                        { "53a": "variable.hp - query.health == -53" },
+                        { "54": "variable.hp - query.health == 54" },
+                        { "54a": "variable.hp - query.health == -54" },
+                        { "55": "variable.hp - query.health == 55" },
+                        { "55a": "variable.hp - query.health == -55" },
+                        { "56": "variable.hp - query.health == 56" },
+                        { "56a": "variable.hp - query.health == -56" },
+                        { "57": "variable.hp - query.health == 57" },
+                        { "57a": "variable.hp - query.health == -57" },
+                        { "58": "variable.hp - query.health == 58" },
+                        { "58a": "variable.hp - query.health == -58" },
+                        { "59": "variable.hp - query.health == 59" },
+                        { "59a": "variable.hp - query.health == -59" },
+                        { "60": "variable.hp - query.health == 60" },
+                        { "60a": "variable.hp - query.health == -60" },
+                        { "61": "variable.hp - query.health == 61" },
+                        { "61a": "variable.hp - query.health == -61" },
+                        { "62": "variable.hp - query.health == 62" },
+                        { "62a": "variable.hp - query.health == -62" },
+                        { "63": "variable.hp - query.health == 63" },
+                        { "63a": "variable.hp - query.health == -63" },
+                        { "64": "variable.hp - query.health == 64" },
+                        { "64a": "variable.hp - query.health == -64" },
+                        { "65": "variable.hp - query.health == 65" },
+                        { "65a": "variable.hp - query.health == -65" },
+                        { "66": "variable.hp - query.health == 66" },
+                        { "66a": "variable.hp - query.health == -66" },
+                        { "67": "variable.hp - query.health == 67" },
+                        { "67a": "variable.hp - query.health == -67" },
+                        { "68": "variable.hp - query.health == 68" },
+                        { "68a": "variable.hp - query.health == -68" },
+                        { "69": "variable.hp - query.health == 69" },
+                        { "69a": "variable.hp - query.health == -69" },
+                        { "70": "variable.hp - query.health == 70" },
+                        { "70a": "variable.hp - query.health == -70" },
+                        { "71": "variable.hp - query.health == 71" },
+                        { "71a": "variable.hp - query.health == -71" },
+                        { "72": "variable.hp - query.health == 72" },
+                        { "72a": "variable.hp - query.health == -72" },
+                        { "73": "variable.hp - query.health == 73" },
+                        { "73a": "variable.hp - query.health == -73" },
+                        { "74": "variable.hp - query.health == 74" },
+                        { "74a": "variable.hp - query.health == -74" },
+                        { "75": "variable.hp - query.health == 75" },
+                        { "75a": "variable.hp - query.health == -75" },
+                        { "76": "variable.hp - query.health == 76" },
+                        { "76a": "variable.hp - query.health == -76" },
+                        { "77": "variable.hp - query.health == 77" },
+                        { "77a": "variable.hp - query.health == -77" },
+                        { "78": "variable.hp - query.health == 78" },
+                        { "78a": "variable.hp - query.health == -78" },
+                        { "79": "variable.hp - query.health == 79" },
+                        { "79a": "variable.hp - query.health == -79" },
+                        { "80": "variable.hp - query.health == 80" },
+                        { "80a": "variable.hp - query.health == -80" },
+                        { "81": "variable.hp - query.health == 81" },
+                        { "81a": "variable.hp - query.health == -81" },
+                        { "82": "variable.hp - query.health == 82" },
+                        { "82a": "variable.hp - query.health == -82" },
+                        { "83": "variable.hp - query.health == 83" },
+                        { "83a": "variable.hp - query.health == -83" },
+                        { "84": "variable.hp - query.health == 84" },
+                        { "84a": "variable.hp - query.health == -84" },
+                        { "85": "variable.hp - query.health == 85" },
+                        { "85a": "variable.hp - query.health == -85" },
+                        { "86": "variable.hp - query.health == 86" },
+                        { "86a": "variable.hp - query.health == -86" },
+                        { "87": "variable.hp - query.health == 87" },
+                        { "87a": "variable.hp - query.health == -87" },
+                        { "88": "variable.hp - query.health == 88" },
+                        { "88a": "variable.hp - query.health == -88" },
+                        { "89": "variable.hp - query.health == 89" },
+                        { "89a": "variable.hp - query.health == -89" },
+                        { "90": "variable.hp - query.health == 90" },
+                        { "90a": "variable.hp - query.health == -90" },
+                        { "91": "variable.hp - query.health == 91" },
+                        { "91a": "variable.hp - query.health == -91" },
+                        { "92": "variable.hp - query.health == 92" },
+                        { "92a": "variable.hp - query.health == -92" },
+                        { "93": "variable.hp - query.health == 93" },
+                        { "93a": "variable.hp - query.health == -93" },
+                        { "94": "variable.hp - query.health == 94" },
+                        { "94a": "variable.hp - query.health == -94" },
+                        { "95": "variable.hp - query.health == 95" },
+                        { "95a": "variable.hp - query.health == -95" },
+                        { "96": "variable.hp - query.health == 96" },
+                        { "96a": "variable.hp - query.health == -96" },
+                        { "97": "variable.hp - query.health == 97" },
+                        { "97a": "variable.hp - query.health == -97" },
+                        { "98": "variable.hp - query.health == 98" },
+                        { "98a": "variable.hp - query.health == -98" },
+                        { "99": "variable.hp - query.health == 99" },
+                        { "99a": "variable.hp - query.health == -99" },
+                        { "100": "variable.hp - query.health == 100" },
+                        { "100a": "variable.hp - query.health == -100" },
+                        { "100plus": "variable.hp - query.health > 100" },
+                        { "100plusa": "variable.hp - query.health < -100" }
+                    ]
+                },
+                "1": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 1;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "2": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 2;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "3": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 3;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "4": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 4;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "5": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 5;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "6": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 6;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "7": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 7;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "8": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 8;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "9": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 9;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "10": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 10;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "11": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 11;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "12": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 12;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "13": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 13;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "14": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 14;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "15": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 15;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "16": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 16;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "17": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 17;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "18": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 18;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "19": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 19;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "20": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 20;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "21": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 21;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "22": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 22;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "23": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 23;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "24": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 24;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "25": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 25;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "26": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 26;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "27": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 27;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "28": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 28;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "29": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 29;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "30": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 30;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "31": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 31;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "32": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 32;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "33": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 33;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "34": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 34;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "35": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 35;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "36": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 36;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "37": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 37;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "38": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 38;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "39": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 39;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "40": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 40;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "41": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 41;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "42": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 42;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "43": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 43;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "44": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 44;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "45": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 45;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "46": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 46;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "47": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 47;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "48": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 48;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "49": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 49;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "50": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 50;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "51": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 51;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "52": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 52;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "53": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 53;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "54": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 54;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "55": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 55;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "56": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 56;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "57": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 57;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "58": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 58;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "59": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 59;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "60": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 60;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "61": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 61;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "62": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 62;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "63": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 63;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "64": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 64;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "65": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 65;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "66": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 66;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "67": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 67;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "68": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 68;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "69": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 69;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "70": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 70;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "71": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 71;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "72": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 72;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "73": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 73;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "74": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 74;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "75": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 75;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "76": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 76;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "77": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 77;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "78": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 78;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "79": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 79;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "80": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 80;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "81": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 81;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "82": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 82;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "83": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 83;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "84": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 84;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "85": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 85;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "86": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 86;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "87": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 87;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "88": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 88;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "89": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 89;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "90": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 90;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "91": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 91;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "92": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 92;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "93": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 93;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "94": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 94;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "95": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 95;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "96": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 96;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "97": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 97;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "98": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 98;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "99": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 99;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "100": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 100;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "100plus": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = 100;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "1a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -1;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "2a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -2;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "3a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -3;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "4a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -4;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "5a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -5;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "6a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -6;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "7a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -7;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "8a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -8;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "9a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -9;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "10a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -10;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "11a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -11;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "12a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -12;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "13a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -13;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "14a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -14;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "15a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -15;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "16a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -16;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "17a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -17;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "18a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -18;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "19a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -19;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "20a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -20;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "21a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -21;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "22a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -22;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "23a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -23;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "24a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -24;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "25a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -25;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "26a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -26;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "27a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -27;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "28a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -28;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "29a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -29;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "30a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -30;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "31a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -31;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "32a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -32;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "33a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -33;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "34a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -34;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "35a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -35;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "36a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -36;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "37a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -37;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "38a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -38;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "39a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -39;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "40a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -40;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "41a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -41;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "42a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -42;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "43a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -43;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "44a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -44;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "45a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -45;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "46a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -46;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "47a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -47;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "48a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -48;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "49a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -49;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "50a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -50;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "51a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -51;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "52a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -52;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "53a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -53;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "54a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -54;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "55a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -55;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "56a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -56;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "57a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -57;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "58a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -58;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "59a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -59;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "60a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -60;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "61a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -61;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "62a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -62;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "63a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -63;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "64a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -64;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "65a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -65;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "66a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -66;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "67a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -67;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "68a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -68;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "69a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -69;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "70a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -70;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "71a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -71;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "72a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -72;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "73a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -73;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "74a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -74;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "75a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -75;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "76a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -76;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "77a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -77;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "78a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -78;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "79a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -79;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "80a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -80;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "81a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -81;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "82a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -82;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "83a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -83;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "84a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -84;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "85a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -85;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "86a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -86;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "87a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -87;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "88a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -88;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "89a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -89;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "90a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -90;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "91a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -91;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "92a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -92;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "93a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -93;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "94a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -94;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "95a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -95;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "96a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -96;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "97a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -97;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "98a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -98;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "99a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -99;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "100a": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -100;" }],
+                    "transitions": [{"default": "1.0"}]
+                },
+                "100plusa": {
+                    "particle_effects": [{ "effect": "dmg", "locator": "dmg", "pre_effect_script": "variable.dmg = -100;" }],
+                    "transitions": [{"default": "1.0"}]
+                }
+            }
+        }
+    }
+}

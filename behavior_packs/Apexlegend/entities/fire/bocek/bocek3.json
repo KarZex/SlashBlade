@@ -1,0 +1,68 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "fire:bocek3",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+
+  "component_groups": {
+   "minecraft:exploding": {
+        "minecraft:transformation": {
+          "into": "zex:itemar",
+          "delay": 0.0
+        }
+   }
+  },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "bullet","arbullet","dmg7"]
+      },
+      "minecraft:collision_box": {
+        "width": 0.001,
+        "height": 0.001
+      },
+      "minecraft:projectile": {
+				"onHit": {
+					"impact_damage": {
+						"damage": 7,
+						"knockback": true
+					},
+					"stick_in_ground": {},
+					"definition_event": {
+						"affect_projectile": true,
+						"event_trigger": {
+							"event": "minecraft:explode",
+							"target": "self"
+						}
+					},
+					"remove_on_hit": {}
+				},
+				"power": 3,
+				"gravity": 0.1,
+				"inertia": 1.5,
+				"uncertaintyBase": 0,
+				"uncertaintyMultiplier": 0,
+				"offset": [
+					0,
+					0,
+					0
+				],
+				"catchFire": false
+			},
+			"minecraft:physics": {}
+		},
+  "events": {
+   "minecraft:explode": {
+        "run_command": {
+          "command": [
+			"loot spawn ~~1~ loot empty"
+          ]
+        }
+   }
+  }
+	}
+}

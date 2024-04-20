@@ -1,0 +1,2 @@
+titleraw @s[scores={p2020=1..}] actionbar {"rawtext":[{"text":"§6Light§r "},{"score":{"name":"@s","objective":"p2020"}},{"text":"/21"}]}
+titleraw @s[scores={p2020=0}] actionbar {"rawtext":[{"text":"§6Light§r §4"},{"score":{"name":"@s","objective":"p2020"}},{"text":"/21§r"}]}

@@ -1,0 +1,19 @@
+{
+  "format_version": 1,
+  "header": {
+    "description": "APEXを再現したアドオンです。
+Created by Kar Zex Channel",
+    "name": "§4§lApex legends Addon V3",
+    "uuid": "2798c150-b0a0-11ee-8e00-71442159dcd7",
+    "version": [0, 0, 1]
+  },
+  "modules": [
+    {
+      "description": "APEXを再現したアドオンです。
+Created by Kar Zex Channel",
+      "type": "resources",
+      "uuid": "27993680-b0a0-11ee-e648-3d3f8ce998f7",
+      "version": [0, 0, 1]
+    }
+  ]
+}

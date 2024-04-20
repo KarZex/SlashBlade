@@ -1,0 +1,484 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.drop": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking0": "(1.0)"
+            }
+          ]
+        },
+        "ticking0": {
+          "on_entry": [
+		    "/summon addon:care ~~20~"
+          ]
+        }
+      }
+    },
+    "controller.animation.rev": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking0": "(1.0)"
+            }
+          ]
+        },
+        "ticking0": {
+          "transitions": [
+            {
+              "ticking1": "(1.0)"
+            }
+          ]
+        },
+        "ticking1": {
+          "transitions": [
+            {
+              "default2": "(1.0)"
+            }
+          ],
+          "on_entry": [
+			"/particle zex:rev ~~~"
+          ]
+        },
+        "ticking2": {
+          "transitions": [
+            {
+              "default1": "(1.0)"
+            }
+          ],
+          "on_entry": [
+			"/particle zex:rev ~~~"
+          ]
+        }
+      }
+    },
+    "controller.animation.arcstar": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/tp @s ~~~",
+			"/particle zex:arcstar_particle ~~~"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/tp @s ~~~",
+			"/particle zex:arcstar_particle ~~~"
+          ]
+        }
+      }
+    },
+    "controller.animation.mirage": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/tp @s[scores={mirage=..100}] ^^^0.2 true",
+			"/scoreboard players set @s[tag=!mirage] mirage 0",
+			"/scoreboard players set @s[tag=!mirage] seer 0",
+			"/scoreboard players set @s[tag=!mirage] blff 0",
+			"/tag @s[tag=!mirage] add mirage",
+			"/scoreboard players add @s[scores={mirage=..100},tag=mirage] mirage 1",
+			"/execute as @s[tag=glow] run function glow"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/tp @s[scores={mirage=..100}] ^^^0.2 true",
+			"/scoreboard players set @s[tag=!mirage] mirage 0",
+			"/scoreboard players set @s[tag=!mirage] seer 0",
+			"/scoreboard players set @s[tag=!mirage] blff 0",
+			"/tag @s[tag=!mirage] add mirage",
+			"/scoreboard players add @s[scores={mirage=..100},tag=mirage] mirage 1",
+			"/execute as @s[tag=glow] run function glow"
+          ]
+        }
+      }
+    },
+    "controller.animation.arc": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/particle zex:arcstar_particle ~~~"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/particle zex:arcstar_particle ~~~"
+          ]
+        }
+      }
+    },
+    "controller.animation.gre": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/particle zex:team1_particle ~~~"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/particle zex:team1_particle ~~~"
+          ]
+        }
+      }
+    },
+    "controller.animation.rev2": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/execute as @a[r=1,tag=!revr] run function rev",
+			"/particle zex:rev ~~~"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/execute as @a[r=1,tag=!revr] run function rev",
+			"/particle zex:rev ~~~"
+          ]
+        }
+      }
+    },
+    "controller.animation.therfire": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/effect @a[r=1] wither 5 2 true",
+		    "/damage @a[r=1] 2 fire",
+			"/particle minecraft:mobflame_single ~~~"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/effect @a[r=1] wither 5 2 true",
+		    "/damage @a[r=1] 2 fire",
+			"/particle minecraft:mobflame_single ~~~"
+          ]
+        }
+      }
+    },
+    "controller.animation.gas": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/execute as @a[r=4] run effect @s[scores={caup=0}] fatal_poison 3 2",
+			"/execute as @a[r=4] run scoreboard players set @s[scores={caup=0}] caup 20",
+		    "/execute as @a[r=4] run tag @e[c=1,type=addon:gas] add ed",
+			"/execute as @s[tag=ed] run particle zex:gas_explosion_emitter ~~~",
+		    "/execute as @a[r=4] run event entity @e[c=1,type=addon:gas] A"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/execute as @a[r=4] run effect @s[scores={caup=0}] fatal_poison 3 2",
+			"/execute as @a[r=4] run scoreboard players set @s[scores={caup=0}] caup 20",
+		    "/execute as @a[r=4] run tag @e[c=1,type=addon:gas] add ed",
+			"/execute as @s[tag=ed] run particle zex:gas_explosion_emitter ~~~",
+		    "/execute as @a[r=4] run event entity @e[c=1,type=addon:gas] A"
+          ]
+        }
+      }
+    },
+    "controller.animation.life": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/effect @a[r=3,scores={lifer=0}] regeneration 1 3",
+			"/scoreboard players set @a[r=3,scores={lifer=0}] lifer 20"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/effect @a[r=3,scores={lifer=0}] regeneration 1 3",
+			"/scoreboard players set @a[r=3,scores={lifer=0}] lifer 20"
+          ]
+        }
+      }
+    },
+    "controller.animation.hor": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/execute as @s positioned ~-0.5~~-0.5 run effect @e[dx=2,dy=16,dz=2,type=!addon:hor] levitation 1 8",
+            "/particle zex:hor_particle ~~~"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/execute as @s positioned ~-0.5~~-0.5 run effect @e[dx=2,dy=16,dz=2,type=!addon:hor] levitation 1 8",
+            "/particle zex:hor_particle ~~~"
+          ]
+        }
+      }
+    },
+    "controller.animation.mirage": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/effect @s resistance 99999 255 true",
+		    "/effect @s regeneration 99999 255 true",
+            "/execute as @e[type=player,r=32] run tag @e[family=spawns,c=1] add spawns"
+          ]
+        }
+      }
+    },
+    "controller.animation.smoke": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/execute as @s run particle minecraft:huge_explosion_emitter ~~~",
+			"/execute as @s run particle minecraft:huge_explosion_emitter ~3~~",
+			"/execute as @s run particle minecraft:huge_explosion_emitter ~~~3",
+			"/execute as @s run particle minecraft:huge_explosion_emitter ~-3~~",
+			"/execute as @s run particle minecraft:huge_explosion_emitter ~~~-3",
+			"/execute as @s run particle minecraft:huge_explosion_emitter ~3~~3",
+			"/execute as @s run particle minecraft:huge_explosion_emitter ~3~~-3",
+			"/execute as @s run particle minecraft:huge_explosion_emitter ~3~~3",
+			"/execute as @s run particle minecraft:huge_explosion_emitter ~-3~~3"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/execute as @s run particle minecraft:huge_explosion_emitter ~~~",
+			"/execute as @s run particle minecraft:huge_explosion_emitter ~3~~",
+			"/execute as @s run particle minecraft:huge_explosion_emitter ~~~3",
+			"/execute as @s run particle minecraft:huge_explosion_emitter ~-3~~",
+			"/execute as @s run particle minecraft:huge_explosion_emitter ~~~-3",
+			"/execute as @s run particle minecraft:huge_explosion_emitter ~3~~3",
+			"/execute as @s run particle minecraft:huge_explosion_emitter ~3~~-3",
+			"/execute as @s run particle minecraft:huge_explosion_emitter ~3~~3",
+			"/execute as @s run particle minecraft:huge_explosion_emitter ~-3~~3"
+          ]
+        }
+      }
+    },
+    "controller.animation.charge": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking0": "(1.0)"
+            }
+          ]
+        },
+        "ticking0": {
+          "transitions": [
+            {
+              "ticking2": "(1.0)"
+            }
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "ticking2": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/execute as @s run particle zex:charge_particle ~~~"
+          ]
+        },
+        "ticking2": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/execute as @s run particle zex:charge_particle ~~~"
+          ]
+        }
+      }
+    },
+    "controller.animation.doom": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/tag @e[tag=!doomin,tag=!doomout,family=bullet,r=6] add doomin",
+		    "/tag @e[tag=!doomin,tag=!doomout,family=bullet,rm=6,] add doomout",
+		    "/kill @e[family=bullet,tag=!doomin,r=6]",
+		    "/kill @e[family=bullet,tag=doomin,rm=6]"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/tag @e[tag=!doomin,tag=!doomout,family=bullet,r=6] add doomin",
+		    "/tag @e[tag=!doomin,tag=!doomout,family=bullet,rm=6,r=14] add doomout",
+		    "/kill @e[family=bullet,tag=!doomin,r=6]",
+		    "/kill @e[family=bullet,tag=doomin,rm=6]"
+          ]
+        }
+      }
+    },
+    "controller.animation.nacl": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/summon fire:naclb"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/summon fire:naclb"
+          ]
+        }
+      }
+    },
+    "controller.animation.dronespawn": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/summon addon:gb6_drone ~~7~",
+		    "/event entity @s A"
+          ]
+        }
+      }
+    }
+  }
+}

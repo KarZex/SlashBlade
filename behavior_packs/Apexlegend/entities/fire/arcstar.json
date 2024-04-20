@@ -1,0 +1,156 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "fire:arcstar",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:wither_skull",
+      "scripts": {
+	    "animate": [ "walk" ]
+	  },
+	  "animations": {
+	    "walk": "controller.animation.arc"
+	  }
+    },
+    "component_groups": {
+		"minecraft:fired": {
+		  "minecraft:type_family": {
+				"family": [ "bullet","arbullet","dmgarc"]
+		  },
+		  "minecraft:projectile": {
+			"on_hit": {
+				"impact_damage": {
+				"damage": 5,
+				"knockback": false,
+				"semi_random_diff_damage": false,
+				"destroy_on_hit": false
+				},
+				"stick_in_ground": {},
+				"definition_event": {
+					"affect_projectile": true,
+					"event_trigger": {
+						"target": "self",
+						"event": "minecraft:explode"
+					}
+				}
+			},
+			"power": 1.1,
+			"gravity": 0.025,
+			"uncertainty_base": 0,
+			"uncertainty_multiplier": 0,
+			"anchor": 1,
+			"should_bounce": true,
+			"offset": [ 0, -0.1, 0 ]
+		  }
+		},
+		"minecraft:exploding": {
+			"minecraft:timer": {
+				"time": 2.75,
+				"time_down_event": { "event": "minecraft:on_exploding" }
+			},
+			"minecraft:explode": {
+				"fuseLength": 2.8,
+				"fuseLit": true,
+				"power": 2,
+				"breaks_blocks": false
+			}
+		}
+    },
+
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+	  "minecraft:type_family": {
+			"family": ["inanimate"]
+	  },
+      "minecraft:projectile": {
+        "on_hit": {
+          "stick_in_ground": {},
+		  "definition_event": {
+			"affect_projectile": true,
+				"event_trigger": {
+					"target": "self",
+					"event": "minecraft:fired"
+				}
+			}
+        },
+		"power": 1.1,
+		"gravity": 0.025,
+        "uncertainty_base": 0,
+        "uncertainty_multiplier": 0,
+        "anchor": 1,
+        "should_bounce": true,
+        "offset": [ 0, -0.1, 0 ]
+      },
+      "minecraft:physics": {
+      },
+			"minecraft:scale": {
+				"value": 1.2
+			},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 7,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+
+    "events": {
+			"minecraft:fired": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"minecraft:fired"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:explode": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"minecraft:exploding"
+							]
+						}
+					},
+					{
+						"run_command": {
+							"command": [
+								"playsound time.arc @a ~~~"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:on_exploding": {
+				"run_command": {
+					"command": [
+						"effect @a[r=3] slowness 3 1"
+					]
+				}
+			}
+    }
+
+  }
+}

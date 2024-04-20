@@ -1,0 +1,53 @@
+item.gun:flat=VK-47 Flatline
+item.gun:hem=Hemlok Burst AR
+item.gun:pro=Prowler Burst PDW
+item.gun:car=C.A.R. SMG
+item.gun:r3030=30-30 Repeater
+item.gun:ram=Rampage LMG
+item.gun:wing=Wingman
+
+item.gun:r301=R-301 Carbine
+item.gun:r99=R-99 SMG
+item.gun:alt=Alternator SMG
+item.gun:re45=RE-45 Auto
+item.gun:p2020=P2020
+
+item.gun:havoc=HAVOC Rifle
+item.gun:triple=Triple Take
+item.gun:dev=Devotion LMG
+item.gun:lstar=L-STAR EMG
+
+item.gun:g7=§cG7 Scout
+item.gun:spit=§cM600 Spitfire
+
+item.gun:pk=Peacekeeper
+item.gun:mas=§cMastiff Shotgun
+item.gun:moz=Mozambique Shotgun
+item.gun:eva=EVA-8 Auto
+
+item.gun:bocek=Bocek Compound Bow
+
+item.zex:r=Materials
+item.zex:ea=Energy Ammo
+item.zex:sa=Shotgun Shells
+item.zex:sr=Sniper Ammo
+item.zex:la=Light Rounds
+item.zex:ha=Heavy Rounds
+item.zex:ar=Arrows
+
+item.item:armor1.name=Body Shield Lv1
+item.item:armor2.name=§bBody Shield Lv2
+item.item:armor3.name=§dBody Shield Lv3
+item.item:armor5.name=§cBody Shield Lv5
+
+item.zex:abi=Tactical Ability
+item.zex:bangalore.name=Bangalore
+item.zex:fuse.name=Fuse
+item.zex:gibraltar.name=Gibraltar
+item.zex:octane.name=Octane
+item.zex:mirage.name=Mirage
+item.zex:wraith.name=Wraith
+
+item.zex:bt.name=§bShield Battery
+item.zex:sell.name=Shield Cell
+item.zex:fx.name=§dPhoenix Kit

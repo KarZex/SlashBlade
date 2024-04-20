@@ -1,0 +1,2 @@
+titleraw @s[scores={kv=1..}] actionbar {"rawtext":[{"text":"§cKraber§r "},{"score":{"name":"@s","objective":"kv"}},{"text":"/4 "},{"score":{"name":"@s","objective":"kva"}}]}
+titleraw @s[scores={kv=0}] actionbar {"rawtext":[{"text":"§cKraber§r §4"},{"score":{"name":"@s","objective":"kv"}},{"text":"/4§r "},{"score":{"name":"@s","objective":"kva"}}]}

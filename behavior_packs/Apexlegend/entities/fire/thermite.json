@@ -1,0 +1,100 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fire:thermite",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:arrow"
+		},
+		"component_groups": {
+			"minecraft:exploding": {
+			"minecraft:explode": {
+				"fuseLength": 0,
+				"fuseLit": true,
+				"power": 0,
+				"breaks_blocks": false
+			}
+		  }
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [ "bullet","arbullet"]
+			},
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.25
+			},
+			"minecraft:scale": {
+				"value": 0.5
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:projectile": {
+				"onHit": {
+					"stick_in_ground": {},
+					"definition_event": {
+						"affect_projectile": true,
+						"event_trigger": {
+							"target": "self",
+							"event": "minecraft:explode"
+						}
+					}
+				},
+				"power": 1.1,
+				"gravity": 0.025,
+				"anchor": 1,
+				"offset": [
+					0,
+					-0.1,
+					0
+				]
+			}
+		},
+		"events": {
+			"minecraft:explode": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"minecraft:exploding"
+							]
+						}
+					},
+					{
+						"run_command": {
+							"command": [
+								"summon fire:therfire ^-2^^",
+								"summon fire:therfire ^-1.5^^",
+								"summon fire:therfire ^-1^^",
+								"summon fire:therfire ^-0.5^^",
+								"summon fire:therfire ~~~",
+								"summon fire:therfire ^0.5^^",
+								"summon fire:therfire ^1^^",
+								"summon fire:therfire ^1.5^^",
+								"summon fire:therfire ^2^^",
+								"playsound time.ther @a ~~~",
+								"effect @e[type=fire:therfire] invisibility 99999 1 true"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:on_exploding": {
+				"run_command": {
+					"command": [
+						"effect @a[r=5] slowness 3 1"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,72 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fire:mad",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"component_groups": {
+			"minecraft:exploding": {
+			"minecraft:explode": {
+				"fuseLength": 9,
+				"fuseLit": true,
+				"power": 0,
+				"breaks_blocks": false
+			}
+		  }
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.25
+			},
+			"minecraft:scale": {
+				"value": 5
+			},
+			"minecraft:physics": {},
+			"minecraft:projectile": {
+				"onHit": {
+					"definition_event": {
+						"affectProjectile": true,
+						"eventTrigger": {
+							"event": "minecraft:explode",
+							"target": "self"
+						}
+					},
+					"stick_in_ground": {}
+				},
+				"power": 3,
+				"anchor": 1,
+				"gravity": 0.01,
+				"offset": [
+					0,
+					-0.1,
+					0
+				]
+			}
+		},
+		"events": {
+			"minecraft:explode": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"minecraft:exploding"
+							]
+						}
+					},
+					{
+						"run_command": {
+							"command": [
+								"summon addon:mad ^^^1"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

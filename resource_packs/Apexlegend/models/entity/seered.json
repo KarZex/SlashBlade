@@ -1,0 +1,35 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.seered",
+				"texture_width": 12,
+				"texture_height": 4,
+				"visible_bounds_width": 13,
+				"visible_bounds_height": 7.5,
+				"visible_bounds_offset": [0, 3.25, 0]
+			},
+			"bones": [
+				{
+					"name": "seered",
+					"pivot": [0, 37, 0],
+					"cubes": [
+						{
+							"origin": [-6, 36, 0],
+							"size": [12, 4, 0],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [12, 4]},
+								"east": {"uv": [0, 0], "uv_size": [0, 4]},
+								"south": {"uv": [0, 0], "uv_size": [0, 0]},
+								"west": {"uv": [0, 0], "uv_size": [0, 4]},
+								"up": {"uv": [10.28571, 0], "uv_size": [-10.28571, 0]},
+								"down": {"uv": [10.28571, 0], "uv_size": [-10.28571, 0]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,4102 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {    
+    "description": {
+      "identifier": "minecraft:player",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false,
+      "scripts": {
+        "pre_animation": [
+          "variable.cooltime = 0.0;"
+		  ],
+        "animate": [
+			"guns",
+			"hold",
+			"reload",
+			"ads",
+			"sheild",
+			"tick",
+			"jump",
+			"att"
+		 ]
+      },
+      "animations": {
+        "guns": "controller.animation.guns",
+        "hold": "controller.animation.hold",
+        "reload": "controller.animation.reload",
+		"sheild":"controller.animation.sheild",
+        "ads": "controller.animation.ads",
+		"tick":"controller.animation.tick",
+		"att":"controller.animation.att",
+		"jump":"controller.animation.jump"
+      }
+    },
+    "component_groups": {
+
+      "noapex": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "inapex": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "team1": {
+      "minecraft:type_family": {
+        "family": [ "player","team1"]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+		{
+			"cause": "all",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "team1"
+                  }
+                ]
+            }
+          }
+		},
+		{
+          "cause": "fall",
+          "deals_damage": false
+        },
+		{
+          "on_damage": {
+            "filters": {
+                "test": "has_damage",
+                "value": "attack"
+            },
+            "event": "damaged"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "revbullet"
+                  }
+                ]
+            },
+            "event": "zex:revbullet"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg1"
+                  }
+                ]
+            },
+            "event": "zex:dmg1"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg2"
+                  }
+                ]
+            },
+            "event": "zex:dmg2"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg3"
+                  }
+                ]
+            },
+            "event": "zex:dmg3"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg4"
+                  }
+                ]
+            },
+            "event": "zex:dmg4"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg5"
+                  }
+                ]
+            },
+            "event": "zex:dmg5"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg6"
+                  }
+                ]
+            },
+            "event": "zex:dmg6"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg7"
+                  }
+                ]
+            },
+            "event": "zex:dmg7"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg9"
+                  }
+                ]
+            },
+            "event": "zex:dmg9"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg10"
+                  }
+                ]
+            },
+            "event": "zex:dmg10"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmgarc"
+                  }
+                ]
+            },
+            "event": "zex:dmgarc"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmgre45"
+                  }
+                ]
+            },
+            "event": "zex:dmgre45"
+          }
+		}
+       ]
+      }
+      },
+      "team2": {
+      "minecraft:type_family": {
+        "family": [ "player","team2"]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+		{
+			"cause": "all",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "team2"
+                  }
+                ]
+            }
+          }
+		},
+		{
+          "cause": "fall",
+          "deals_damage": false
+        },
+		{
+          "on_damage": {
+            "filters": {
+                "test": "has_damage",
+                "value": "attack"
+            },
+            "event": "damaged"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "revbullet"
+                  }
+                ]
+            },
+            "event": "zex:revbullet"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg1"
+                  }
+                ]
+            },
+            "event": "zex:dmg1"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg2"
+                  }
+                ]
+            },
+            "event": "zex:dmg2"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg3"
+                  }
+                ]
+            },
+            "event": "zex:dmg3"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg4"
+                  }
+                ]
+            },
+            "event": "zex:dmg4"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg5"
+                  }
+                ]
+            },
+            "event": "zex:dmg5"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg6"
+                  }
+                ]
+            },
+            "event": "zex:dmg6"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg7"
+                  }
+                ]
+            },
+            "event": "zex:dmg7"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg9"
+                  }
+                ]
+            },
+            "event": "zex:dmg9"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg10"
+                  }
+                ]
+            },
+            "event": "zex:dmg10"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmgarc"
+                  }
+                ]
+            },
+            "event": "zex:dmgarc"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmgre45"
+                  }
+                ]
+            },
+            "event": "zex:dmgre45"
+          }
+		}
+       ]
+      }
+      },
+      "team3": {
+      "minecraft:type_family": {
+        "family": [ "player","team3"]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+		{
+			"cause": "all",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "team3"
+                  }
+                ]
+            }
+          }
+		},
+		{
+          "cause": "fall",
+          "deals_damage": false
+        },
+		{
+          "on_damage": {
+            "filters": {
+                "test": "has_damage",
+                "value": "attack"
+            },
+            "event": "damaged"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "revbullet"
+                  }
+                ]
+            },
+            "event": "zex:revbullet"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg1"
+                  }
+                ]
+            },
+            "event": "zex:dmg1"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg2"
+                  }
+                ]
+            },
+            "event": "zex:dmg2"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg3"
+                  }
+                ]
+            },
+            "event": "zex:dmg3"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg4"
+                  }
+                ]
+            },
+            "event": "zex:dmg4"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg5"
+                  }
+                ]
+            },
+            "event": "zex:dmg5"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg6"
+                  }
+                ]
+            },
+            "event": "zex:dmg6"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg7"
+                  }
+                ]
+            },
+            "event": "zex:dmg7"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg9"
+                  }
+                ]
+            },
+            "event": "zex:dmg9"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg10"
+                  }
+                ]
+            },
+            "event": "zex:dmg10"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmgarc"
+                  }
+                ]
+            },
+            "event": "zex:dmgarc"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmgre45"
+                  }
+                ]
+            },
+            "event": "zex:dmgre45"
+          }
+		}
+       ]
+      }
+      },
+      "damage": {
+      "minecraft:type_family": {
+        "family": [ "player","mod"]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+		{
+          "cause": "fall",
+          "deals_damage": false
+        },
+		{
+          "on_damage": {
+            "filters": {
+                "test": "has_damage",
+                "value": "attack"
+            },
+            "event": "damaged"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "revbullet"
+                  }
+                ]
+            },
+            "event": "zex:revbullet"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg1"
+                  }
+                ]
+            },
+            "event": "zex:dmg1"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg2"
+                  }
+                ]
+            },
+            "event": "zex:dmg2"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg3"
+                  }
+                ]
+            },
+            "event": "zex:dmg3"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg4"
+                  }
+                ]
+            },
+            "event": "zex:dmg4"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg5"
+                  }
+                ]
+            },
+            "event": "zex:dmg5"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg6"
+                  }
+                ]
+            },
+            "event": "zex:dmg6"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg7"
+                  }
+                ]
+            },
+            "event": "zex:dmg7"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg9"
+                  }
+                ]
+            },
+            "event": "zex:dmg9"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg10"
+                  }
+                ]
+            },
+            "event": "zex:dmg10"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmgarc"
+                  }
+                ]
+            },
+            "event": "zex:dmgarc"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmgre45"
+                  }
+                ]
+            },
+            "event": "zex:dmgre45"
+          }
+		}
+       ]
+      }
+      },
+      "team4": {
+      "minecraft:type_family": {
+        "family": [ "player","team4"]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+		{
+			"cause": "all",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "team4"
+                  }
+                ]
+            }
+          }
+		},
+		{
+          "cause": "fall",
+          "deals_damage": false
+        },
+		{
+          "on_damage": {
+            "filters": {
+                "test": "has_damage",
+                "value": "attack"
+            },
+            "event": "damaged"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "revbullet"
+                  }
+                ]
+            },
+            "event": "zex:revbullet"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg1"
+                  }
+                ]
+            },
+            "event": "zex:dmg1"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg2"
+                  }
+                ]
+            },
+            "event": "zex:dmg2"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg3"
+                  }
+                ]
+            },
+            "event": "zex:dmg3"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg4"
+                  }
+                ]
+            },
+            "event": "zex:dmg4"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg5"
+                  }
+                ]
+            },
+            "event": "zex:dmg5"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg6"
+                  }
+                ]
+            },
+            "event": "zex:dmg6"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg7"
+                  }
+                ]
+            },
+            "event": "zex:dmg7"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg9"
+                  }
+                ]
+            },
+            "event": "zex:dmg9"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg10"
+                  }
+                ]
+            },
+            "event": "zex:dmg10"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmgarc"
+                  }
+                ]
+            },
+            "event": "zex:dmgarc"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmgre45"
+                  }
+                ]
+            },
+            "event": "zex:dmgre45"
+          }
+		}
+       ]
+      }
+      },
+      "portal": {
+      "minecraft:damage_sensor": {
+        "triggers": [
+		{
+          "cause": "all",
+          "deals_damage": false
+        }
+       ]
+      },
+	   "minecraft:timer": {
+		  "time": 5,
+		  "time_down_event": { "event": "zex:nportal" }
+	   }
+      },
+      "wraithab": {
+      "minecraft:damage_sensor": {
+        "triggers": [
+		{
+          "cause": "all",
+          "deals_damage": false
+        }
+       ]
+      },
+	   "minecraft:timer": {
+		  "time": 5,
+		  "time_down_event": { "event": "zex:nwraithab" }
+	   }
+      },
+      "zex:armor0": {
+      "minecraft:health": {
+        "max": 20
+      }
+      },
+      "zex:armor1": {
+      "minecraft:health": {
+        "max": 30
+      }
+      },
+      "zex:armor2": {
+      "minecraft:health": {
+        "max": 35
+      }
+      },
+      "zex:armor3": {
+      "minecraft:health": {
+        "max": 40
+      }
+      },
+      "zex:armor5": {
+      "minecraft:health": {
+        "max": 45
+      }
+      },
+      "fire:hor": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:hor",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:hor",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ]
+      },
+      "fire:valk": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:valk",
+            "num_to_spawn": 6,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:valk",
+            "num_to_spawn": 6,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ]
+      },
+      "zex:cau": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:cau",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:cau",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ]
+      },
+      "zex:rev": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:rev",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:rev",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ]
+      },
+      "zex:gib": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:gib",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:gib",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ]
+      },
+      "fire:bocek1": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:bocek1",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:bocek1",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ]
+      },
+      "fire:bocek2": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:bocek2",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:bocek2",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ]
+      },
+      "fire:bocek3": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:bocek3",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:bocek3",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ]
+      },
+      "fire:bocek4": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:bocek4",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:bocek4",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ]
+      },
+      "fire:bocek5": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:bocek5",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:bocek5",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ]
+      },
+      "zex:fuse": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:fuse",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:fuse",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ]
+      },
+      "zex:mad": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:mad",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:mad",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ]
+      },
+      "zex:bangaloreab": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:ban",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:ban",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ]
+      },
+      "fire:mas": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:mas",
+            "num_to_spawn": 8,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:smas",
+            "num_to_spawn": 8,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:pk": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:pk",
+            "num_to_spawn": 10,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:spk",
+            "num_to_spawn": 10,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:seer": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:seer",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:seer",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:blf": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:blf",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:blf",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:moz": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:moz",
+            "num_to_spawn": 3,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:smoz",
+            "num_to_spawn": 3,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:eva": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:eva",
+            "num_to_spawn": 12,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:seva",
+            "num_to_spawn": 12,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:r301": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:r301",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:sr301",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:r99": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:r99",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:sr99",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:re45": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:re45",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:sre45",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:p2020": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:p2020",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:sp2020",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:g7": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:g7",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:sg7",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:tr301": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:tr301",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:str301",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:tflat": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:tflat",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:stflat",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:alt": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:alt",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:salt",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:r3030": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:r3030",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:sr3030",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:car": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:car",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:scar",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:hem": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:hem",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:shem",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:pro": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:pro",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:spro",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:ram": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:ram",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:sram",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:flat": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:flat",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:sflat",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:wing": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:wing",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:swing",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:spit": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:spit",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:sspit",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:dev": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:dev",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:sdev",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:charge": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:charge",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:charge",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:charges": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:charges",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:charges",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:lstar": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:lstar",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:slstar",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:havoc": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:havoc",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:shavoc",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:long": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:long",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:slong",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:volt": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:volt",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:svolt",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:kv": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:kv",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:skv",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:sen": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:sen",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:ssen",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:tsen": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:tsen",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:stsen",
+            "num_to_spawn": 1,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:triple": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:triple",
+            "num_to_spawn": 3,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","operator":"!=","value":"scope"}
+            ]
+          },
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:striple",
+            "num_to_spawn": 3,
+            "filters":[
+              {"test":"has_tag","operator":"!=","value":"reload"},
+              {"test":"has_tag","value":"scope"}
+            ]
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:seishi": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:seishi",
+            "num_to_spawn": 1,
+            "filters":{
+              "test":"has_tag","operator":"!=","value":"reload"
+            }
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "fire:rpg": {
+        "minecraft:spawn_entity": [
+          {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "fire:rpg",
+            "num_to_spawn": 1,
+            "filters":{
+              "test":"has_tag","operator":"!=","value":"reload"
+            }
+          }
+        ],
+        "minecraft:spell_effects": {
+        }
+      },
+      "minecraft:add_bad_omen": {
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "bad_omen",
+              "duration": 6000,
+              "display_on_screen_animation": true
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": [ 0.0, 0.0 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:clear_add_bad_omen",
+            "target": "self"
+          }
+        }
+      },
+      "minecraft:clear_bad_omen_spell_effect": {
+        "minecraft:spell_effects": {
+        }
+      },
+      "minecraft:raid_trigger": {
+        "minecraft:raid_trigger": {
+          "triggered_event": {
+            "event": "minecraft:remove_raid_trigger",
+            "target": "self"
+          }
+        },
+        "minecraft:spell_effects": {
+          "remove_effects": "bad_omen"
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "player","mod"]
+      },
+      "minecraft:environment_sensor": [
+        {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_mob_effect",
+                  "subject": "self",
+                  "value": "bad_omen"
+                },
+                {
+                  "test": "is_in_village",
+                  "subject": "self",
+                  "value": true
+                }
+              ]
+            },
+            "event": "minecraft:trigger_raid"
+          }
+        }
+      ],
+      "minecraft:is_hidden_when_invisible": {
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+		{
+          "cause": "fall",
+          "deals_damage": false
+        },
+		{
+          "on_damage": {
+            "filters": {
+                "test": "has_damage",
+                "value": "attack"
+            },
+            "event": "damaged"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "revbullet"
+                  }
+                ]
+            },
+            "event": "zex:revbullet"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg1"
+                  }
+                ]
+            },
+            "event": "zex:dmg1"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg2"
+                  }
+                ]
+            },
+            "event": "zex:dmg2"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg3"
+                  }
+                ]
+            },
+            "event": "zex:dmg3"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg4"
+                  }
+                ]
+            },
+            "event": "zex:dmg4"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg5"
+                  }
+                ]
+            },
+            "event": "zex:dmg5"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg6"
+                  }
+                ]
+            },
+            "event": "zex:dmg6"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg7"
+                  }
+                ]
+            },
+            "event": "zex:dmg7"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg9"
+                  }
+                ]
+            },
+            "event": "zex:dmg9"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmg10"
+                  }
+                ]
+            },
+            "event": "zex:dmg10"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmgarc"
+                  }
+                ]
+            },
+            "event": "zex:dmgarc"
+          }
+		},
+		{
+			"cause": "projectile",
+			"deals_damage": false,
+			"on_damage": {
+            "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "dmgre45"
+                  }
+                ]
+            },
+            "event": "zex:dmgre45"
+          }
+		}
+       ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:collision_box": {
+        "width": 0.4,
+        "height": 1.8
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:movement": {
+        "value": 0.1
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:attack": {
+        "damage": 1
+      },
+      "minecraft:player.saturation": {
+        "value": 20
+      },
+      "minecraft:player.exhaustion": {
+        "value": 0,
+        "max": 4
+      },
+	  "minecraft:environment_sensor":{
+		"triggers":[
+       {
+          "filters":{
+             "all_of":[
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "!=",
+					"domain": "head",
+					"value": "zex:bangalore"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "!=",
+					"domain": "head",
+					"value": "zex:caustic"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "!=",
+					"domain": "head",
+					"value": "zex:fuse"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "!=",
+					"domain": "head",
+					"value": "zex:gibraltar"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "!=",
+					"domain": "head",
+					"value": "zex:horizon"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "!=",
+					"domain": "head",
+					"value": "zex:lifeline"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "!=",
+					"domain": "head",
+					"value": "zex:mirage"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "!=",
+					"domain": "head",
+					"value": "zex:octane"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "!=",
+					"domain": "head",
+					"value": "zex:revenant"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "!=",
+					"domain": "head",
+					"value": "zex:valkyrie"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "!=",
+					"domain": "head",
+					"value": "zex:bloodhound"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "!=",
+					"domain": "head",
+					"value": "zex:seer"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "!=",
+					"domain": "head",
+					"value": "zex:wraith"
+				}
+             ]
+          },
+          "event":"zex:noapex"
+       },
+       {
+          "filters":{
+             "any_of":[
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "==",
+					"domain": "head",
+					"value": "zex:bangalore"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "==",
+					"domain": "head",
+					"value": "zex:horizon"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "==",
+					"domain": "head",
+					"value": "zex:caustic"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "==",
+					"domain": "head",
+					"value": "zex:fuse"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "==",
+					"domain": "head",
+					"value": "zex:gibraltar"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "==",
+					"domain": "head",
+					"value": "zex:lifeline"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "==",
+					"domain": "head",
+					"value": "zex:mirage"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "==",
+					"domain": "head",
+					"value": "zex:octane"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "==",
+					"domain": "head",
+					"value": "zex:revenant"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "==",
+					"domain": "head",
+					"value": "zex:seer"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "==",
+					"domain": "head",
+					"value": "zex:bloodhound"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "==",
+					"domain": "head",
+					"value": "zex:valkyrie"
+				},
+				{
+					"test": "has_equipment",
+					"subject": "self",
+					"operator": "==",
+					"domain": "head",
+					"value": "zex:wraith"
+				}
+             ]
+          },
+          "event":"zex:inapex"
+       }
+    ]
+ },
+      "minecraft:player.level": {
+        "value": 0,
+        "max": 24791
+      },
+      "minecraft:player.experience": {
+        "value": 0,
+        "max": 1
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": -1,
+        "inhaleTime": 3.75,
+        "generatesBubbles": false
+      },
+      "minecraft:nameable": {
+        "alwaysShow": true,
+        "allowNameTagRenaming": false
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:insomnia": {
+        "days_until_insomnia": 3
+      },
+      "minecraft:rideable": {
+        "seat_count": 2,
+        "family_types": [
+          "parrot_tame"
+        ],
+        "pull_in_entities": true,
+        "seats": [
+          {
+            "position": [
+              0.4,
+              -0.15,
+              0.04
+            ],
+            "min_rider_count": 0,
+            "max_rider_count": 0,
+            "lock_rider_rotation": 0
+          },
+          {
+            "position": [
+              -0.4,
+              -0.15,
+              0.04
+            ],
+            "min_rider_count": 1,
+            "max_rider_count": 2,
+            "lock_rider_rotation": 0
+          }
+        ]
+      },
+      "minecraft:scaffolding_climber": {
+      }
+    },
+    "events": {
+      "minecraft:gain_bad_omen": {
+        "add": {
+          "component_groups": [
+            "minecraft:add_bad_omen"
+          ]
+        }
+      },
+      "minecraft:clear_add_bad_omen": {
+        "remove": {
+          "component_groups": [
+            "minecraft:add_bad_omen"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:clear_bad_omen_spell_effect"
+          ]
+        }
+      },
+      "minecraft:trigger_raid": {
+        "add": {
+          "component_groups": [ "minecraft:raid_trigger" ]
+        }
+      },
+      "minecraft:remove_raid_trigger": {
+        "remove": {
+          "component_groups": [ "minecraft:raid_trigger" ]
+        }
+      },
+      "fire:mas": {
+        "add": {
+          "component_groups": [
+            "fire:mas"
+          ]
+        }
+      },
+      "zex:armor0": {
+        "add": {
+          "component_groups": [
+            "zex:armor0"
+          ]
+        }
+      },
+      "damaged": {
+        "add": {
+          "component_groups": [
+            "damaged"
+          ]
+        }
+      },
+      "damageded": {
+        "add": {
+          "component_groups": [
+            "damageded"
+          ]
+        }
+      },
+      "zex:noapex": {
+        "add": {
+          "component_groups": [
+            "noapex"
+          ]
+        }
+      },
+      "zex:inapex": {
+        "add": {
+          "component_groups": [
+            "inapex"
+          ]
+        }
+      },
+      "zex:armor1": {
+        "add": {
+          "component_groups": [
+            "zex:armor1"
+          ]
+        }
+      },
+      "zex:armor2": {
+        "add": {
+          "component_groups": [
+            "zex:armor2"
+          ]
+        }
+      },
+      "zex:armor3": {
+        "add": {
+          "component_groups": [
+            "zex:armor3"
+          ]
+        }
+      },
+      "zex:armor5": {
+        "add": {
+          "component_groups": [
+            "zex:armor5"
+          ]
+        }
+      },
+      "zex:bangaloreab": {
+        "add": {
+          "component_groups": [
+            "zex:bangaloreab"
+          ]
+        }
+      },
+      "zex:gib": {
+        "add": {
+          "component_groups": [
+            "zex:gib"
+          ]
+        }
+      },
+      "zex:rev": {
+        "add": {
+          "component_groups": [
+            "zex:rev"
+          ]
+        }
+      },
+      "zex:cau": {
+        "add": {
+          "component_groups": [
+            "zex:cau"
+          ]
+        }
+      },
+      "fire:tr301": {
+        "add": {
+          "component_groups": [
+            "fire:tr301"
+          ]
+        }
+      },
+      "fire:tflat": {
+        "add": {
+          "component_groups": [
+            "fire:tflat"
+          ]
+        }
+      },
+      "fire:ak12": {
+        "add": {
+          "component_groups": [
+            "fire:ak12"
+          ]
+        }
+      },
+      "fire:m24": {
+        "add": {
+          "component_groups": [
+            "fire:m24"
+          ]
+        }
+      },
+      "fire:sks": {
+        "add": {
+          "component_groups": [
+            "fire:sks"
+          ]
+        }
+      },
+      "zex:fuse": {
+        "add": {
+          "component_groups": [
+            "zex:fuse"
+          ]
+        }
+      },
+      "fire:pkm": {
+        "add": {
+          "component_groups": [
+            "fire:pkm"
+          ]
+        }
+      },
+      "fire:t62": {
+        "add": {
+          "component_groups": [
+            "fire:t62"
+          ]
+        }
+      },
+      "fire:sv98": {
+        "add": {
+          "component_groups": [
+            "fire:sv98"
+          ]
+        }
+      },
+      "fire:bomb": {
+        "add": {
+          "component_groups": [
+            "fire:bomb"
+          ]
+        }
+      },
+      "fire:pk": {
+        "add": {
+          "component_groups": [
+            "fire:pk"
+          ]
+        }
+      },
+      "fire:moz": {
+        "add": {
+          "component_groups": [
+            "fire:moz"
+          ]
+        }
+      },
+      "fire:fire": {
+        "add": {
+          "component_groups": [
+            "fire:fire"
+          ]
+        }
+      },
+      "fire:eva": {
+        "add": {
+          "component_groups": [
+            "fire:eva"
+          ]
+        }
+      },
+      "fire:r301": {
+        "add": {
+          "component_groups": [
+            "fire:r301"
+          ]
+        }
+      },
+      "fire:r99": {
+        "add": {
+          "component_groups": [
+            "fire:r99"
+          ]
+        }
+      },
+      "fire:mad": {
+        "add": {
+          "component_groups": [
+            "zex:mad"
+          ]
+        }
+      },
+      "fire:re45": {
+        "add": {
+          "component_groups": [
+            "fire:re45"
+          ]
+        }
+      },
+      "fire:p2020": {
+        "add": {
+          "component_groups": [
+            "fire:p2020"
+          ]
+        }
+      },
+      "fire:g7": {
+        "add": {
+          "component_groups": [
+            "fire:g7"
+          ]
+        }
+      },
+      "fire:alt": {
+        "add": {
+          "component_groups": [
+            "fire:alt"
+          ]
+        }
+      },
+      "fire:r3030": {
+        "add": {
+          "component_groups": [
+            "fire:r3030"
+          ]
+        }
+      },
+      "fire:car": {
+        "add": {
+          "component_groups": [
+            "fire:car"
+          ]
+        }
+      },
+      "fire:hem": {
+        "add": {
+          "component_groups": [
+            "fire:hem"
+          ]
+        }
+      },
+      "fire:pro": {
+        "add": {
+          "component_groups": [
+            "fire:pro"
+          ]
+        }
+      },
+      "fire:ram": {
+        "add": {
+          "component_groups": [
+            "fire:ram"
+          ]
+        }
+      },
+      "fire:flat": {
+        "add": {
+          "component_groups": [
+            "fire:flat"
+          ]
+        }
+      },
+      "fire:wing": {
+        "add": {
+          "component_groups": [
+            "fire:wing"
+          ]
+        }
+      },
+      "fire:uzi": {
+        "add": {
+          "component_groups": [
+            "fire:uzi"
+          ]
+        }
+      },
+      "fire:vz61": {
+        "add": {
+          "component_groups": [
+            "fire:vz61"
+          ]
+        }
+      },
+      "fire:spit": {
+        "add": {
+          "component_groups": [
+            "fire:spit"
+          ]
+        }
+      },
+      "fire:dev": {
+        "add": {
+          "component_groups": [
+            "fire:dev"
+          ]
+        }
+      },
+      "fire:rpg": {
+        "add": {
+          "component_groups": [
+            "fire:rpg"
+          ]
+        }
+      },
+      "fire:volt": {
+        "add": {
+          "component_groups": [
+            "fire:volt"
+          ]
+        }
+      },
+      "fire:long": {
+        "add": {
+          "component_groups": [
+            "fire:long"
+          ]
+        }
+      },
+      "fire:aug": {
+        "add": {
+          "component_groups": [
+            "fire:aug"
+          ]
+        }
+      },
+      "fire:kv": {
+        "add": {
+          "component_groups": [
+            "fire:kv"
+          ]
+        }
+      },
+      "fire:chinko": {
+        "add": {
+          "component_groups": [
+            "fire:chinko"
+          ]
+        }
+      },
+      "fire:bar": {
+        "add": {
+          "component_groups": [
+            "fire:bar"
+          ]
+        }
+      },
+      "fire:mp5": {
+        "add": {
+          "component_groups": [
+            "fire:mp5"
+          ]
+        }
+      },
+      "fire:p90": {
+        "add": {
+          "component_groups": [
+            "fire:p90"
+          ]
+        }
+      },
+      "fire:mg36": {
+        "add": {
+          "component_groups": [
+            "fire:mg36"
+          ]
+        }
+      },
+      "fire:seer": {
+        "add": {
+          "component_groups": [
+            "fire:seer"
+          ]
+        }
+      },
+      "fire:blf": {
+        "add": {
+          "component_groups": [
+            "fire:blf"
+          ]
+        }
+      },
+      "fire:longh": {
+        "add": {
+          "component_groups": [
+            "fire:longh"
+          ]
+        }
+      },
+      "fire:g36": {
+        "add": {
+          "component_groups": [
+            "fire:g36"
+          ]
+        }
+      },
+      "fire:havoc": {
+        "add": {
+          "component_groups": [
+            "fire:havoc"
+          ]
+        }
+      },
+      "zex:revbullet": {
+        "run_command": {
+          "command": [
+            "function rev",
+			"tag @s add damaged"
+          ]
+        }
+      },
+      "zex:dmgarc": {
+        "run_command": {
+          "command": [
+            "damage @s[tag=!wraithab,tag=!gibsing,tag=sheild] 8 override",
+            "damage @s[tag=!wraithab,tag=!gibsing,tag=!sheild] 3 override",
+			"playsound time.arc @a ~~~",
+			"tag @s add damaged",
+			"kill @e[c=1,type=fire:arcstar]",
+			"scoreboard players set @s arcf 56",
+			"tag @s add arc",
+			"effect @s slowness 6 1"
+          ]
+        }
+      },
+      "zex:dmgre45": {
+        "run_command": {
+          "command": [
+            "damage @s[tag=!wraithab,tag=!gibsing,tag=!sheild] 2 override",
+            "damage @s[tag=!wraithab,tag=!gibsing,tag=sheild] 4 override",
+			"tag @s add damaged"
+          ]
+        }
+      },
+      "zex:dmg1": {
+        "run_command": {
+          "command": [
+            "damage @s[tag=!wraithab,tag=!gibsing] 1 override",
+			      "tag @s add damaged"
+          ]
+        }
+      },
+      "zex:dmg2": {
+        "run_command": {
+          "command": [
+            "damage @s[tag=!wraithab,tag=!gibsing] 2 override",
+			      "tag @s add damaged"
+          ]
+        }
+      },
+      "zex:dmg3": {
+        "run_command": {
+          "command": [
+            "damage @s[tag=!wraithab,tag=!gibsing] 3 override",
+			      "tag @s add damaged"
+          ]
+        }
+      },
+      "zex:dmg4": {
+        "run_command": {
+          "command": [
+            "damage @s[tag=!wraithab,tag=!gibsing] 4 override",
+			      "tag @s add damaged"
+          ]
+        }
+      },
+      "zex:dmg5": {
+        "run_command": {
+          "command": [
+            "damage @s[tag=!wraithab,tag=!gibsing] 5 override",
+			      "tag @s add damaged"
+          ]
+        }
+      },
+      "zex:dmg6": {
+        "run_command": {
+          "command": [
+            "damage @s[tag=!wraithab,tag=!gibsing] 6 override",
+			      "tag @s add damaged"
+          ]
+        }
+      },
+      "zex:dmg7": {
+        "run_command": {
+          "command": [
+            "damage @s[tag=!wraithab,tag=!gibsing] 7 override",
+			      "tag @s add damaged"
+          ]
+        }
+      },
+      "zex:dmg9": {
+        "run_command": {
+          "command": [
+            "damage @s[tag=!wraithab,tag=!gibsing] 9 override",
+			      "tag @s add damaged"
+          ]
+        }
+      },
+      "zex:dmg10": {
+        "run_command": {
+          "command": [
+            "damage @s[tag=!wraithab,tag=!gibsing] 10 override",
+			      "tag @s add damaged"
+          ]
+        }
+      },
+      "fire:la": {
+        "add": {
+          "component_groups": [
+            "fire:la"
+          ]
+        }
+      },
+      "fire:bocek1": {
+        "add": {
+          "component_groups": [
+            "fire:bocek1"
+          ]
+        }
+      },
+      "fire:bocek2": {
+        "add": {
+          "component_groups": [
+            "fire:bocek2"
+          ]
+        }
+      },
+      "fire:bocek3": {
+        "add": {
+          "component_groups": [
+            "fire:bocek3"
+          ]
+        }
+      },
+      "fire:bocek4": {
+        "add": {
+          "component_groups": [
+            "fire:bocek4"
+          ]
+        }
+      },
+      "fire:bocek5": {
+        "add": {
+          "component_groups": [
+            "fire:bocek5"
+          ]
+        }
+      },
+      "fire:charge": {
+        "add": {
+          "component_groups": [
+            "fire:charge"
+          ]
+        }
+      },
+      "fire:charges": {
+        "add": {
+          "component_groups": [
+            "fire:charges"
+          ]
+        }
+      },
+      "fire:lstar": {
+        "add": {
+          "component_groups": [
+            "fire:lstar"
+          ]
+        }
+      },
+      "fire:sen": {
+        "add": {
+          "component_groups": [
+            "fire:sen"
+          ]
+        }
+      },
+      "fire:tsen": {
+        "add": {
+          "component_groups": [
+            "fire:tsen"
+          ]
+        }
+      },
+      "fire:triple": {
+        "add": {
+          "component_groups": [
+            "fire:triple"
+          ]
+        }
+      },
+      "fire:valk": {
+        "add": {
+          "component_groups": [
+            "fire:valk"
+          ]
+        }
+      },
+      "fire:hor": {
+        "add": {
+          "component_groups": [
+            "fire:hor"
+          ]
+        }
+      },
+      "fire:seishi": {
+        "add": {
+          "component_groups": [
+            "fire:seishi"
+          ]
+        }
+      },
+      "team1": {
+        "add": {
+          "component_groups": [
+            "team1"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "team2",
+            "team3",
+            "team4"
+          ]
+        }
+      },
+      "team2": {
+        "add": {
+          "component_groups": [
+            "team2"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "team1",
+            "team3",
+            "team4"
+          ]
+        }
+      },
+      "team3": {
+        "add": {
+          "component_groups": [
+            "team3"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "team2",
+            "team1",
+            "team4"
+          ]
+        }
+      },
+      "team4": {
+        "add": {
+          "component_groups": [
+            "team4"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "team2",
+            "team3",
+            "team1"
+          ]
+        }
+      },
+      "team0": {
+        "add": {
+          "component_groups": [
+            "damage"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "team2",
+            "team3",
+            "team1",
+			"team4"
+          ]
+        }
+      }
+    }
+  }
+}

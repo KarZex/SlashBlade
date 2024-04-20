@@ -1,0 +1,25 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+      "controller.animation.att": {
+        "states": {
+          "default": {
+            "transitions": [
+				{ "x6": "query.is_sneaking && (query.get_equipped_item_name('main_hand') == 'kv' || query.get_equipped_item_name('main_hand') == 'tsen' || query.get_equipped_item_name('main_hand') == 'charge' || query.get_equipped_item_name('main_hand') == 'long' || query.get_equipped_item_name('main_hand') == 'sen')" }
+            ]
+          },
+          "x6": {
+            "transitions": [
+                {"default":"!query.is_sneaking"}
+            ],
+            "on_entry": [
+              "/effect @s[tag=!reload] slowness 1000 8 true"
+            ],
+            "on_exit": [
+              "/effect @s slowness 0 0 true"
+            ]
+          }
+        }
+      }
+   }
+}

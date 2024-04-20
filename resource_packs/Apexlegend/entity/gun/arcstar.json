@@ -1,0 +1,20 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+      "description": {
+        "identifier": "fire:arcstar2",
+        "materials": {
+          "default": "arrow"
+        },
+        "textures": {
+          "default": "textures/arcstar"
+        },
+        "geometry": {
+          "default": "geometry.arcstar"
+        },
+        "render_controllers": [ 
+          "controller.render.arrow" 
+        ]
+      }
+    }
+}

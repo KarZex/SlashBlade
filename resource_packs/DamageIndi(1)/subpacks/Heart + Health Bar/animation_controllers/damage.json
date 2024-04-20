@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.damage.root": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "run": "variable.hp != query.health"
+            }
+          ]
+        },
+        "run": {
+          "particle_effects": [
+            {
+              "effect": "dmg",
+              "locator": "dmg",
+              "pre_effect_script": "variable.dmg = (query.self -> variable.hp) - query.health;"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "variable.hp = query.health; return 1.0;"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

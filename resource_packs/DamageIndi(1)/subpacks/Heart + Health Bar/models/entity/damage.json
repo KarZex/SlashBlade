@@ -1,0 +1,36 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+            "description": {
+                "identifier": "geometry.dmg",
+                "texture_width": 32,
+                "texture_height": 16,
+                "visible_bounds_width": 3,
+                "visible_bounds_height": 2.5,
+                "visible_bounds_offset": [
+                    0,
+                    0.75,
+                    0
+                ]
+            },
+            "bones": [
+                {
+                    "name": "dmg",
+                    "pivot": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "locators": {
+                        "dmg": [
+                            0,
+                            10,
+                            0
+                        ]
+                    }
+                }
+            ]
+        }
+	]
+}

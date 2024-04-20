@@ -1,0 +1,2 @@
+titleraw @s[scores={re45=1..}] actionbar {"rawtext":[{"text":"§cRE45§r "},{"score":{"name":"@s","objective":"re45"}},{"text":"/25 "},{"score":{"name":"@s","objective":"re45a"}}]}
+titleraw @s[scores={re45=0}] actionbar {"rawtext":[{"text":"§cRE45§r §4"},{"score":{"name":"@s","objective":"re45"}},{"text":"/25§r "},{"score":{"name":"@s","objective":"re45a"}}]}

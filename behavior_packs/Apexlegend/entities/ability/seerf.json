@@ -1,0 +1,109 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "fire:seerf",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+	"component_groups": {
+      "minecraft:exploding": {
+	  "minecraft:explode": {
+          "fuse_length": 0,
+          "fuse_lit": true,
+          "power": 0,
+          "causes_fire": true,
+          "destroy_affected_by_griefing": true
+        }
+      },
+      "B": {
+        "minecraft:transformation": {
+          "into": "addon:d2b"
+        }
+      },
+      "C": {
+        "minecraft:transformation": {
+          "into": "addon:d2c"
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "inanimate", "spawns" ]
+      },
+		"minecraft:timer": {
+				"time": 0.5,
+				"time_down_event": { "event": "minecraft:explode" }
+		},
+      "minecraft:damage_sensor": {
+        "triggers": [
+		{
+			"cause": "all",
+			"deals_damage": false
+		}
+	   ]
+	  },		
+      "minecraft:collision_box": {
+        "width": 0.015,
+        "height": 0.015
+      },
+	  "minecraft:explode": {
+          "fuse_length": 8,
+          "fuse_lit": true,
+          "power": 0,
+          "causes_fire": true,
+          "destroy_affected_by_griefing": true
+        },
+      "minecraft:health": {
+        "value": 9999,
+        "max": 9999
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/empty.json"
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:persistent": {
+      },
+	  "minecraft:physics":{
+		"has_collision": false,
+		"has_gravity": false
+	  },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+
+    "events": {
+		"minecraft:explode": {
+			"sequence": [
+				{
+					"add": {
+						"component_groups": [
+							"minecraft:exploding"
+						]
+					}
+				},
+				{
+					"run_command" : {
+						"command" : [
+							"execute as @e[family=player,r=3,scores={seer=..0}] run function seerf"
+						]
+					}
+				}
+			]
+		}
+    }
+  }
+}

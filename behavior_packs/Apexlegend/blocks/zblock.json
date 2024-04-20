@@ -1,0 +1,42 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "zex:zblock",
+      "register_to_creative_menu": false
+    },
+    "components": {
+      "minecraft:destroy_time": 3,
+	  "minecraft:block_light_absorption": 0.0,
+      "minecraft:block_light_emission": 0.0,
+      "minecraft:explosion_resistance": 1,
+	  "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "no",
+          "render_method": "blend"
+        }
+      },
+	  "minecraft:unit_cube": {},
+      "minecraft:ticking": {
+        "looping": true,
+        "range": [ 4, 4 ],
+        "on_tick": {
+          "condition": "(1.0)",
+          "event": "minecraft:ignite",
+          "target": "self"
+        }
+      },
+      "minecraft:map_color": "#FF0000"
+    },
+    "events": {
+	  "minecraft:ignite": {
+        "run_command": {
+          "command": [
+            "fill ~~~ ~~~ air 0 destroy"
+          ]
+        }
+	  }
+    }
+  }
+}

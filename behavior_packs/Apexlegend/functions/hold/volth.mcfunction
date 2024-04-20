@@ -1,0 +1,2 @@
+titleraw @s[scores={volt=1..}] actionbar {"rawtext":[{"text":"§aEnergy§r "},{"score":{"name":"@s","objective":"volt"}},{"text":"/26"}]}
+titleraw @s[scores={volt=0}] actionbar {"rawtext":[{"text":"§aEnergy§r §4"},{"score":{"name":"@s","objective":"volt"}},{"text":"/26§r"}]}

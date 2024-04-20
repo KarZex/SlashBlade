@@ -1,0 +1,100 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:pillager",
+      "materials": {
+        "default": "pillager",
+        "hp": "entity_emissive_alpha"
+      },
+      "geometry": {
+        "default": "geometry.pillager",
+        "health_bar": "geometry.health_bar",
+        "heart": "geometry.heart",
+        "dmg": "geometry.dmg"
+      },
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 56
+      },
+      "animations": {
+        "humanoid_base_pose": "animation.humanoid.base_pose",
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+        "move": "animation.humanoid.move",
+        "riding.arms": "animation.humanoid.riding.arms",
+        "riding.legs": "animation.humanoid.riding.legs",
+        "holding": "animation.humanoid.holding",
+        "attack.rotations": "animation.humanoid.attack.rotations",
+        "bob": "animation.humanoid.bob",
+        "crossbow_hold": "animation.pillager.crossbow.hold",
+        "crossbow_charge": "animation.pillager.crossbow.charge",
+        "celebrating": "animation.humanoid.celebrating",
+        "controller_humanoid_base_pose": "controller.animation.humanoid.base_pose",
+        "controller_look_at_target": "controller.animation.humanoid.look_at_target",
+        "controller_move": "controller.animation.humanoid.move",
+        "controller_riding": "controller.animation.humanoid.riding",
+        "controller_attack": "controller.animation.humanoid.attack",
+        "controller_bob": "controller.animation.humanoid.bob",
+        "controller_pillager_attack": "controller.animation.pillager.attack",
+        "pillager_root_controller": "controller.animation.pillager.root",
+        "dmg_controller": "controller.animation.damage.root",
+        "hp_offset": "animation.health_villager",
+        "health_percentage": "animation.health_bar.percentage"
+      },
+      "render_controllers": [
+        "controller.render.pillager",
+        "controller.render.health_bar",
+        "controller.render.heart",
+        "controller.render.first_digit",
+        "controller.render.second_digit",
+        "controller.render.third_digit",
+        "controller.render.dmg"
+      ],
+      "enable_attachables": true,
+      "scripts": {
+        "pre_animation": [
+          "variable.health = query.health / query.max_health;",
+          "variable.health_color = math.round(query.health / query.max_health * 100) >= 50 ? 0 : ((math.round(query.health / query.max_health * 100) >= 25 && math.round(query.health / query.max_health * 100) < 50) ? 1 : 2);",
+          "variable.first_digit = math.floor(query.health / 100);",
+          "variable.second_digit = math.floor((math.mod(query.health, 100)) / 10);",
+          "variable.third_digit = query.health - ((math.floor(query.health / 10)) * 10);",
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+        ],
+        "animate": [
+          "pillager_root_controller",
+          "hp_offset",
+          "health_percentage",
+          "dmg_controller"
+        ],
+        "initialize": [
+          "variable.hp = query.health;"
+        ],
+        "variables": {
+          "variable.hp": "public"
+        }
+      },
+      "particle_effects": {
+        "dmg": "particle:damage"
+      },
+      "textures": {
+        "default": "textures/entity/pillager",
+        "health_green": "textures/heart/health_bar_green",
+        "health_yellow": "textures/heart/health_bar_yellow",
+        "health_red": "textures/heart/health_bar_red",
+        "heart": "textures/heart/heart",
+        "heart0": "textures/heart/heart0",
+        "heart1": "textures/heart/heart1",
+        "heart2": "textures/heart/heart2",
+        "heart3": "textures/heart/heart3",
+        "heart4": "textures/heart/heart4",
+        "heart5": "textures/heart/heart5",
+        "heart6": "textures/heart/heart6",
+        "heart7": "textures/heart/heart7",
+        "heart8": "textures/heart/heart8",
+        "heart9": "textures/heart/heart9"
+      }
+    }
+  }
+}

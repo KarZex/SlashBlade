@@ -1,0 +1,90 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:phantom",
+      "materials": {
+        "default": "phantom",
+        "invisible": "phantom_invisible",
+        "hp": "entity_emissive_alpha"
+      },
+      "geometry": {
+        "default": "geometry.phantom",
+        "health_bar": "geometry.health_bar",
+        "heart": "geometry.heart",
+        "dmg": "geometry.dmg"
+      },
+      "animations": {
+        "phantom_base_pose": "animation.phantom.base_pose",
+        "phantom_base_pose_controller": "controller.animation.phantom.base_pose",
+        "move": "animation.phantom.move",
+        "dmg_controller": "controller.animation.damage.root",
+        "hp_offset": "animation.health_phantom",
+        "health_percentage": "animation.health_bar.percentage"
+      },
+      "sound_effects": {
+        "flap": "mob.phantom.flap"
+      },
+      "render_controllers": [
+        "controller.render.phantom",
+        "controller.render.health_bar",
+        "controller.render.heart",
+        "controller.render.first_digit",
+        "controller.render.second_digit",
+        "controller.render.third_digit",
+        "controller.render.dmg"
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 51
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.modified_tcos0 = Math.clamp(((Math.cos(query.modified_distance_moved * 13.5) * Math.min(query.modified_move_speed, 0.6) / variable.gliding_speed_value) * 25.0), -12.5, 12.5);",
+          "variable.health = query.health / query.max_health;",
+          "variable.health_color = math.round(query.health / query.max_health * 100) >= 50 ? 0 : ((math.round(query.health / query.max_health * 100) >= 25 && math.round(query.health / query.max_health * 100) < 50) ? 1 : 2);",
+          "variable.first_digit = math.floor(query.health / 100);",
+          "variable.second_digit = math.floor((math.mod(query.health, 100)) / 10);",
+          "variable.third_digit = query.health - ((math.floor(query.health / 10)) * 10);"
+        ],
+        "animate": [
+          "hp",
+          "dmg",
+          "hp_offset",
+          "health_percentage",
+          "dmg_controller"
+        ],
+        "initialize": [
+          "variable.runtimeid = 0;",
+          "variable.tailrotx = -5.0;",
+          "variable.wingrotz = 0.0;",
+          "variable.hp = query.health;"
+        ],
+        "variables": {
+          "variable.hp": "public"
+        }
+      },
+      "particle_effects": {
+        "dmg": "particle:damage",
+        "wing_dust": "minecraft:phantom_trail_particle"
+      },
+      "textures": {
+        "default": "textures/entity/phantom",
+        "health_green": "textures/heart/health_bar_green",
+        "health_yellow": "textures/heart/health_bar_yellow",
+        "health_red": "textures/heart/health_bar_red",
+        "heart": "textures/heart/heart",
+        "heart0": "textures/heart/heart0",
+        "heart1": "textures/heart/heart1",
+        "heart2": "textures/heart/heart2",
+        "heart3": "textures/heart/heart3",
+        "heart4": "textures/heart/heart4",
+        "heart5": "textures/heart/heart5",
+        "heart6": "textures/heart/heart6",
+        "heart7": "textures/heart/heart7",
+        "heart8": "textures/heart/heart8",
+        "heart9": "textures/heart/heart9"
+      }
+    }
+  }
+}

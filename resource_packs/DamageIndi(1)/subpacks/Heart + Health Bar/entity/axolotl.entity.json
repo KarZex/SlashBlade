@@ -1,0 +1,96 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:axolotl",
+      "materials": {
+        "default": "axolotl",
+        "limbs": "axolotl_limbs",
+        "hp": "entity_emissive_alpha"
+      },
+      "textures": {
+        "blue": "textures/entity/axolotl/axolotl_blue",
+        "cyan": "textures/entity/axolotl/axolotl_cyan",
+        "gold": "textures/entity/axolotl/axolotl_gold",
+        "lucy": "textures/entity/axolotl/axolotl_lucy",
+        "wild": "textures/entity/axolotl/axolotl_wild",
+        "health_green": "textures/heart/health_bar_green",
+        "health_yellow": "textures/heart/health_bar_yellow",
+        "health_red": "textures/heart/health_bar_red",
+        "heart": "textures/heart/heart",
+        "heart0": "textures/heart/heart0",
+        "heart1": "textures/heart/heart1",
+        "heart2": "textures/heart/heart2",
+        "heart3": "textures/heart/heart3",
+        "heart4": "textures/heart/heart4",
+        "heart5": "textures/heart/heart5",
+        "heart6": "textures/heart/heart6",
+        "heart7": "textures/heart/heart7",
+        "heart8": "textures/heart/heart8",
+        "heart9": "textures/heart/heart9"
+      },
+      "geometry": {
+        "default": "geometry.axolotl",
+        "health_bar": "geometry.health_bar",
+        "heart": "geometry.heart",
+        "dmg": "geometry.dmg"
+      },
+      "animations": {
+        "idle_float": "animation.axolotl.idle_underwater",
+        "idle_floor": "animation.axolotl.idle_floor",
+        "idle_floor_water": "animation.axolotl.idle_floor_underwater",
+        "swim": "animation.axolotl.swim",
+        "walk_floor": "animation.axolotl.walk_floor",
+        "walk_floor_water": "animation.axolotl.walk_floor_underwater",
+        "play_dead": "animation.axolotl.play_dead",
+        "swim_angle": "animation.axolotl.swim_angle",
+        "look_at_target": "animation.common.look_at_target",
+        "general": "controller.animation.axolotl.general",
+        "move": "controller.animation.axolotl.move",
+        "dmg_controller": "controller.animation.damage.root",
+        "hp_offset": "animation.health_mite",
+        "health_percentage": "animation.health_bar.percentage"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.moving = query.ground_speed > 0 || query.vertical_speed > 0;",
+          "variable.pitch = query.body_x_rotation;",
+          "variable.health = query.health / query.max_health;",
+          "variable.health_color = math.round(query.health / query.max_health * 100) >= 50 ? 0 : ((math.round(query.health / query.max_health * 100) >= 25 && math.round(query.health / query.max_health * 100) < 50) ? 1 : 2);",
+          "variable.first_digit = math.floor(query.health / 100);",
+          "variable.second_digit = math.floor((math.mod(query.health, 100)) / 10);",
+          "variable.third_digit = query.health - ((math.floor(query.health / 10)) * 10);"
+        ],
+        "animate": [
+          "general",
+          "move",
+          "hp_offset",
+          "health_percentage",
+          "dmg_controller"
+        ],
+        "variables": {
+          "variable.hp": "public"
+        },
+        "initialize": [
+          "variable.hp = query.health;"
+        ]
+      },
+      "particle_effects": {
+        "dmg": "particle:damage"
+      },
+      "render_controllers": [
+        "controller.render.axolotl",
+        "controller.render.health_bar",
+        "controller.render.heart",
+        "controller.render.first_digit",
+        "controller.render.second_digit",
+        "controller.render.third_digit",
+        "controller.render.dmg.axolotl"
+      ],
+      "spawn_egg": {
+        "base_color": "#0xfbc1e3",
+        "overlay_color": "#0xa62d74"
+      }
+    }
+  }
+}

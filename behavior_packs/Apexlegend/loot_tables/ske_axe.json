@@ -1,0 +1,14 @@
+{
+  "type": "item",
+  "name": "minecraft:written_book",
+  "functions": [
+      {
+          "function": "set_book_contents",
+          "author": "Steve",
+          "title": "Creator Woes",
+          "pages": [
+              ""
+          ]
+      }
+  ]
+}

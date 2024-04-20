@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:bt2",
+      "category": "gun"
+    },
+    "components": {
+      "minecraft:icon": "bt",
+      "minecraft:render_offsets": "bow"
+    }
+  }
+}

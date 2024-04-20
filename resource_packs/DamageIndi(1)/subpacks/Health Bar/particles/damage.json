@@ -1,0 +1,44 @@
+{
+    "format_version": "1.10.0",
+    "particle_effect": {
+        "description": {
+            "identifier": "particle:damage",
+            "basic_render_parameters": {
+                "material": "particles_damage",
+                "texture": "textures/dmg/dmg"
+            }
+        },
+        "components": {
+            "minecraft:emitter_rate_instant": {
+                "num_particles": 1
+            },
+            "minecraft:emitter_lifetime_once": {},
+            "minecraft:particle_lifetime_expression": {
+                "max_lifetime": "variable.dmg < 0 ? 0.75 : 0.75"
+            },
+            "minecraft:emitter_shape_point": {
+                "direction": [0, -1, 0]
+            },
+            "minecraft:particle_initial_speed": 2,
+            "minecraft:particle_motion_dynamic": {
+                "linear_drag_coefficient": "variable.dmg < 0 ? 5 : 2.5"
+            },
+            "minecraft:particle_appearance_billboard": {
+                "facing_camera_mode": "rotate_xyz",
+                "size": [
+                    "variable.particle_age > 0.125 ? 0.15 : (variable.particle_age * 1.2)",
+                    "variable.particle_age > 0.125 ? 0.15 : (variable.particle_age * 1.2)"
+                ],
+                "uv": {
+                    "texture_width": 3200,
+                    "texture_height": 3200,
+                    "uv_size": [320, 320],
+                    "uv": ["((math.mod(math.abs(variable.dmg), 10)) - 1) < 0 ? 2880 : ((math.mod(math.abs(variable.dmg), 10)) - 1) * 320", "(math.abs(variable.dmg / 10)) - (math.trunc(math.abs(variable.dmg / 10))) == 0 ? ((math.abs(variable.dmg / 10)) - 1) * 320 : (math.trunc(math.abs(variable.dmg / 10))) * 320"]
+                }
+            },
+            "minecraft:particle_appearance_tinting": {
+                "color": ["variable.dmg < 0 ? 0 : 1", 1, "variable.dmg < 0 ? 0 : 1", 1]
+            }
+        }
+    }
+}

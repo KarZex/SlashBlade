@@ -1,0 +1,76 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+      "controller.animation.reload": {
+        "states": {
+          "default": {
+            "transitions": [
+				{ "sneak": "query.is_sneaking" }
+            ]
+          },
+          "sneak": {
+            "transitions": [
+                {"default":"!query.is_sneaking"}
+            ],
+            "on_entry": [
+              "/tag @s add scope"
+            ],
+            "on_exit": [
+              "/tag @s remove scope"
+            ]
+          }
+        }
+      },
+    "controller.animation.jump": {
+      "states": {
+        "default": {
+          "transitions": [
+			{ "jump": "query.is_jumping" }
+          ]
+        },
+		"jump": {
+          "on_entry": [  
+			"/tag @s add flying",
+			"/tag @s add flying2",
+			"/scoreboard players set @s vala 10"
+          ],
+          "on_exit": [          
+            "/tag @s remove flying"
+          ],
+          "transitions": [ { "default": "!query.is_jumping"}]
+        }
+      }
+    },
+    "controller.animation.sheild": {
+      "states": {
+        "default": {
+          "transitions": [
+			{ "sheild": "query.health > 20" },
+			{ "low": "query.health <= 10"}
+          ]
+        },
+		"sheild": {
+          "on_entry": [  
+			"/tag @s add sheild"
+          ],
+          "on_exit": [          
+			"/tag @s remove sheild"
+          ],
+          "transitions": [ 
+			{ "default": "query.health <= 20"},
+			{ "low": "query.health <= 10"}
+		  ]
+        },
+		"low": {
+          "on_entry": [  
+			"/tag @s add low"
+          ],
+          "on_exit": [          
+			"/tag @s remove low"
+          ],
+          "transitions": [ { "default": "query.health >= 10"}]
+        }
+      }
+    }
+   }
+}

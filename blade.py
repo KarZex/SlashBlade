@@ -6,7 +6,7 @@ target = 1
 
 
 #BP/entity/stand.json
-BP_stand_path = open("BP/entities/stand.json","r")
+BP_stand_path = open("behavior_packs/SlashBlade/entities/stand.json","r")
 BP_stand = json.load(BP_stand_path)
 
 #data
@@ -21,24 +21,24 @@ item = json.load(item_path)
 func_path = open("tool/blade.mcfunction","r")
 
 #entity/player.json
-player_path = open("RP/entity/player.json","r")
+player_path = open("resource_packs/SlashBlade/entity/player.json","r")
 player = json.load(player_path)
 
 
 #entity/stand.json
-stand_path = open("RP/entity/stand.json","r")
+stand_path = open("resource_packs/SlashBlade/entity/stand.json","r")
 stand = json.load(stand_path)
 
 #render_controllers/bladeitem.json
-bladeitem_path = open("RP/render_controllers/bladeitem.json","r")
+bladeitem_path = open("resource_packs/SlashBlade/render_controllers/bladeitem.json","r")
 bladeitem = json.load(bladeitem_path)
 
 #render_controllers/blades.render_controllers.json
-blades_render_controllers_path = open("RP/render_controllers/blades.render_controllers.json","r")
+blades_render_controllers_path = open("resource_packs/SlashBlade/render_controllers/blades.render_controllers.json","r")
 blades_render_controllers = json.load(blades_render_controllers_path)
 
 #item_texture
-item_texture_path = open("RP/textures/item_texture.json","r")
+item_texture_path = open("resource_packs/SlashBlade/textures/item_texture.json","r")
 item_texture = json.load(item_texture_path)
 
 
@@ -153,7 +153,7 @@ for row in csv_reader:
             item["minecraft:item"]["components"]["minecraft:foil"] = True
         
         #output
-        with open('BP/items/blade/{}.json'.format(blade_id),'w') as f:
+        with open('behavior_packs/SlashBlade/items/blade/{}.json'.format(blade_id),'w') as f:
             json.dump(item,f,indent=4)
         
         item_path = open("blade.json","r")
@@ -162,10 +162,10 @@ for row in csv_reader:
 
         #function
 
-        with open('BP/functions/bladestart.mcfunction','a') as f:
+        with open('behavior_packs/SlashBlade/functions/bladestart.mcfunction','a') as f:
             f.write("\nexecute @a[hasitem={{location=slot.weapon.mainhand,item=blade:{0} }}] ~~~ function blade/{0}\n".format(blade_id))
 
-        with open('BP/functions/blade/{}.mcfunction'.format(blade_id),'w') as f:
+        with open('behavior_packs/SlashBlade/functions/blade/{}.mcfunction'.format(blade_id),'w') as f:
             f.write("effect @s[scores=blade=..19] weakness 1 0\n")
             if(blade_effect == 1): f.write("effect @s[scores=blade=40..] strength 1 1\n")
             for i in range(len(Enchants)):
@@ -198,17 +198,17 @@ for row in csv_reader:
 
         
         #geometries
-        shutil.copy('tool/model/{}.json'.format(blade_id),'RP/models/entity/blade')
+        shutil.copy('tool/model/{}.json'.format(blade_id),'resource_packs/SlashBlade/models/entity/blade')
 
         #texture
-        shutil.copy('tool/model/{}.png'.format(blade_id),'RP/textures/models')
+        shutil.copy('tool/model/{}.png'.format(blade_id),'resource_packs/SlashBlade/textures/models')
 
         #icon
-        shutil.copy('tool/icon/{}.png'.format(blade_id),'RP/textures/blade')
+        shutil.copy('tool/icon/{}.png'.format(blade_id),'resource_packs/SlashBlade/textures/blade')
         item_texture["texture_data"]["{}".format(blade_id)] = {"textures": "textures/blade/{}.png".format(blade_id)}
 
         #name
-        with open('RP/texts/ja_JP.lang','a') as f:
+        with open('resource_packs/SlashBlade/texts/ja_JP.lang','a') as f:
             f.write("\nitem.blade:{0}={1}".format(blade_id,blade_name))
 
         
@@ -224,22 +224,22 @@ new_blade = player["minecraft:client_entity"]["description"]["scripts"]["pre_ani
 new_blade = new_blade.replace("|| ;",";")
 player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10] = new_blade
 
-with open("BP/entities/stand.json",'w') as f:
+with open("behavior_packs/SlashBlade/entities/stand.json",'w') as f:
     json.dump(BP_stand,f,indent=4)
 
-with open("RP/entity/player.json",'w') as f:
+with open("resource_packs/SlashBlade/entity/player.json",'w') as f:
     json.dump(player,f,indent=4)
 
-with open("RP/entity/stand.json",'w') as f:
+with open("resource_packs/SlashBlade/entity/stand.json",'w') as f:
     json.dump(stand,f,indent=4)
     
-with open("RP/render_controllers/bladeitem.json",'w') as f:
+with open("resource_packs/SlashBlade/render_controllers/bladeitem.json",'w') as f:
     json.dump(bladeitem,f,indent=4)
 
-with open("RP/render_controllers/blades.render_controllers.json",'w') as f:
+with open("resource_packs/SlashBlade/render_controllers/blades.render_controllers.json",'w') as f:
     json.dump(blades_render_controllers,f,indent=4)
 
-with open("RP/textures/item_texture.json",'w') as f:
+with open("resource_packs/SlashBlade/textures/item_texture.json",'w') as f:
     json.dump(item_texture,f,indent=4)
 
 

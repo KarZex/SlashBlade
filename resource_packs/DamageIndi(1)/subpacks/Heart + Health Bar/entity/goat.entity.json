@@ -1,0 +1,90 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:goat",
+      "materials": {
+        "default": "goat",
+        "hp": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/goat/goat",
+        "health_green": "textures/heart/health_bar_green",
+        "health_yellow": "textures/heart/health_bar_yellow",
+        "health_red": "textures/heart/health_bar_red",
+        "heart": "textures/heart/heart",
+        "heart0": "textures/heart/heart0",
+        "heart1": "textures/heart/heart1",
+        "heart2": "textures/heart/heart2",
+        "heart3": "textures/heart/heart3",
+        "heart4": "textures/heart/heart4",
+        "heart5": "textures/heart/heart5",
+        "heart6": "textures/heart/heart6",
+        "heart7": "textures/heart/heart7",
+        "heart8": "textures/heart/heart8",
+        "heart9": "textures/heart/heart9"
+      },
+      "geometry": {
+        "default": "geometry.goat",
+        "health_bar": "geometry.health_bar",
+        "heart": "geometry.heart",
+        "dmg": "geometry.dmg"
+      },
+      "spawn_egg": {
+        "base_color": "#c0ac90",
+        "overlay_color": "#857261"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos_right_side = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+          "variable.tcos_left_side = -variable.tcos_right_side;",
+          "variable.attack_head_rot =  Math.sin(variable.attack_time * 180.0) * -37.3;",
+          "variable.ram_head_rot = Math.sin(variable.should_bow_head * 90.0) * 37.3;",
+          "variable.health = query.health / query.max_health;",
+          "variable.health_color = math.round(query.health / query.max_health * 100) >= 50 ? 0 : ((math.round(query.health / query.max_health * 100) >= 25 && math.round(query.health / query.max_health * 100) < 50) ? 1 : 2);",
+          "variable.first_digit = math.floor(query.health / 100);",
+          "variable.second_digit = math.floor((math.mod(query.health, 100)) / 10);",
+          "variable.third_digit = query.health - ((math.floor(query.health / 10)) * 10);"
+        ],
+        "animate": [
+          "walk",
+          "look_at_target",
+          {
+            "attack": "variable.has_target && variable.attack_time >= 0.0"
+          },
+          "ram_attack",
+          "hp_offset",
+          "health_percentage",
+          "dmg_controller"
+        ],
+        "initialize": [
+          "variable.hp = query.health;"
+        ],
+        "variables": {
+          "variable.hp": "public"
+        }
+      },
+      "particle_effects": {
+        "dmg": "particle:damage"
+    },
+      "animations": {
+        "walk": "animation.goat.walk",
+        "look_at_target": "animation.goat.look_at_target",
+        "attack": "animation.goat.attack",
+        "ram_attack": "animation.goat.ram_attack",
+        "dmg_controller": "controller.animation.damage.root",
+        "hp_offset": "animation.health_sheep",
+        "health_percentage": "animation.health_bar.percentage"
+      },
+      "render_controllers": [
+        "controller.render.goat",
+        "controller.render.health_bar",
+        "controller.render.heart",
+        "controller.render.first_digit",
+        "controller.render.second_digit",
+        "controller.render.third_digit",
+        "controller.render.dmg"
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "gun:arcstar",
+      "category": "gun"
+    },
+    "components": {
+      "minecraft:icon": "arcstar",
+      "minecraft:render_offsets": "bow"
+    }
+  }
+}

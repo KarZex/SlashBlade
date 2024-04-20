@@ -1,0 +1,20 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:client_entity": {
+      "description": {
+        "identifier": "addon:gas",
+        "materials": {
+          "default": "spider"
+        },
+        "textures": {
+          "default": "textures/craft/cgas"
+        },
+        "geometry": {
+          "default": "geometry.cgas"
+        },
+        "render_controllers": [ 
+          "controller.render.default" 
+        ]
+      }
+    }
+}

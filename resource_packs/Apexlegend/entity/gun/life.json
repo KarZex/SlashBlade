@@ -1,0 +1,20 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:client_entity": {
+      "description": {
+        "identifier": "addon:life",
+        "materials": {
+          "default": "spider"
+        },
+        "textures": {
+          "default": "textures/craft/life"
+        },
+        "geometry": {
+          "default": "geometry.life"
+        },
+        "render_controllers": [ 
+          "controller.render.default" 
+        ]
+      }
+    }
+}

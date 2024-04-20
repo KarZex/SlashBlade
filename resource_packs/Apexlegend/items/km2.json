@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:sell2",
+      "category": "gun"
+    },
+    "components": {
+      "minecraft:icon": "sell",
+      "minecraft:render_offsets": "bow"
+    }
+  }
+}

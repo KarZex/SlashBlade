@@ -1,0 +1,16 @@
+{
+    "cooldown": 2.5,
+    "use_item": true,
+    "play_sounds": "mob.armor_stand.place",
+    "interact_text": "action.gvc.ds",
+    "on_interact": {
+      "filters": {
+        "all_of": [
+          { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:haze"},
+          { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+        ]
+      },
+      "event": "set:haze",
+      "target": "self"
+    }
+  }

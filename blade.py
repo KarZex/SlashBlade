@@ -4,6 +4,11 @@ import shutil
 
 target = 1
 
+
+#BP/entity/stand.json
+BP_stand_path = open("BP/entities/stand.json","r")
+BP_stand = json.load(BP_stand_path)
+
 #data
 csv_path = open("tool/newblade.csv","r",encoding="utf_8")
 csv_reader = csv.reader(csv_path)
@@ -18,6 +23,11 @@ func_path = open("blade.mcfunction","r")
 #entity/player.json
 player_path = open("RP/entity/player.json","r")
 player = json.load(player_path)
+
+
+#entity/stand.json
+stand_path = open("RP/entity/stand.json","r")
+stand = json.load(stand_path)
 
 #render_controllers/bladeitem.json
 bladeitem_path = open("RP/render_controllers/bladeitem.json","r")
@@ -73,6 +83,49 @@ for row in csv_reader:
         ##########################
         # Behavior Pack 
         ##########################
+        
+        #entities/stand
+        stand_zero = {
+            "cooldown": 2.5,
+            "use_item": True,
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.gvc.ds",
+            "on_interact": {
+            "filters": {
+                "all_of": [
+                { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blade:{}".format(blade_id)},
+                { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+            },
+            "event": "set:{}".format(blade_id),
+            "target": "self"
+            }
+        }
+        BP_stand["minecraft:entity"]["component_groups"]["default"]["minecraft:interact"].append(stand_zero)
+        stand_one = {
+            "minecraft:interact": [
+                {
+                    "cooldown": 2.5,
+                    "use_item": True,
+                    "transform_to_item": "blade:{}".format(blade_id),
+                    "play_sounds": "mob.armor_stand.place",
+                    "interact_text": "action.interact.gunstand",
+                    "on_interact": {
+                        "filters": {
+                            "all_of": [
+                            { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                            ]
+                        },
+                        "event": "set:default",
+                        "target": "self"
+                    }
+                }
+            ],
+            "minecraft:skin_id": { "value": len(BP_stand["minecraft:entity"]["component_groups"]["default"]["minecraft:interact"]) }
+        }
+        BP_stand["minecraft:entity"]["component_groups"]["{}".format(blade_id)] = stand_one
+        BP_stand["minecraft:entity"]["events"]["set:{}".format(blade_id)] = { "add": {"component_groups": ["{}".format(blade_id)] } }
+
 
         #item/blade
 
@@ -132,6 +185,9 @@ for row in csv_reader:
         player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10] = new_blade
         player["minecraft:client_entity"]["description"]["render_controllers"].append({ "controller.render.player.{}".format(blade_id): "query.get_equipped_item_name=='{}'".format(blade_id) })
 
+        #stand
+        stand["minecraft:client_entity"]["description"]["textures"]["{}".format(blade_id)] = "textures/models/{}".format(blade_id)
+        stand["minecraft:client_entity"]["description"]["geometry"]["{}".format(blade_id)] = "geometry.{}".format(blade_id)
 
         #render_controllers
 
@@ -142,10 +198,13 @@ for row in csv_reader:
 
         
         #geometries
-        shutil.copy('texture/model/{}.json'.format(blade_id),'RP/models/entity/blade')
+        shutil.copy('tool/model/{}.json'.format(blade_id),'RP/models/entity/blade')
+
+        #texture
+        shutil.copy('tool/model/{}.png'.format(blade_id),'RP/textures/models')
 
         #icon
-        shutil.copy('texture/icon/{}.png'.format(blade_id),'RP/textures/blade')
+        shutil.copy('tool/icon/{}.png'.format(blade_id),'RP/textures/blade')
         item_texture["texture_data"]["{}".format(blade_id)] = {"textures": "textures/blade/{}.png"}
 
         #name
@@ -165,8 +224,14 @@ new_blade = player["minecraft:client_entity"]["description"]["scripts"]["pre_ani
 new_blade = new_blade.replace("|| ;",";")
 player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10] = new_blade
 
+with open("BP/entities/stand.json",'w') as f:
+    json.dump(BP_stand,f,indent=4)
+
 with open("RP/entity/player.json",'w') as f:
     json.dump(player,f,indent=4)
+
+with open("RP/entity/stand.json",'w') as f:
+    json.dump(stand,f,indent=4)
     
 with open("RP/render_controllers/bladeitem.json",'w') as f:
     json.dump(bladeitem,f,indent=4)

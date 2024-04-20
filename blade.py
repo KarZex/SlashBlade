@@ -121,7 +121,7 @@ for row in csv_reader:
                     }
                 }
             ],
-            "minecraft:skin_id": { "value": len(BP_stand["minecraft:entity"]["component_groups"]["default"]["minecraft:interact"]) }
+            "minecraft:skin_id": { "value": len(BP_stand["minecraft:entity"]["component_groups"]["default"]["minecraft:interact"]) - 1 }
         }
         BP_stand["minecraft:entity"]["component_groups"]["{}".format(blade_id)] = stand_one
         BP_stand["minecraft:entity"]["events"]["set:{}".format(blade_id)] = { "add": {"component_groups": ["{}".format(blade_id)] } }

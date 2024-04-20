@@ -205,7 +205,7 @@ for row in csv_reader:
 
         #icon
         shutil.copy('tool/icon/{}.png'.format(blade_id),'RP/textures/blade')
-        item_texture["texture_data"]["{}".format(blade_id)] = {"textures": "textures/blade/{}.png"}
+        item_texture["texture_data"]["{}".format(blade_id)] = {"textures": "textures/blade/{}.png".format(blade_id)}
 
         #name
         with open('RP/texts/ja_JP.lang','a') as f:

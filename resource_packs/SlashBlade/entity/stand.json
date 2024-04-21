@@ -46,7 +46,7 @@
                 "yamato": "geometry.yamato"
             },
             "spawn_egg": {
-                "texture": "a1",
+                "texture": "stand",
                 "texture_index": 0
             },
             "scripts": {

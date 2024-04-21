@@ -26,7 +26,8 @@
                 "balkond": "textures/models/balkond",
                 "haze": "textures/models/haze",
                 "weiss": "textures/models/weiss",
-                "bambook": "textures/models/bambook"
+                "bambook": "textures/models/bambook",
+                "yamato": "textures/models/yamato"
             },
             "geometry": {
                 "default": "geometry.stand",
@@ -41,7 +42,8 @@
                 "weiss": "geometry.weiss",
                 "silverbanboo": "geometry.slashblade",
                 "tagayasan": "geometry.tagayasan",
-                "bambook": "geometry.bambook"
+                "bambook": "geometry.bambook",
+                "yamato": "geometry.yamato"
             },
             "spawn_egg": {
                 "texture": "a1",

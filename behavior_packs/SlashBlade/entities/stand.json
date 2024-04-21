@@ -485,6 +485,31 @@
                             "event": "set:bambook",
                             "target": "self"
                         }
+                    },
+                    {
+                        "cooldown": 2.5,
+                        "use_item": true,
+                        "play_sounds": "mob.armor_stand.place",
+                        "interact_text": "action.gvc.ds",
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "has_equipment",
+                                        "subject": "other",
+                                        "domain": "hand",
+                                        "value": "blade:yamato"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "player"
+                                    }
+                                ]
+                            },
+                            "event": "set:yamato",
+                            "target": "self"
+                        }
                     }
                 ],
                 "minecraft:skin_id": {
@@ -976,6 +1001,33 @@
                 "minecraft:skin_id": {
                     "value": 18
                 }
+            },
+            "yamato": {
+                "minecraft:interact": [
+                    {
+                        "cooldown": 2.5,
+                        "use_item": true,
+                        "transform_to_item": "blade:yamato",
+                        "play_sounds": "mob.armor_stand.place",
+                        "interact_text": "action.interact.gunstand",
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "player"
+                                    }
+                                ]
+                            },
+                            "event": "set:default",
+                            "target": "self"
+                        }
+                    }
+                ],
+                "minecraft:skin_id": {
+                    "value": 19
+                }
             }
         },
         "components": {
@@ -1137,6 +1189,13 @@
                 "add": {
                     "component_groups": [
                         "bambook"
+                    ]
+                }
+            },
+            "set:yamato": {
+                "add": {
+                    "component_groups": [
+                        "yamato"
                     ]
                 }
             }

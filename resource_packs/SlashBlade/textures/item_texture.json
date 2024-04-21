@@ -5,6 +5,9 @@
         "butakusi": {
             "textures": "textures/items/butakusi"
         },
+        "stand": {
+            "textures": "textures/blade/yamato.png"
+        },
         "butamesi": {
             "textures": "textures/items/butamesi"
         },
@@ -133,6 +136,9 @@
         },
         "bambook": {
             "textures": "textures/blade/bambook.png"
+        },
+        "yamato": {
+            "textures": "textures/blade/yamato.png"
         }
     }
 }

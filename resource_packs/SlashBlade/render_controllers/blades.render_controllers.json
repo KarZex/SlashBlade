@@ -220,6 +220,17 @@
             "textures": [
                 "Texture.bambook"
             ]
+        },
+        "controller.render.player.yamato": {
+            "geometry": "Geometry.yamato",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.yamato"
+            ]
         }
     }
 }

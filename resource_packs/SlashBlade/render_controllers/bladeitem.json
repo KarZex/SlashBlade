@@ -32,7 +32,8 @@
                         "Geometry.balkon",
                         "Geometry.weiss",
                         "Geometry.weiss",
-                        "Geometry.bambook"
+                        "Geometry.bambook",
+                        "Geometry.yamato"
                     ]
                 },
                 "textures": {
@@ -55,7 +56,8 @@
                         "Texture.balkond",
                         "Texture.weiss",
                         "Texture.haze",
-                        "Texture.bambook"
+                        "Texture.bambook",
+                        "Texture.yamato"
                     ]
                 }
             }

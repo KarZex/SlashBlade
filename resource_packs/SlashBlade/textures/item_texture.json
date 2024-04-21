@@ -6,7 +6,7 @@
             "textures": "textures/items/butakusi"
         },
         "stand": {
-            "textures": "textures/blade/yamato.png"
+            "textures": "textures/items/stand"
         },
         "butamesi": {
             "textures": "textures/items/butamesi"

@@ -15,11 +15,6 @@ execute @a[tag=run] ~~~ function run
 
 gamerule commandblockoutput false
 
-
-execute @a[hasitem={location=slot.weapon.mainhand,item=blade:bambook }] ~~~ function blade/bambook
-
-execute @a[hasitem={location=slot.weapon.mainhand,item=blade:yamato }] ~~~ function blade/yamato
-
 execute @a[hasitem={location=slot.weapon.mainhand,item=blade:wood }] ~~~ function blade/wood
 
 execute @a[hasitem={location=slot.weapon.mainhand,item=blade:white }] ~~~ function blade/white

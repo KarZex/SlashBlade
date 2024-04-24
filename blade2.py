@@ -84,40 +84,6 @@ for row in csv_reader:
     
         #item/blade
 
-        #name
-        item["minecraft:item"]["description"]["identifier"] = "blade:{}".format(blade_id)
-        #png icon
-        item["minecraft:item"]["components"]["minecraft:icon"]["texture"] = blade_id
-        #durability
-        item["minecraft:item"]["components"]["minecraft:durability"]["max_durability"] = blade_durability
-        #melee damage
-        item["minecraft:item"]["components"]["minecraft:damage"] = blade_damage
-        #around damage
-        item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"][0]["sequence"][0]["run_command"]["command"].append("execute @s[scores={blade=..19}] ~~~ damage @e[r=3,family=monster] 1 override entity @s")
-        item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"][0]["sequence"][0]["run_command"]["command"].append("execute @s[scores={{blade=20..39}}] ~~~ damage @e[r=3,family=monster] {} override entity @s".format(blade_around))
-        item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"][0]["sequence"][0]["run_command"]["command"].append("execute @s[scores={{blade=40..}}] ~~~ damage @e[r=3,family=monster] {} override entity @s".format(blade_around + 2))
-        #sa
-        if blade_sa =="A":
-            item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"].append(saA)
-            item["minecraft:item"]["components"]["minecraft:foil"] = True
-        elif blade_sa =="B":
-            item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"].append(saB)
-            item["minecraft:item"]["components"]["minecraft:foil"] = True
-        elif blade_sa =="C":
-            item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"].append(saC)
-            item["minecraft:item"]["components"]["minecraft:foil"] = True
-        elif blade_sa =="D":
-            item["minecraft:item"]["events"]["zex:on_use"]["sequence"][0]["sequence"].append(saD)
-            item["minecraft:item"]["components"]["minecraft:foil"] = True
-        
-        #output
-        with open('behavior_packs/SlashBlade/items/blade/{}.json'.format(blade_id),'w') as f:
-            json.dump(item,f,indent=4)
-        
-        item_path = open("tool/blade.json","r")
-        item = json.load(item_path)
-        
-
         #function
 
         with open('behavior_packs/SlashBlade/functions/bladestart.mcfunction','a') as f:
@@ -130,32 +96,3 @@ for row in csv_reader:
                 f.write("enchant @s[scores={{blade=40..}}] {0} {1}\n".format(Enchants[i],Levels[i]))
     
     row_count += 1
-
-
-###################
-#Saving
-###################
-
-new_blade = player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10]
-new_blade = new_blade.replace("|| ;",";")
-player["minecraft:client_entity"]["description"]["scripts"]["pre_animation"][10] = new_blade
-
-with open("behavior_packs/SlashBlade/entities/stand.json",'w') as f:
-    json.dump(BP_stand,f,indent=4)
-
-with open("resource_packs/SlashBlade/entity/player.json",'w') as f:
-    json.dump(player,f,indent=4)
-
-with open("resource_packs/SlashBlade/entity/stand.json",'w') as f:
-    json.dump(stand,f,indent=4)
-    
-with open("resource_packs/SlashBlade/render_controllers/bladeitem.json",'w') as f:
-    json.dump(bladeitem,f,indent=4)
-
-with open("resource_packs/SlashBlade/render_controllers/blades.render_controllers.json",'w') as f:
-    json.dump(blades_render_controllers,f,indent=4)
-
-with open("resource_packs/SlashBlade/textures/item_texture.json",'w') as f:
-    json.dump(item_texture,f,indent=4)
-
-

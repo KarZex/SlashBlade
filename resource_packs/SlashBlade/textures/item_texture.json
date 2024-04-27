@@ -139,6 +139,9 @@
         },
         "yamato": {
             "textures": "textures/blade/yamato.png"
+        },
+        "sange": {
+            "textures": "textures/blade/sange.png"
         }
     }
 }

@@ -55,3 +55,5 @@ gamerule commandblockoutput false
 execute @a[hasitem={location=slot.weapon.mainhand,item=blade:bambook }] ~~~ function blade/bambook
 
 execute @a[hasitem={location=slot.weapon.mainhand,item=blade:yamato }] ~~~ function blade/yamato
+
+execute @a[hasitem={location=slot.weapon.mainhand,item=blade:sange }] ~~~ function blade/sange

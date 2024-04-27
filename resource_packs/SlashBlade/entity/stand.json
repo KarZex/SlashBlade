@@ -27,7 +27,8 @@
                 "haze": "textures/models/haze",
                 "weiss": "textures/models/weiss",
                 "bambook": "textures/models/bambook",
-                "yamato": "textures/models/yamato"
+                "yamato": "textures/models/yamato",
+                "sange": "textures/models/sange"
             },
             "geometry": {
                 "default": "geometry.stand",
@@ -43,7 +44,8 @@
                 "silverbanboo": "geometry.slashblade",
                 "tagayasan": "geometry.tagayasan",
                 "bambook": "geometry.bambook",
-                "yamato": "geometry.yamato"
+                "yamato": "geometry.yamato",
+                "sange": "geometry.sange"
             },
             "spawn_egg": {
                 "texture": "stand",

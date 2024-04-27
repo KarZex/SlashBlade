@@ -510,6 +510,31 @@
                             "event": "set:yamato",
                             "target": "self"
                         }
+                    },
+                    {
+                        "cooldown": 2.5,
+                        "use_item": true,
+                        "play_sounds": "mob.armor_stand.place",
+                        "interact_text": "action.gvc.ds",
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "has_equipment",
+                                        "subject": "other",
+                                        "domain": "hand",
+                                        "value": "blade:sange"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "player"
+                                    }
+                                ]
+                            },
+                            "event": "set:sange",
+                            "target": "self"
+                        }
                     }
                 ],
                 "minecraft:skin_id": {
@@ -1028,6 +1053,33 @@
                 "minecraft:skin_id": {
                     "value": 19
                 }
+            },
+            "sange": {
+                "minecraft:interact": [
+                    {
+                        "cooldown": 2.5,
+                        "use_item": true,
+                        "transform_to_item": "blade:sange",
+                        "play_sounds": "mob.armor_stand.place",
+                        "interact_text": "action.interact.gunstand",
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "player"
+                                    }
+                                ]
+                            },
+                            "event": "set:default",
+                            "target": "self"
+                        }
+                    }
+                ],
+                "minecraft:skin_id": {
+                    "value": 20
+                }
             }
         },
         "components": {
@@ -1196,6 +1248,13 @@
                 "add": {
                     "component_groups": [
                         "yamato"
+                    ]
+                }
+            },
+            "set:sange": {
+                "add": {
+                    "component_groups": [
+                        "sange"
                     ]
                 }
             }

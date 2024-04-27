@@ -33,7 +33,8 @@
                         "Geometry.weiss",
                         "Geometry.weiss",
                         "Geometry.bambook",
-                        "Geometry.yamato"
+                        "Geometry.yamato",
+                        "Geometry.sange"
                     ]
                 },
                 "textures": {
@@ -57,7 +58,8 @@
                         "Texture.weiss",
                         "Texture.haze",
                         "Texture.bambook",
-                        "Texture.yamato"
+                        "Texture.yamato",
+                        "Texture.sange"
                     ]
                 }
             }

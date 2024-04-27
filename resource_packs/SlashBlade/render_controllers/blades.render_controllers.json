@@ -231,6 +231,17 @@
             "textures": [
                 "Texture.yamato"
             ]
+        },
+        "controller.render.player.sange": {
+            "geometry": "Geometry.sange",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.sange"
+            ]
         }
     }
 }

@@ -169,8 +169,8 @@ for row in csv_reader:
             f.write("\nexecute @a[hasitem={{location=slot.weapon.mainhand,item=blade:{0} }}] ~~~ function blade/{0}\n".format(blade_id))
 
         with open('behavior_packs/SlashBlade/functions/blade/{}.mcfunction'.format(blade_id),'w') as f:
-            f.write("effect @s[scores=blade=..19] weakness 1 0\n")
-            if(blade_effect == 1): f.write("effect @s[scores=blade=40..] strength 1 1\n")
+            f.write("effect @s[scores={blade=..19}] weakness 1 0\n")
+            if(blade_effect == 1): f.write("effect @s[scores={blade=40..}] strength 1 1\n")
             for i in range(len(Enchants)):
                 f.write("enchant @s[scores={{blade=40..}}] {0} {1}\n".format(Enchants[i],Levels[i]))
 
